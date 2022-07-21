@@ -16,13 +16,13 @@
   </nav>
   <br>
   <form>
-      <label for="pname">Project name:</label>
+      <label for="pname"><b>Project name:</b></label>
       <input type="text" id="pname" name="pname"><br><br>
-      <label for="startdate">Start Date:</label>
+      <label for="startdate"><b>Start Date:&emsp;&ensp;</b></label>
       <input type="date" id="startdate" name="startdate"><br><br>
-      <label for="enddate">End Date:</label>
+      <label for="enddate"><b>End Date:&emsp;&ensp;&ensp;</b></label>
       <input type="date" id="enddate" name="enddate"><br><br>
-      <input type="submit" value="Submit">
+      <button class="button button2">Submit</button>
   </form>
   <br>
 <br>
