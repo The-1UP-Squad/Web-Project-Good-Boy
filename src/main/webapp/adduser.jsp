@@ -1,6 +1,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="./CSS/stylesheet.css">
+    <title>Project Planner Application - Add User</title>
   </head>
 
   <h1>New User Form</h1>
@@ -16,11 +17,11 @@
   </nav>
   <br>
   <form>
-      <label for="fname">First name:</label>
+      <label for="fname">First name:&ensp;&nbsp; </label>
       <input type="text" id="fname" name="fname"><br><br>
-      <label for="lname">Last name:</label>
+      <label for="lname">Last name:&ensp;&nbsp; </label>
       <input type="text" id="lname" name="lname"><br><br>
-      <label for="email">Email:</label>
+      <label for="email">Email:&emsp;&emsp;&emsp;</label>
       <input type="text" id="email" name="email"><br><br>
       <label for="serviceline">Service Line:</label>
       <select name="serviceline">
