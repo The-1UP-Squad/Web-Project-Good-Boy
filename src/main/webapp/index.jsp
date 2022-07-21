@@ -19,7 +19,6 @@
         <li><a href="index.jsp">Home</a></li>
         <li><a href="adduser.jsp">Add a user</a></li>
         <li><a href="addproject.jsp">Add a project</a></li>
-        <li><a href="addproject.jsp">Add a project</a></li>
         
       </ul>
     </div>
@@ -29,27 +28,27 @@
 <table id="myTable">
   <tr class="header">
     <th style="width: 33%;">Project Name</th>
-    <th style="width: 33%;">Description</th>
+    <th style="width: 33%;">Employee</th>
     <th style="width: 33%;">Modify</th>
   </tr>
   <tr>
     <td>Java</td>
-    <td>Project 1</td>
+    <td>Matthew Cockram</td>
     <td>Edit</td>
   </tr>
   <tr>
     <td>Eclipse</td>
-    <td>Project 2</td>
+    <td>Sandra Longbottom</td>
     <td>Edit</td>
   </tr>
   <tr>
     <td>Python</td>
-    <td>Project 3</td>
+    <td>Emma Watson</td>
     <td>Edit</td>
   </tr>
   <tr>
     <td>Linux</td>
-    <td>Project 4</td>
+    <td>Harry Hamlton</td>
     <td>Edit</td>
   </tr>
 </table>
