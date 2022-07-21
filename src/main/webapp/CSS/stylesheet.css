@@ -79,3 +79,23 @@ li a:hover {
 	text-align: left;
 	
 }
+
+#fname{
+	width: 200px;
+	padding: 5px;
+}
+
+#lname{
+	width: 200px;
+	padding: 5px;
+}
+
+#email{
+	width: 200px;
+	padding: 5px;
+}
+
+#serviceline{
+	width: 200px;
+	padding: 5px;
+}
