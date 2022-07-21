@@ -1,6 +1,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="./CSS/stylesheet.css">
+    <title>Project Planner Application - Add Project</title>
   </head>
   <h1>New Project Form</h1>
 
