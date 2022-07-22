@@ -25,6 +25,15 @@ public class Employee {
 		this.serviceLine = serviceLine;
 		this.other = other;
 	}
+	
+
+	public Employee(int id, String fName, String lName, String email) {
+		
+		this.id = id;
+		this.fName = fName;
+		this.lName = lName;
+		this.email = email;
+	}
 
 	public int getId() {
 		return id;

@@ -1,5 +1,6 @@
 package com.project.api.web.www;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ public class UserDbUtil {
 	public UserDbUtil(DataSource theDataSource) {
 		dataSource = theDataSource;
 	}
+	
 public List<Employee> getEmployees() throws Exception {
 	List<Employee> employees = new ArrayList<>();
 	Connection myConn = null;
@@ -21,21 +23,24 @@ public List<Employee> getEmployees() throws Exception {
 	
 	try {
 		myConn = dataSource.getConnection();
-		String sql = "select * from employee order by lName";
+		
+		String sql = "select * from Employees order by Last_Name";
 		myStmt = myConn.createStatement();
+		
 		myRs = myStmt.executeQuery(sql);
 		while (myRs.next()) {
-			int id = myRs.getInt("id");
-			String fName = myRs.getString("fName");
-			String lName = myRs.getString("lName");
-			String email = myRs.getString("email");
-			String serviceLine = myRs.getString("serviceLine");
-			String other = myRs.getString("other");
-			Employee tempEmployee = new Employee(id, fName, lName, email, serviceLine, other);
+			int id = myRs.getInt("EmpId");
+			String fName = myRs.getString("First_Name");
+			String lName = myRs.getString("Last_Name");
+			String email = myRs.getString("Email_address");
+		//	String serviceLine = myRs.getString("serviceLine");
+		//	String other = myRs.getString("other");
+			Employee tempEmployee = new Employee(id, fName, lName, email);
 			employees.add(tempEmployee);
 		}
 	
-		return employees;}
+		return employees; 
+	}
 	finally {close(myConn, myStmt, myRs);
 	
 	}
