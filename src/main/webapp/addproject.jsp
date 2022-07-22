@@ -27,7 +27,12 @@
   <br>
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
 <div id="footer" >
+
 <a href="index.jsp" style="color: white">Request One IT Support</a>
 
 </div>

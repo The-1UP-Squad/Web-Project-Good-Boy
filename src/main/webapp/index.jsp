@@ -1,3 +1,6 @@
+
+
+
 <%@ page import = "java.io.*,java.util.*" %>
 <%@ page import = "javax.servlet.*,java.text.*" %>
 <html>
@@ -33,6 +36,7 @@
          new SimpleDateFormat ("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
          out.print( "<h2 align=\"right\">" + ft.format(dNow) + "</h2>");
       %></div>
+      
 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for projects..">
 
 <table id="myTable">
@@ -65,6 +69,7 @@
 
 
 </nav>
+<br>
 <br>
 <br>
 <br>
