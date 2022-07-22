@@ -21,7 +21,7 @@ public class UserControllerServlet extends HttpServlet {
 	
 	private UserDbUtil userDbUtil; 
 	
-	@Resource(name="www/Web-Project-Good-Boy")
+	@Resource(name="jdbc/webapi")
 	private DataSource dataSource;
 	
 	

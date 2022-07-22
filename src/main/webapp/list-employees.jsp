@@ -6,7 +6,7 @@
 </head>
 <%
 List<Employee> theEmployees =
-(List<Employees>) request.getAttribute("EMPLOYEE_LIST");
+(List<Employee>) request.getAttribute("EMPLOYEE_LIST");
 
 %>
 <body>
