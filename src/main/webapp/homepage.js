@@ -1,9 +1,7 @@
-
-
 function myFunction() {
   // Declare variables
   var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
+   input = document.getElementById("myInput");
   filter = input.value.toUpperCase();
   table = document.getElementById("myTable");
   tr = table.getElementsByTagName("tr");
@@ -21,4 +19,5 @@ function myFunction() {
     }
   }
 
+      
 }

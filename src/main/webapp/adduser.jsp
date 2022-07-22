@@ -39,5 +39,16 @@
   <div style="clear:both;"></div>
   <p>
   <a href="UserControllerServlet">Back to List</a>
+  <br>
+  <br>
+<br>
+<br>
+<br>
+<div id="footer" >
+<a href="index.jsp" style="color: white">Request One IT Support</a>
+
+
+</div>
+
   
 </html>
