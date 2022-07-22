@@ -29,7 +29,7 @@ li a {
 }
 
 /* Change the link color to #111 (black) on hover */
-li a:hover {
+li a hover {
   background-color: #111;
 }
 
@@ -81,23 +81,121 @@ li a:hover {
 }
 
 #fname{
-	width: 200px;
-	padding: 5px;
+  width: 200px;
+  padding: 10px 20px;
+  margin: 2px 0;
+  box-sizing: border-box;
+  border: 2px solid #000048;
+  border-radius: 4px;
+  background-color: #f1f1f1;
 }
 
 #lname{
-	width: 200px;
-	padding: 5px;
+  width: 200px;
+  padding: 10px 20px;
+  margin: 2px 0;
+  box-sizing: border-box;
+  border: 2px solid #000048;
+  border-radius: 4px;
+  background-color: #f1f1f1;
 }
 
 #email{
-	width: 200px;
-	padding: 5px;
+  width: 200px;
+  padding: 10px 20px;
+  margin: 2px 0;
+  box-sizing: border-box;
+  border: 2px solid #000048;
+  border-radius: 4px;
+  background-color: #f1f1f1;
 }
 
 #serviceline{
-	width: 200px;
-	padding: 5px;
+  width: 200px;
+  padding: 10px 20px;
+  margin: 2px 0;
+  box-sizing: border-box;
+  border: 2px solid #000048;
+  border-radius: 4px;
+}
+
+
+#other{
+  width: 200px;
+  padding: 10px 20px;
+  margin: 2px 0;
+  box-sizing: border-box;
+  border: 2px solid #000048;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+select {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+#project{
+  width: 200px;
+  padding: 10px 20px;
+  margin: 2px 0;
+  box-sizing: border-box;
+  border: 2px solid #000048;
+  border-radius: 4px;
+}
+
+#pnameother{
+  width: 200px;
+  padding: 10px 20px;
+  margin: 2px 0;
+  box-sizing: border-box;
+  border: 2px solid #000048;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+#employee{
+  width: 200px;
+  padding: 10px 20px;
+  margin: 2px 0;
+  box-sizing: border-box;
+  border: 2px solid #000048;
+  border-radius: 4px;
+}
+
+#startdate{
+  width: 200px;
+  padding: 10px 20px;
+  margin: 2px 0;
+  box-sizing: border-box;
+  border: 2px solid #000048;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+#enddate{
+  width: 200px;
+  padding: 10px 20px;
+  margin: 2px 0;
+  box-sizing: border-box;
+  border: 2px solid #000048;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+.button2:hover {
+  background-color: #000048;
+  color: white;
+}
+
+.button2 {
+	font-size: 25px;
+  background-color: white; 
+  color: black; 
+  border: 2px solid #000048;
 }
 
 #select {
@@ -108,3 +206,4 @@ li a:hover {
 font-size: 7px; 
 
 }
+
