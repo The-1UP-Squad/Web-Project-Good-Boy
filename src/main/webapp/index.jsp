@@ -1,3 +1,8 @@
+
+
+
+<%@ page import = "java.io.*,java.util.*" %>
+<%@ page import = "javax.servlet.*,java.text.*" %>
 <html>
     <head>
    
@@ -8,21 +13,31 @@
      
     </head>
 
-<h1><img src="logo.png" id="logo">Project Planner</h1>
+<h1><img src="logo.png" id="logo"><p style="color:#000048; p style=font-family:"arial";> Project Planner  </h1>
 
 <body>
 <h2>Welcome!</h2>
 <p>What would you like to do?</p>
+
 <nav>
     <div class="navbar">
       <ul>
         <li><a href="index.jsp">Home</a></li>
         <li><a href="adduser.jsp">Add a user</a></li>
         <li><a href="addproject.jsp">Add a project</a></li>
+       
+        
         
       </ul>
     </div>
 <h2>Project List</h2>
+<div id="time" ><% 
+         Date dNow = new Date( );
+         SimpleDateFormat ft = 
+         new SimpleDateFormat ("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
+         out.print( "<h2 align=\"right\">" + ft.format(dNow) + "</h2>");
+      %></div>
+      
 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for projects..">
 
 <table id="myTable">
@@ -55,6 +70,7 @@
 
 
 </nav>
+<br>
 <br>
 <br>
 <br>
