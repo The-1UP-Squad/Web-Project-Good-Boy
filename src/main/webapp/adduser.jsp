@@ -32,7 +32,8 @@
       <option value="AIML">AI and Machine Learning</option>
       </select> <br><br>
       <label for="other"><b>Other:</b>&emsp;&emsp;&emsp;&nbsp;</label>
-      <input type="text" id="other" name="other"><br><br>
+      <input type="text" id="other" name="other"><br><br><br><br>
+      <button class="button button2">Submit</button>
      
   </form>
   <div style="clear:both;"></div>
