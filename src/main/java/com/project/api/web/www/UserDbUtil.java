@@ -29,13 +29,13 @@ public List<Employee> getEmployees() throws Exception {
 		
 		myRs = myStmt.executeQuery(sql);
 		while (myRs.next()) {
-			int id = myRs.getInt("EmpId");
+		//	int id = myRs.getInt("EmpId");
 			String fName = myRs.getString("First_Name");
 			String lName = myRs.getString("Last_Name");
 			String email = myRs.getString("Email_address");
 		//	String serviceLine = myRs.getString("serviceLine");
 		//	String other = myRs.getString("other");
-			Employee tempEmployee = new Employee(id, fName, lName, email);
+			Employee tempEmployee = new Employee(fName, lName, email);
 			employees.add(tempEmployee);
 		}
 	
@@ -63,6 +63,35 @@ private void close(Connection myConn, Statement myStmt, ResultSet myRs) {
 	}
 	catch (Exception exc) {
 		exc.printStackTrace();
+	}
+	
+}
+
+public void addEmployee(Employee theEmployee) throws Exception {
+	
+	Connection myConn = null;
+	PreparedStatement myStmt = null;
+	
+	try {
+		
+		myConn = dataSource.getConnection();
+		
+		String sql = "insert into Employees "
+				+ "(First_Name, Last_Name, Email_address) "
+				+ "values (?, ?, ?)";
+		
+		myStmt = myConn.prepareStatement(sql);
+		
+		myStmt.setString(1, theEmployee.getfName());
+		myStmt.setString(2, theEmployee.getlName());
+		myStmt.setString(3, theEmployee.getEmail());
+		
+		myStmt.execute();
+		
+	}
+	finally {
+		
+		close(myConn, myStmt, null);
 	}
 	
 }

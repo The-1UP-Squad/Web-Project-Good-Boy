@@ -46,8 +46,27 @@ public class UserControllerServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		try {
-		// list the users .. in mvc fashion
-		listEmployees(request, response);
+			
+			String theCommand = request.getParameter("command");
+			
+			if (theCommand == null) {
+				theCommand = "LIST";
+			}
+			
+			switch(theCommand){
+				
+				case "LIST":
+					listEmployees(request, response);
+					break;
+					
+				case "ADD":
+					addEmployee(request, response);
+					break;
+					
+				default:
+					listEmployees(request, response);
+					}
+			
 		}
 		catch (Exception exc) {
 			throw new ServletException(exc);
@@ -56,7 +75,25 @@ public class UserControllerServlet extends HttpServlet {
 	}
 
 
-        private void listEmployees(HttpServletRequest request, HttpServletResponse response) 
+        private void addEmployee(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+        	String fName = request.getParameter("fName");
+        	String lName = request.getParameter("lName");
+        	String email = request.getParameter("email");
+        	
+        	Employee theEmployee = new Employee(fName, lName, email);
+        	
+        	UserDbUtil.addEmployee(theEmployee);
+        	
+        	listEmployees(request, response);
+        	
+	}
+
+
+
+
+
+		private void listEmployees(HttpServletRequest request, HttpServletResponse response) 
         	throws Exception {
 		// get users from db util
         	List<Employee> employees = userDbUtil.getEmployees();
