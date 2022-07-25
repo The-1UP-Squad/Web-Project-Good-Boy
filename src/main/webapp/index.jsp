@@ -44,6 +44,7 @@
 
 <table id="myTable">
   <tr class="header">
+
     <th style="width: 20%;">Project</th>
     <th style="width: 20%;">Employee</th>
     <th style="width: 20%;">Email</th>
@@ -51,17 +52,20 @@
     <th style="width: 25%;">End Date</th>
     <th style="width: 25%;">Modify</th>
     <th style="width: 25%;">Delete</th>
+
   </tr>
   <c:forEach var="tempEmployee" items="${EMPLOYEE_LIST}">
   <tr>
     <td>${tempEmployee.fName} </td>
     <td>${tempEmployee.lName}</td>
     <td>${tempEmployee.email}</td>
+
     <td>10-07-2002</td>
     <td>10-09-2002</td>
     <td> <a href="/modify.jsp"
 		onclick="if (!(confirm('Are you sure you want to edit this Employee?'))) return false">
 		Edit</a>	</td>
+    
     <td>Delete</td>
     
   </tr>
