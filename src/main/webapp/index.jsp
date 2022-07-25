@@ -46,14 +46,16 @@
   <tr class="header">
     <th style="width: 33%;">Project Name</th>
     <th style="width: 33%;">Employee</th>
+    <th style="width: 33%;"></th>
     <th style="width: 33%;">Modify</th>
+    <th style="width: 33%;">Delete</th>
   </tr>
   <c:forEach var="tempEmployee" items="${EMPLOYEE_LIST}">
   <tr>
     <td>${tempEmployee.fName} </td>
-    <td>Edit</td>
     <td>${tempEmployee.lName}</td>
     <td>${tempEmployee.email}</td>
+    <td>Edit</td>
     <td>Delete</td>
   </tr>
   </c:forEach>
