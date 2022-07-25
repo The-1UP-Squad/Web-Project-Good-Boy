@@ -1,6 +1,7 @@
 package com.project.api.web.www;
 
 public class Employee {
+	
 	private int id;
 	private String fName;
 	private String lName;
@@ -18,6 +19,7 @@ public class Employee {
 	}
 
 	public Employee(int id, String fName, String lName, String email, String serviceLine, String other) {
+		
 		this.id = id;
 		this.fName = fName;
 		this.lName = lName;
