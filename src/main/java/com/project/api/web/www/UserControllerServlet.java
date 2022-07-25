@@ -83,7 +83,7 @@ public class UserControllerServlet extends HttpServlet {
         	
         	Employee theEmployee = new Employee(fName, lName, email);
         	
-        	UserDbUtil.addEmployee(theEmployee);
+        	userDbUtil.addEmployee(theEmployee);
         	
         	listEmployees(request, response);
         	
