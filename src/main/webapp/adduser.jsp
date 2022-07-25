@@ -18,11 +18,11 @@
   <br>
   <form action="UserControllerServlet" method="GET">
 <input type="hidden" name="command" value="ADD"/>
-      <label for="fname"><b>First name:</b>&ensp;&nbsp;&nbsp; </label>
-	  <input type="text" id="fname" name="fname"/><br><br>
+      <label for="fName"><b>First name:</b>&ensp;&nbsp;&nbsp; </label>
+	  <input type="text" id="fName" name="fName"/><br><br>
 	  
-      <label for="lname"><b>Last name:</b>&ensp;&nbsp;&nbsp; </label>
-      <input type="text" id="lname" name="lname"/><br><br>
+      <label for="lName"><b>Last name:</b>&ensp;&nbsp;&nbsp; </label>
+      <input type="text" id="lName" name="lName"/><br><br>
       
       <label for="email"><b>Email:</b>&emsp;&emsp;&emsp;&nbsp;</label>
       <input type="text" id="email" name="email"/><br><br>

@@ -29,7 +29,7 @@ public List<Employee> getEmployees() throws Exception {
 		
 		myRs = myStmt.executeQuery(sql);
 		while (myRs.next()) {
-		//	int id = myRs.getInt("EmpId");
+			//int id = myRs.getInt("EmpId");
 			String fName = myRs.getString("First_Name");
 			String lName = myRs.getString("Last_Name");
 			String email = myRs.getString("Email_address");
