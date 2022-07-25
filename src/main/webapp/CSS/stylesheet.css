@@ -81,7 +81,7 @@ li a hover {
 }
 
 #fname{
-  width: 200px;
+  width: 250px;
   padding: 10px 20px;
   margin: 2px 0;
   box-sizing: border-box;
@@ -91,7 +91,7 @@ li a hover {
 }
 
 #lname{
-  width: 200px;
+  width: 250px;
   padding: 10px 20px;
   margin: 2px 0;
   box-sizing: border-box;
@@ -101,7 +101,7 @@ li a hover {
 }
 
 #email{
-  width: 200px;
+  width: 280px;
   padding: 10px 20px;
   margin: 2px 0;
   box-sizing: border-box;
@@ -111,7 +111,7 @@ li a hover {
 }
 
 #serviceline{
-  width: 200px;
+  width: 280px;
   padding: 10px 20px;
   margin: 2px 0;
   box-sizing: border-box;
@@ -121,7 +121,7 @@ li a hover {
 
 
 #other{
-  width: 200px;
+  width: 280px;
   padding: 10px 20px;
   margin: 2px 0;
   box-sizing: border-box;
@@ -131,7 +131,7 @@ li a hover {
 }
 
 select {
-  width: 100%;
+  width: 280%;
   padding: 16px 20px;
   border: none;
   border-radius: 4px;
@@ -139,7 +139,7 @@ select {
 }
 
 #project{
-  width: 200px;
+  width: 280px;
   padding: 10px 20px;
   margin: 2px 0;
   box-sizing: border-box;
@@ -148,7 +148,7 @@ select {
 }
 
 #pnameother{
-  width: 200px;
+  width: 280px;
   padding: 10px 20px;
   margin: 2px 0;
   box-sizing: border-box;
@@ -158,7 +158,7 @@ select {
 }
 
 #employee{
-  width: 200px;
+  width: 2580px;
   padding: 10px 20px;
   margin: 2px 0;
   box-sizing: border-box;
@@ -167,7 +167,7 @@ select {
 }
 
 #startdate{
-  width: 200px;
+  width: 280px;
   padding: 10px 20px;
   margin: 2px 0;
   box-sizing: border-box;
@@ -177,7 +177,7 @@ select {
 }
 
 #enddate{
-  width: 200px;
+  width: 280px;
   padding: 10px 20px;
   margin: 2px 0;
   box-sizing: border-box;
