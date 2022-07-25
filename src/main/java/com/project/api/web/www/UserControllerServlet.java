@@ -102,7 +102,7 @@ public class UserControllerServlet extends HttpServlet {
         	request.setAttribute("EMPLOYEE_LIST", employees);
         	
         // send to jsp page
-        	RequestDispatcher dispatcher = request.getRequestDispatcher("/list-employees.jsp");
+        	RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
         	dispatcher.forward(request, response);
 		
 	}
