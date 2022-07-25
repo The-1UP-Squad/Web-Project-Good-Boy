@@ -2,7 +2,7 @@ package com.project.api.web.www;
 
 public class Employee {
 	private int id;
-	private String 	fName;
+	private String fName;
 	private String lName;
 	private String email;
 	private String serviceLine;

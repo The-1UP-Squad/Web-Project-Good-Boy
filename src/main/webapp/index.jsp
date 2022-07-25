@@ -25,7 +25,7 @@
         <li><a href="index.jsp">Home</a></li>
         <li><a href="adduser.jsp">Add a user</a></li>
         <li><a href="addproject.jsp">Add a project</a></li>
-       
+       	
         
         
       </ul>
@@ -42,30 +42,33 @@
 
 <table id="myTable">
   <tr class="header">
-    <th style="width: 33%;">Project Name</th>
-    <th style="width: 33%;">Employee</th>
-    <th style="width: 33%;">Modify</th>
-  </tr>
-  <tr>
-    <td>Java</td>
-    <td>Matthew Cockram</td>
-    <td>Edit</td>
-  </tr>
-  <tr>
-    <td>Eclipse</td>
-    <td>Sandra Longbottom</td>
-    <td>Edit</td>
-  </tr>
-  <tr>
-    <td>Python</td>
-    <td>Emma Watson</td>
-    <td>Edit</td>
-  </tr>
-  <tr>
-    <td>Linux</td>
-    <td>Harry Hamlton</td>
-    <td>Edit</td>
-  </tr>
+    <th style="width: 25%;">Project Name</th>
+    <th style="width: 25%;">Employee</th>
+    <th style="width: 25%;">Modify</th>
+    <th style="width: 25%;">Delete</th>
+   </tr>
+   <tr>
+   
+   <url var="deleteLink" value="UserControllerServlet">
+   <param name="command" value="DELETE" />
+   <param name="userId" value="${tempEmployee.id}">
+   
+	<td> ${tempEmployee.fName} </td>
+	<td> ${tempEmployee.lName} </td>
+	<td> ${tempEmployee.email} </td>
+	<td>
+	
+	
+	
+	
+	
+	 
+	
+
+	<a href="${deleteLink}"
+		onclick="if (!(confirm('Are you sure you want to delete this Employee?'))) return false">
+		Delete Employee</a>	
+		
 </table>
 
 
