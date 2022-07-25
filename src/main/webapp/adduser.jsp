@@ -17,7 +17,7 @@
   </nav>
   <br>
   <form action="UserControllerServlet" method="GET">
-<input type="hidden" name="command" value="ADD"/>
+<input type="hidden" name="command" value="ADDEMPLOYEE"/>
       <label for="fName"><b>First name:</b>&ensp;&nbsp;&nbsp; </label>
 	  <input type="text" id="fName" name="fName"/><br><br>
 	  

@@ -27,7 +27,6 @@ public class UserControllerServlet extends HttpServlet {
 	
 	@Override
 	public void init() throws ServletException {
-		// TODO Auto-generated method stub
 		super.init();
 		
 		// create our user db util .. and pass in the conn pool / data source
@@ -50,16 +49,16 @@ public class UserControllerServlet extends HttpServlet {
 			String theCommand = request.getParameter("command");
 			
 			if (theCommand == null) {
-				theCommand = "LIST";
+				theCommand = "LISTEMPLOYEES";
 			}
 			
 			switch(theCommand){
 				
-				case "LIST":
+				case "LISTEMPLOYEES":
 					listEmployees(request, response);
 					break;
 					
-				case "ADD":
+				case "ADDEMPLOYEE":
 					addEmployee(request, response);
 					break;
 					
