@@ -19,20 +19,25 @@
   <form action="UserControllerServlet" method="GET">
 <input type="hidden" name="command" value="ADD"/>
       <label for="fname"><b>First name:</b>&ensp;&nbsp;&nbsp; </label>
-
-      <input type="text" id="fname" name="fname"><br><br>
+	  <input type="text" id="fname" name="fname"/><br><br>
+	  
       <label for="lname"><b>Last name:</b>&ensp;&nbsp;&nbsp; </label>
-      <input type="text" id="lname" name="lname"><br><br>
+      <input type="text" id="lname" name="lname"/><br><br>
+      
       <label for="email"><b>Email:</b>&emsp;&emsp;&emsp;&nbsp;</label>
-      <input type="text" id="email" name="email"><br><br>
+      <input type="text" id="email" name="email"/><br><br>
+      
       <label for="serviceline"><b>Service Line:</b></label>
       <select id="serviceline" name="serviceline">
+      
       <option value="software">Software Development</option>
       <option value="cloud">Cloud</option>
       <option value="AIML">AI and Machine Learning</option>
       </select> <br><br>
+      
       <label for="other"><b>Other:</b>&emsp;&emsp;&emsp;&nbsp;</label>
       <input type="text" id="other" name="other"><br><br><br><br>
+      
       <button class="button button2">Submit</button>
      
   </form>
