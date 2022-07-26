@@ -2,6 +2,7 @@ package com.project.api.web.www;
 
 public class Project {
 
+
 	private int projId;
 	private String projName;
 	
@@ -26,4 +27,15 @@ public class Project {
 	public String toString() {
 		return "Project [projId=" + projId + ", projName=" + projName + "]";
 	}
+
+}
+    public Project(int projId, String projName) {
+        this.projId = projId;
+        this.projName = projName;
+    }
+
+    @Override
+    public String toString() {
+        return "Project [projId=" + projId + ", projName=" + projName + "]";
+    }
 }
