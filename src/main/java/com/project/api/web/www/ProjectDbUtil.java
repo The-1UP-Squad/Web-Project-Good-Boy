@@ -1,6 +1,7 @@
 package com.project.api.web.www;
-
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,17 +15,85 @@ public class ProjectDbUtil {
 	private DataSource dataSource;
 	
 	public ProjectDbUtil(DataSource theDataSource) {
-		dataSource = theDataSource;
-	}
+		dataSource = theDataSource;}
 	
-	public List<Project> getProject() throws Exception {
+	
+	public List<Project> getProjects() throws Exception {
 		
-		List<Project> project = new ArrayList<>();
+		List<Project> projects = new ArrayList<>();
 		
 		Connection myConn = null;
 		Statement myStmt = null;
-		Resultset myRs = null;
+		ResultSet myRs = null;
+		try {
+			myConn = dataSource.getConnection();
+			
+			String sql = "select * from Projects order by Project";
+			myStmt = myConn.createStatement();
+			
+			myRs = myStmt.executeQuery(sql);
+			while (myRs.next()) {
+				int pId = myRs.getInt("ProID");
+				String pName = myRs.getString("Project");
+				
+				Project tempProject = new Project(pId, pName);
+				projects.add(tempProject);
+			}
 		
-		return project;
+			return projects; 
+		}
+		finally {close(myConn, myStmt, myRs);
+		
+		}
+		
+		
+
 	}
-}
+	private void close(Connection myConn, Statement myStmt, ResultSet myRs) {
+		try {
+			if (myRs != null) {
+				myRs.close();
+			}
+			if (myStmt != null) {
+				myStmt.close();
+			}
+			if (myConn != null) {
+				myConn.close();
+			}
+			
+		}
+		catch (Exception exc) {
+			exc.printStackTrace();
+		}
+		
+	}
+
+	public void addProject(Project theProject) throws Exception {
+		
+		Connection myConn = null;
+		PreparedStatement myStmt = null;
+		
+		try {
+			
+			myConn = dataSource.getConnection();
+			
+			String sql = "insert into Projects "
+					+ "(ProID, Project) "
+					+ "values (?,?)";
+			
+			myStmt = myConn.prepareStatement(sql);
+			
+			myStmt.setInt(1, theProject.getProjId());
+			myStmt.setString(2, theProject.getProjName());
+			
+			
+			myStmt.execute();
+			
+		}
+		finally {
+			
+			close(myConn, myStmt, null);
+		}
+		
+	}
+	}
