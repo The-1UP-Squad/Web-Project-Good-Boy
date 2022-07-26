@@ -33,10 +33,10 @@ public class ProjectDbUtil {
 			
 			myRs = myStmt.executeQuery(sql);
 			while (myRs.next()) {
-				int pId = myRs.getInt("ProID");
+				//int pId = myRs.getInt("ProID");
 				String pName = myRs.getString("Project");
 				
-				Project tempProject = new Project(pId, pName);
+				Project tempProject = new Project(pName);
 				projects.add(tempProject);
 			}
 		
@@ -77,14 +77,14 @@ public class ProjectDbUtil {
 			
 			myConn = dataSource.getConnection();
 			
-			String sql = "insert into Projects "
-					+ "(ProID, Project) "
-					+ "values (?,?)";
+			String sql = "insert into Projects"
+					+ "(Project) "
+					+ "values (?)";
 			
 			myStmt = myConn.prepareStatement(sql);
 			
-			myStmt.setInt(1, theProject.getProjId());
-			myStmt.setString(2, theProject.getProjName());
+			//myStmt.setInt(1, theProject.getProjId());
+			myStmt.setString(1, theProject.getProjName());
 			
 			
 			myStmt.execute();
