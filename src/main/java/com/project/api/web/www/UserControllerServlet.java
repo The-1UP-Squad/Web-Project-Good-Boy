@@ -50,7 +50,7 @@ public class UserControllerServlet extends HttpServlet {
 			String theCommand = request.getParameter("command");
 			
 			if (theCommand == null) {
-				theCommand = "LIST";
+				theCommand = "LISTEMPLOYEE";
 			}
 			
 			switch(theCommand){
