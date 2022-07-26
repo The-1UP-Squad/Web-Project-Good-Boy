@@ -23,16 +23,7 @@ public class Project {
 		this.projName = projName;
 	}
 	
-	@Override
-	public String toString() {
-		return "Project [projId=" + projId + ", projName=" + projName + "]";
-	}
-
-}
-    public Project(int projId, String projName) {
-        this.projId = projId;
-        this.projName = projName;
-    }
+	
 
     @Override
     public String toString() {
