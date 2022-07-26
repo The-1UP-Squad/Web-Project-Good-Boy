@@ -207,4 +207,39 @@ select {
 font-size: 7px; 
 
 }
+#myTableUser {
+  border-collapse: collapse; /* Collapse borders */
+  width: 200%; /* Full-width */
+  border: 2px solid black;
+  font-size: 14px; /* Increase font-size */
+  padding : 20px;
+  position: relative;
+ 
+}
+
+#myTableUser th, #myTableUser td {
+  text-align: left; /* Left-align text */
+  padding: 12px; /* Add padding */
+}
+
+#myTableUser tr {
+  /* Add a bottom border to all table rows */
+  border-bottom: 1px solid #ddd;
+}
+
+#myTableUser tr.header {
+  background-color: #000048;
+  color: white;
+}
+  
+.formUser{
+ display: flex;
+ }
+ 
+ form{margin:0px; padding:25px; display:inline;
+
+ }
+ 
+ h2{ text-align: centre;}
+
 
