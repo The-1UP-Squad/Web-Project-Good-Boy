@@ -15,7 +15,11 @@
         </ul>
       </div>
   </nav>
+  
   <br>
+  
+    
+  <div class="formUser">
   <form action="UserControllerServlet" method="GET">
 <input type="hidden" name="command" value="ADDEMPLOYEE"/>
       <label for="fName"><b>First name:</b>&ensp;&nbsp;&nbsp; </label>
@@ -37,10 +41,29 @@
       
       <label for="other"><b>Other:</b>&emsp;&emsp;&emsp;&nbsp;</label>
       <input type="text" id="other" name="other"><br><br><br><br>
-      
       <button class="button button2">Submit</button>
+      </form>
      
-  </form>
+     
+      <div>
+      <h2> Current Employees at Cognizant</h2>
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Employees..">
+      
+        <table id="myTableUser">
+  <tr class="header">
+
+
+    <th style="width: 33%;">Name</th>
+    <th style="width: 33%;">Email</th>
+    <th style="width: 25%;">Delete</th>
+
+  </tr>
+  
+</table>
+</div>
+</div>
+
+
   <div style="clear:both;"></div>
   <p>
   <a href="UserControllerServlet">Back to List</a>
