@@ -16,31 +16,28 @@
       </div>
   </nav>
   <br>
-  <form action="UserControllerServlet" method="GET">
-<input type="hidden" name="command" value="ADD"/>
-      <label for="fName"><b>First name:</b>&ensp;&nbsp;&nbsp; </label>
-	  <input type="text" id="fName" name="fName"/><br><br>
-	  
-      <label for="lName"><b>Last name:</b>&ensp;&nbsp;&nbsp; </label>
-      <input type="text" id="lName" name="lName"/><br><br>
-      
-      <label for="email"><b>Email:</b>&emsp;&emsp;&emsp;&nbsp;</label>
-      <input type="text" id="email" name="email"/><br><br>
-      
-      <label for="serviceline"><b>Service Line:</b></label>
-      <select id="serviceline" name="serviceline">
-      
-      <option value="software">Software Development</option>
-      <option value="cloud">Cloud</option>
-      <option value="AIML">AI and Machine Learning</option>
+      <label for="serviceline"><b>Project name:</b></label>
+      <select id="project" name="project">
+      <option value="7 West">7 West</option>
+      <option value="SRG">Super Retail Group</option>
+      <option value="Telstra">Telstra</option>
       </select> <br><br>
+      <label for="pnameother"><b>Project other:</b></label>
+      <input type="text" id="pnameother" name="pname"><br><br>
+      <label for="employee"><b>Employee:&emsp;&ensp;</b></label>
+      <select id="employee" name="employee">
+      <option value="Matthew">Matthew</option>
+      <option value="Emma">Emma</option>
+      <option value="Siobhan">Siobhan</option>
+      </select> <br><br>
+      <label for="startdate"><b>Start Date:&emsp;&ensp;</b></label>
+      <input type="date" id="startdate" name="startdate"><br><br>
+      <label for="enddate"><b>End Date:&emsp;&ensp;&ensp;</b></label>
+      <input type="date" id="enddate" name="enddate"><br><br><br><br>
       
-      <label for="other"><b>Other:</b>&emsp;&emsp;&emsp;&nbsp;</label>
-      <input type="text" id="other" name="other"><br><br><br><br>
-      
-      <button class="button button2">Submit</button>
+      <button class="button button2">Submit</button>&emsp;&emsp;<button class="button button2">Back</button>
      
-  </form>
+
   <div style="clear:both;"></div>
   <p>
   <br>

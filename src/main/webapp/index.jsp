@@ -62,7 +62,7 @@
 
     <td>10-07-2002</td>
     <td>10-09-2002</td>
-    <td> <a href="/modify.jsp"
+    <td> <a href="modify.jsp"
 		onclick="if (!(confirm('Are you sure you want to edit this Employee?'))) return false">
 		Edit</a>	</td>
     
