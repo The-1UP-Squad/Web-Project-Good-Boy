@@ -52,21 +52,34 @@
     <th style="width: 25%;">End Date</th>
     <th style="width: 25%;">Modify</th>
     <th style="width: 25%;">Delete</th>
+    <th style="width: 25%;"></th>
 
   </tr>
   <c:forEach var="tempEmployee" items="${EMPLOYEE_LIST}">
   <tr>
+    
     <td>${tempEmployee.fName} </td>
     <td>${tempEmployee.lName}</td>
     <td>${tempEmployee.email}</td>
-
-    <td>10-07-2002</td>
+    
+	<td>10-07-2002</td>
     <td>10-09-2002</td>
+    
+
+    
     <td> <a href="modify.jsp"
 		onclick="if (!(confirm('Are you sure you want to edit this Employee?'))) return false">
 		Edit</a>	</td>
-    
-    <td>Delete</td>
+		
+		<td><a href="${deleteLink}"
+		onclick="if (!(confirm('Are you sure you want to delete this student?'))) return false">
+		Delete</a>	</td>
+		
+		        <td><c:url var="deleteLink" value="UserControllerServlet">
+						<c:param name="command" value="DELETE" />
+						<c:param name="EmpId" value="${tempEmployee.id}" />
+					</c:url></td>
+		
     
   </tr>
   </c:forEach>
