@@ -19,7 +19,8 @@ import javax.sql.DataSource;
 public class UserControllerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private UserDbUtil userDbUtil; 
+	private UserDbUtil userDbUtil;
+	private ProjectDbUtil projectDbUtil;
 	
 	@Resource(name="jdbc/webapi")
 	private DataSource dataSource;
@@ -32,15 +33,13 @@ public class UserControllerServlet extends HttpServlet {
 		// create our user db util .. and pass in the conn pool / data source
 		try {
 			userDbUtil = new UserDbUtil(dataSource);
+			projectDbUtil = new ProjectDbUtil(dataSource);
 		}
 		catch (Exception exc) {
 			throw new ServletException(exc);
 		}
 	}
-
-
-
-
+	
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -64,6 +63,14 @@ public class UserControllerServlet extends HttpServlet {
 					addEmployee(request, response);
 					break;
 					
+				case "LISTPROJECTS":
+					listProjects(request, response);
+					break;
+					
+				case "ADDPROJECT":
+					addProject(request, response);
+					break;
+					
 				default:
 					listEmployees(request, response);
 					}
@@ -76,7 +83,35 @@ public class UserControllerServlet extends HttpServlet {
 	}
 
 
-        private void addEmployee(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        private void addProject(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+        	String pName = request.getParameter("pName");
+        	
+        	Project theProject = new Project(pName);
+        	
+        	projectDbUtil.addProject(theProject);
+          	
+        	listProjects(request, response);
+	}
+        
+		private void listProjects(HttpServletRequest request, HttpServletResponse response) 
+	        	throws Exception {
+			// get users from db util
+	        	List<Project> projects = projectDbUtil.getProjects();
+	        	
+	        // add users to the request
+	        	request.setAttribute("PROJECT_LIST", projects);
+	        	
+	        // send to jsp page
+	        	RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+	        	dispatcher.forward(request, response);
+			
+		}
+
+
+
+
+		private void addEmployee(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
         	String fName = request.getParameter("fName");
         	String lName = request.getParameter("lName");
