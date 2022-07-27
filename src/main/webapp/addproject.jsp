@@ -5,6 +5,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="./CSS/REALprojectCSS.css">
+    <link rel="stylesheet" href="./CSS/stylesheet.css">
     <title>Project Planner Application - Add Project</title>
   </head>
   <h1><img src="logo.png" id="logo"><p style="color:#000048; p style=font-family:"arial";> New Project Form  </h1>
@@ -35,10 +36,10 @@
       </select> 
       <br><br>
 
-      <label for="pnameother"><b>Project other:</b></label>
+      <label for="pnameother">&emsp;&ensp;&nbsp;<b>Project other:</b></label>
       <input type="text" id="pnameother" name="pName"><br><br>
       
-      <label for="employee"><b>Employee:&emsp;&ensp;</b></label>
+      <label for="employee">&emsp;&ensp;&nbsp;<b>Employee:&emsp;&ensp;</b></label>
       <select id="employee" name="employee">
       <option value="Matthew">Matthew</option>
       <option value="Emma">Emma</option>
@@ -47,10 +48,10 @@
       </select>
       <br><br>
 
-      <label for="startdate"><b>Start Date:&emsp;&ensp;</b></label>
+      <label for="startdate">&emsp;&ensp;&nbsp;<b>Start Date:&emsp;&ensp;</b></label>
       <input type="date" id="startdate" name="startdate"><br><br>
       
-      <label for="enddate"><b>End Date:&emsp;&ensp;&ensp;</b></label>
+      <label for="enddate">&emsp;&ensp;&nbsp;<b>End Date:&emsp;&ensp;&ensp;</b></label>
       <input type="date" id="enddate" name="enddate"><br><br><br><br>
       
       <button class="button button2">Submit</button>

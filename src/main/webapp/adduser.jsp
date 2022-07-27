@@ -66,7 +66,6 @@
 
   <div style="clear:both;"></div>
   <p>
-  <a href="UserControllerServlet">Back to List</a>
   <br>
   <br>
 <br>
