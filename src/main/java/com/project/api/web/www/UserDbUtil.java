@@ -29,13 +29,13 @@ public List<Employee> getEmployees() throws Exception {
 		
 		myRs = myStmt.executeQuery(sql);
 		while (myRs.next()) {
-			//int id = myRs.getInt("EmpId");
+			int id = myRs.getInt("EmpId");
 			String fName = myRs.getString("First_Name");
 			String lName = myRs.getString("Last_Name");
 			String email = myRs.getString("Email_address");
 		//	String serviceLine = myRs.getString("serviceLine");
 		//	String other = myRs.getString("other");
-			Employee tempEmployee = new Employee(fName, lName, email);
+			Employee tempEmployee = new Employee(fName, lName, email, id);
 			employees.add(tempEmployee);
 		}
 	
@@ -94,5 +94,37 @@ public void addEmployee(Employee theEmployee) throws Exception {
 		close(myConn, myStmt, null);
 	}
 	
+}
+
+	public void deleteEmployee(String theEmployeeID) throws Exception {
+	
+		Connection myConn = null;
+		PreparedStatement myStmt = null;
+	
+		try {
+			//convert employee id to int
+			int id = Integer.parseInt(theEmployeeID);
+			
+			//get connection to database
+			myConn = dataSource.getConnection();
+			
+			//create sql to delete student
+			String sql = "delete from employees where EmpID=?";
+			
+			//prep statement
+			myStmt = myConn.prepareStatement(sql);
+			
+			//set params
+			myStmt.setInt(1, id);
+			
+			//execute sql statement
+			myStmt.execute();
+			
+		}
+		finally {
+			//clean up JDBC code
+			close(myConn, myStmt, null);
+		}
+		
 }
 }

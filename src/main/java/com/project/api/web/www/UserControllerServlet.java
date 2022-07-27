@@ -70,6 +70,10 @@ public class UserControllerServlet extends HttpServlet {
 				case "ADDPROJECT":
 					addProject(request, response);
 					break;
+				
+				case "DELETEEMPLOYEES":
+					deleteEmployee(request, response);
+					break;
 					
 				default:
 					listEmployees(request, response);
@@ -83,7 +87,21 @@ public class UserControllerServlet extends HttpServlet {
 	}
 
 
-        private void addProject(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        private void deleteEmployee(HttpServletRequest request, HttpServletResponse response)
+        throws Exception {
+		
+		//read student id form from id
+        String theEmployeeID = request.getParameter("EmpId");	
+        	
+        //delete student from data base
+        userDbUtil.deleteEmployee(theEmployeeID);	
+        
+        //send them back to servlet or index page, right?
+        listEmployees(request, response); //not sure about this line??
+	}
+
+
+		private void addProject(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
         	String pName = request.getParameter("pName");
         	
