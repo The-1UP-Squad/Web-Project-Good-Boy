@@ -109,7 +109,8 @@ public class UserControllerServlet extends HttpServlet {
         userDbUtil.deleteEmployee(theEmployeeID);	
         
         //send them back to servlet or index page, right?
-        listEmployees(request, response); //not sure about this line??
+        listEmployees(request, response);
+        } //not sure about this line??
 
         private void addEmployeeProject(HttpServletRequest request, HttpServletResponse response) throws Exception {
         	
@@ -134,7 +135,8 @@ public class UserControllerServlet extends HttpServlet {
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
     	dispatcher.forward(request, response);
-	
+    	
+    	
 		
 	}
 
@@ -196,7 +198,13 @@ public class UserControllerServlet extends HttpServlet {
         // send to jsp page
         	RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
         	dispatcher.forward(request, response);
+        	}
 		
-	}
 
-}
+    			
+        
+	}
+		
+		
+
+

@@ -1,6 +1,11 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import = "java.io.*,java.util.*" %>
+<%@ page import = "javax.servlet.*,java.text.*" %>
+
 <html>
   <head>
     <link rel="stylesheet" href="./CSS/stylesheet.css">
+    <script src="homepage.js"></script>
     <title>Project Planner Application - Add User</title>
   </head>
 
@@ -56,8 +61,25 @@
     <th style="width: 33%;">Name</th>
     <th style="width: 33%;">Email</th>
     <th style="width: 25%;">Delete</th>
-
+</tr>    
+      <c:forEach var="tempEmployee" items="${EMPLOYEE_LIST}">
+  <tr>    
+    <td>${tempEmployee.fName} ${tempEmployee.lName}</td>
+    <td>${tempEmployee.email}</td>
+    
+	<c:url var="deleteLink" value="UserControllerServlet">
+		<c:param name="command" value="DELETEEMPLOYEES" />
+		<c:param name="EmpId" value="${tempEmployee.id}" />
+	</c:url>
+    
+		<td><a href="${deleteLink}"
+		onclick="if (!(confirm('Are you sure you want to delete this Employee?'))) return false">
+		Delete</a>	</td>
+		     
+		   
   </tr>
+  </c:forEach>
+    
   
 </table>
 </div>

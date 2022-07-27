@@ -9,7 +9,7 @@
   <nav>
       <div class="menu">
         <ul>
-          <li><a href="http://localhost:8086/Web-Project-Good-Boy/"></li>
+          <li><a href="http://localhost:8086/Web-Project-Good-Boy/"></a></li>
           <li><a href="adduser.jsp"></a></li>
           <li><a href="addproject.jsp"></a></li>
         </ul>
