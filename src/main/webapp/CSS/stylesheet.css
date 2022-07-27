@@ -241,5 +241,31 @@ font-size: 7px;
  }
  
  h2{ text-align: centre;}
+ 
+ .userscroll {
+border: none;
+padding: 5px;
+font: 24px/36px sans-serif;
+width: 100px;
+height: 200px;
+overflow: scroll;
+}
+::-webkit-scrollbar {
+width: 12px;
+height: 12px;
+}
+::-webkit-scrollbar-track {
+border: 1px solid #000080;
+border-radius: 10px;
+
+}
+::-webkit-scrollbar-thumb {
+background: #000080;
+border-radius: 10px;
+
+}
+::-webkit-scrollbar-thumb:hover {
+background: #88ba1c;
+}
 
 

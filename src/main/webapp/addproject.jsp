@@ -14,8 +14,8 @@
       <div class="menu">
         <ul>
           <li><a href="http://localhost:8086/Web-Project-Good-Boy/">Home</a></li>
-          <li><a href="adduser.jsp">Add a user</a></li>
-          <li><a href="addproject.jsp">Add a project</a></li>
+          <li><a href="http://localhost:8086/Web-Project-Good-Boy/UserControllerServlet?command=LISTEMPLOYEES&whereTo=1">Users</a></li>
+          <li><a href="addproject.jsp">Projects</a></li>
         </ul>
       </div>
   </nav>

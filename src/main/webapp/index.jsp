@@ -22,10 +22,16 @@
 
 <nav>
     <div class="navbar">
+      <c:url var="addUserLink" value="UserControllerServlet">
+                <c:param name="command" value="LISTEMPLOYEES" />
+                <c:param name="whereTo" value="1" />
+		</c:url>
+      
       <ul>
         <li><a href="http://localhost:8086/Web-Project-Good-Boy/">Home</a></li>
-        <li><a href="adduser.jsp">Add a user</a></li>
-        <li><a href="addproject.jsp">Add a project</a></li>
+        <li><a href="${addUserLink}">Users</a></li>
+        <li><a href="addproject.jsp">Projects</a></li>
+       
        
         
         

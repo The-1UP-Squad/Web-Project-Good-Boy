@@ -109,7 +109,8 @@ public class UserControllerServlet extends HttpServlet {
         userDbUtil.deleteEmployee(theEmployeeID);	
         
         //send them back to servlet or index page, right?
-        listEmployees(request, response); //not sure about this line??
+        listEmployees(request, response);//not sure about this line??
+        }
 
         private void addEmployeeProject(HttpServletRequest request, HttpServletResponse response) throws Exception {
         	
@@ -187,6 +188,11 @@ public class UserControllerServlet extends HttpServlet {
 
 		private void listEmployees(HttpServletRequest request, HttpServletResponse response) 
         	throws Exception {
+			int whereTo = 0;
+			
+			if (request.getParameter("whereTo") != null) {
+				whereTo = Integer.parseInt(request.getParameter("whereTo"));
+			}
 		// get users from db util
         	List<Employee> employees = userDbUtil.getEmployees();
         	
@@ -194,8 +200,16 @@ public class UserControllerServlet extends HttpServlet {
         	request.setAttribute("EMPLOYEE_LIST", employees);
         	
         // send to jsp page
-        	RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
-        	dispatcher.forward(request, response);
+        	if (whereTo == 1) {
+        		RequestDispatcher dispatcher = request.getRequestDispatcher("/adduser.jsp");
+	        	dispatcher.forward(request, response);
+        	} else {
+	        	RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+	        	dispatcher.forward(request, response);
+        	}
+     
+        	
+        	
 		
 	}
 
