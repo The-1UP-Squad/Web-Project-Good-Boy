@@ -113,7 +113,6 @@ public class UserControllerServlet extends HttpServlet {
         listEmployees(request, response);//not sure about this line??
         }
 
-
         private void addEmployeeProject(HttpServletRequest request, HttpServletResponse response) throws Exception {
         	
         	String pName = request.getParameter("pName");
@@ -204,6 +203,7 @@ public class UserControllerServlet extends HttpServlet {
         	
         // send to jsp page
 
+
         	if (whereTo == 1) {
         		RequestDispatcher dispatcher = request.getRequestDispatcher("/adduser.jsp");
 	        	dispatcher.forward(request, response);
@@ -214,6 +214,3 @@ public class UserControllerServlet extends HttpServlet {
         
 	}
 		
-		
-
-
