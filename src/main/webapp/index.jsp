@@ -86,11 +86,6 @@
 		   
   </tr>
   </c:forEach>
-
-  <c:forEach var="tempProject" items="${PROJECT_LIST}">
-  <tr>
-  	<td>${tempProject.pName}</td>
-  </c:forEach>
 </table>
 
 
