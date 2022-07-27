@@ -9,7 +9,7 @@
   <nav>
       <div class="menu">
         <ul>
-          <li><a href="index.jsp"></li>
+          <li><a href="index.jsp"></a></li>
           <li><a href="adduser.jsp"></a></li>
           <li><a href="addproject.jsp"></a></li>
         </ul>
