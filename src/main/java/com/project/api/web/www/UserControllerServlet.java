@@ -109,8 +109,10 @@ public class UserControllerServlet extends HttpServlet {
         userDbUtil.deleteEmployee(theEmployeeID);	
         
         //send them back to servlet or index page, right?
+
         listEmployees(request, response);//not sure about this line??
         }
+
 
         private void addEmployeeProject(HttpServletRequest request, HttpServletResponse response) throws Exception {
         	
@@ -135,7 +137,8 @@ public class UserControllerServlet extends HttpServlet {
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
     	dispatcher.forward(request, response);
-	
+    	
+    	
 		
 	}
 
@@ -200,17 +203,17 @@ public class UserControllerServlet extends HttpServlet {
         	request.setAttribute("EMPLOYEE_LIST", employees);
         	
         // send to jsp page
+
         	if (whereTo == 1) {
         		RequestDispatcher dispatcher = request.getRequestDispatcher("/adduser.jsp");
 	        	dispatcher.forward(request, response);
         	} else {
 	        	RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
 	        	dispatcher.forward(request, response);
-        	}
-     
-        	
-        	
-		
+        	}  			
+        
 	}
+		
+		
 
-}
+
