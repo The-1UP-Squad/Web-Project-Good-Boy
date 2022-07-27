@@ -21,6 +21,7 @@ public class UserControllerServlet extends HttpServlet {
 	
 	private UserDbUtil userDbUtil;
 	private ProjectDbUtil projectDbUtil;
+	private EmpProjectDbUtil employeeProjectDbUtil;
 	
 	@Resource(name="jdbc/webapi")
 	private DataSource dataSource;
@@ -34,6 +35,8 @@ public class UserControllerServlet extends HttpServlet {
 		try {
 			userDbUtil = new UserDbUtil(dataSource);
 			projectDbUtil = new ProjectDbUtil(dataSource);
+			employeeProjectDbUtil = new EmpProjectDbUtil(dataSource);
+			
 		}
 		catch (Exception exc) {
 			throw new ServletException(exc);
@@ -71,6 +74,14 @@ public class UserControllerServlet extends HttpServlet {
 					addProject(request, response);
 					break;
 					
+				case "LISTEMPLOYEEPROJECTS":
+					listEmployeeProjects(request, response);
+					break;
+					
+				case "ADDEMPLOYEEPROJECT":
+					addEmployeeProject(request, response);
+					break;
+					
 				default:
 					listEmployees(request, response);
 					}
@@ -83,7 +94,35 @@ public class UserControllerServlet extends HttpServlet {
 	}
 
 
-        private void addProject(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        private void addEmployeeProject(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        	
+        	String pName = request.getParameter("pName");
+        	String fName = request.getParameter("fName");
+        	//String lName = request.getParameter("lName");
+        	String startDate = request.getParameter("startDate");
+        	String endDate = request.getParameter("endDate");
+        	
+        	EmployeeProject theEmpProject = new EmployeeProject(pName, fName, startDate, endDate);
+        	
+        	employeeProjectDbUtil.addEmployeeProject(theEmpProject);
+        	
+        	listEmployeeProjects(request, response);
+	}
+
+
+		private void listEmployeeProjects(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		List<EmployeeProject> employeeProjects = employeeProjectDbUtil.getEmployeeProjects();
+		
+		request.setAttribute("EMPLOYEEPROJECT_LIST", employeeProjects);
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+    	dispatcher.forward(request, response);
+	
+		
+	}
+
+
+		private void addProject(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
         	String pName = request.getParameter("pName");
         	
