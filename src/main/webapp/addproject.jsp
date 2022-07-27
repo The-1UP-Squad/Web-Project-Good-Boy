@@ -6,6 +6,7 @@
   <head>
     <link rel="stylesheet" href="./CSS/REALprojectCSS.css">
     <link rel="stylesheet" href="./CSS/stylesheet.css">
+    <script src="homepage.js"></script>
     <title>Project Planner Application - Add Project</title>
   </head>
   <h1><img src="logo.png" id="logo"><p style="color:#000048; p style=font-family:"arial";> New Project Form  </h1>
@@ -54,8 +55,20 @@
       <label for="enddate"><b>End Date:&emsp;&ensp;&ensp;</b></label>
       <input type="date" id="enddate" name="enddate"><br><br><br><br>
       
-      <button class="button button2">Submit</button>
+      <button class="button button2">Submit</button>&emsp;&emsp;<button class="button button2">New Project</button>
   </form>
+  
+<div id="newProject" class="modal">
+
+  <div class="projectContents">
+    <span class="close">&times;</span>
+    <p>      
+    <label for="pnameother"><b>Project other:</b></label>
+      <input type="text" id="pnameother" name="pName"><br><br>
+      </p>
+  </div>
+
+</div>
   
   
   
