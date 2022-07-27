@@ -1,9 +1,11 @@
 <%@ page import = "java.io.*,java.util.*" %>
 <%@ page import = "javax.servlet.*,java.text.*" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <html>
   <head>
     <link rel="stylesheet" href="./CSS/stylesheet.css">
+    <script src="homepage.js"></script>
     <title>Project Planner Application - Add User</title>
   </head>
 
@@ -57,6 +59,7 @@
   <tr class="header">
 
 
+
     <th style="width: 15%;">First Name</th>
     <th style="width: 15%;">Last Name</th>
     <th style="width: 15%;">Email</th>
@@ -64,31 +67,25 @@
  
     
     </tr>
-  <c:forEach var="tempEmployee" items="${EMPLOYEE_LIST}">
-  <tr>
-    
-    <td>${tempEmployee.fName} </td>
-    <td>${tempEmployee.lName}</td>
+   
+      <c:forEach var="tempEmployee" items="${EMPLOYEE_LIST}">
+  <tr>    
+    <td>${tempEmployee.fName} ${tempEmployee.lName}</td>
     <td>${tempEmployee.email}</td>
     
-
+	<c:url var="deleteLink" value="UserControllerServlet">
+		<c:param name="command" value="DELETEEMPLOYEES" />
+		<c:param name="EmpId" value="${tempEmployee.id}" />
+	</c:url>
     
-
-    <td><a href="${deleteLink}"
-		onclick="if (!(confirm('Are you sure you want to delete this student?'))) return false">
+		<td><a href="${deleteLink}"
+		onclick="if (!(confirm('Are you sure you want to delete this Employee?'))) return false">
 		Delete</a>	</td>
-		
-		        <td><c:url var="deleteLink" value="UserControllerServlet">
-						<c:param name="command" value="DELETE" />
-						<c:param name="EmpId" value="${tempEmployee.id}" />
-					</c:url></td>
-		
-    
+		     
+		   
   </tr>
   </c:forEach>
     
-
-  </tr>
   
 </table>
 </div>

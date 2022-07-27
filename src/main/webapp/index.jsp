@@ -80,7 +80,7 @@
 		Edit</a>	</td>
 		
 		<td><a href="${deleteLink}"
-		onclick="if (!(confirm('Are you sure you want to delete this student?'))) return false">
+		onclick="if (!(confirm('Are you sure you want to delete this Employee?'))) return false">
 		Delete</a>	</td>
 		     
 		   
