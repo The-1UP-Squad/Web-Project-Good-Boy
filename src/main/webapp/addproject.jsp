@@ -19,7 +19,9 @@
       </div>
   </nav>
   <br>
-
+  
+  
+   <div class="project-form">
    <form action="UserControllerServlet" method="GET">
 	<input type="hidden" name="command" value="ADDPROJECT"/>
 	
@@ -59,6 +61,8 @@
   <div>
   <h2>Current Projects at Cognizant</h2>
   <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for projects..">
+  
+      
   <table id="myTable">
   <tr class="header">
 
@@ -71,10 +75,11 @@
 </div>
 
 
-
-<br>
-<br>
-<br>
+<div style="clear:both;"></div>
+  <p>
+  <a href="UserControllerServlet">Back to List</a>
+  <br>
+  <br>
 <br>
 <br>
 <br>
