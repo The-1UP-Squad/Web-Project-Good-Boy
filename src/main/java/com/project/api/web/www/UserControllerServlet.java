@@ -110,6 +110,7 @@ public class UserControllerServlet extends HttpServlet {
         
         //send them back to servlet or index page, right?
         listEmployees(request, response); //not sure about this line??
+        }
 
         private void addEmployeeProject(HttpServletRequest request, HttpServletResponse response) throws Exception {
         	
