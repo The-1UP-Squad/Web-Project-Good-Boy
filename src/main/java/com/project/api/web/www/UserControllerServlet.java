@@ -110,7 +110,7 @@ public class UserControllerServlet extends HttpServlet {
         
         //send them back to servlet or index page, right?
         listEmployees(request, response); //not sure about this line??
-
+        }
         private void addEmployeeProject(HttpServletRequest request, HttpServletResponse response) throws Exception {
         	
         	String pName = request.getParameter("pName");
@@ -197,6 +197,9 @@ public class UserControllerServlet extends HttpServlet {
         	RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
         	dispatcher.forward(request, response);
 		
+        	//request.setAttribute("res1" ,list);
 	}
+		
+		
 
 }

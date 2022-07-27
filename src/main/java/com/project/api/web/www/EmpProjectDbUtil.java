@@ -80,8 +80,8 @@ public class EmpProjectDbUtil {
 			myConn = dataSource.getConnection();
 			
 			String sql = "insert into addprojects"
-					+ "(Project) "
-					+ "values (?)";
+					+ "(Project,Name,Start_Date,End_Date) "
+					+ "values (?,?,?,?)";
 			
 			myStmt = myConn.prepareStatement(sql);
 			
