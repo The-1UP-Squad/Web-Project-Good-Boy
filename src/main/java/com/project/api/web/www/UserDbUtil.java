@@ -126,5 +126,46 @@ public void addEmployee(Employee theEmployee) throws Exception {
 			close(myConn, myStmt, null);
 		}
 		
+	
 }
-}
+	public Employee getEmployee(String theEmployeeID) throws Exception{
+		   Employee theEmployee = null; 
+		   PreparedStatement myStmt = null;
+		   Connection myConn = null;
+		   ResultSet myRs = null;
+		   int employeeId;
+		   
+		   try {
+			   employeeId = Integer.parseInt(theEmployeeID);
+			   
+			   myConn = dataSource.getConnection();
+			   
+			   String sql = "select * from employees where EmpID =?";
+			   
+			   myStmt = myConn.prepareStatement(sql);
+			   
+			   myStmt.setInt(1, employeeId);
+			   
+			   myRs = myStmt.executeQuery();
+			   
+			   if (myRs.next()) {
+				   String firstName = myRs.getString("First_Name");
+				   String lastName = myRs.getString("Last_Name");
+				   String email = myRs.getString("Email_address");
+				  
+				   theEmployee = new Employee(employeeId, firstName, lastName, email );
+			   }
+			   else {
+				   throw new Exception ("could not find id:" + employeeId);
+			   }
+						   
+			   
+			  
+			     
+			   return theEmployee;
+		   }
+			finally {
+				close(myConn, myStmt, myRs);
+				}
+	}
+	}
