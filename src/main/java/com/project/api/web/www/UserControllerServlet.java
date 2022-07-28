@@ -86,6 +86,10 @@ public class UserControllerServlet extends HttpServlet {
 					addEmployeeProject(request, response);
 					break;
 					
+				case "DELETEPROJECT":
+					deleteProject(request, response);
+					break;
+					
 				default:
 					listEmployees(request, response);
 					}
@@ -144,7 +148,7 @@ public class UserControllerServlet extends HttpServlet {
 
 		private void addProject(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-        	String pName = request.getParameter("pName");
+        	String pName = request.getParameter("ProID");
         	
         	Project theProject = new Project(pName);
         	
@@ -162,7 +166,7 @@ public class UserControllerServlet extends HttpServlet {
 	        	request.setAttribute("PROJECT_LIST", projects);
 	        	
 	        // send to jsp page
-	        	RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+	        	RequestDispatcher dispatcher = request.getRequestDispatcher("/addproject.jsp");
 	        	dispatcher.forward(request, response);
 			
 		}
@@ -212,5 +216,29 @@ public class UserControllerServlet extends HttpServlet {
 	        	dispatcher.forward(request, response);
         	}  			
         
-	}
+		}
+		
+		
+		private void deleteProject(HttpServletRequest request, HttpServletResponse response)
+		        throws Exception {
+				
+				//read student id form from id
+		        String pName = request.getParameter("ProID");
+		        
+		        //Project theProjects = new Project(pName);
+		        	
+		        //delete student from data base
+		        //ProjectDbUtil.deleteProject(theProjectID);
+		        
+		        projectDbUtil.deleteProject(pName);
+		  
+		        
+		        //send them back to servlet or index page, right?
+
+		        listProjects(request, response);//not sure about this line??
+		        }
+		
+}
+
+
 		

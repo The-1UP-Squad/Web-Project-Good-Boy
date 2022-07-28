@@ -14,11 +14,11 @@ public class Project {
 		this.projId = projId;
 	}
 	
-	public String getProjName() {
+	public String getprojName() {
 		return projName;
 	}
 	
-	public void setProjName(String projName) {
+	public void setprojName(String projName) {
 		this.projName = projName;
 	}
 	
@@ -28,13 +28,13 @@ public class Project {
 	}
 	
 
-	public Project(String projName) {
-		this.projName = projName;
+	public Project(String pName) {
+		this.projName = pName;
 	}
 	
 	@Override
 	public String toString() {
-		return "Project [projId=" + projId + ", projName=" + projName + "]";
+		return "Project [projId=" + projId + ", pName=" + projName + "]";
 	}
 
 }

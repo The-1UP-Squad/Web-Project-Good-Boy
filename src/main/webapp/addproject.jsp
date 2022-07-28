@@ -86,6 +86,28 @@
     <th style="width: 25%;">Delete Project</th>
     
   </tr>
+  
+        <c:forEach var="tempProject" items="${PROJECT_LIST}">
+  <tr>    
+    <td>${tempProject.projName}</td>
+    
+    
+	<c:url var="deleteLink" value="UserControllerServlet">
+		<c:param name="command" value="DELETEPROJECT" />
+		<c:param name="ProID" value="${tempProject.projId}" />
+		<c:param name="nameProject" value="${tempProject.projName}"/>
+	</c:url>
+    
+		<td><a href="${deleteLink}"
+		onclick="if (!(confirm('Are you sure you want to delete this Project?'))) return false">
+		Delete</a>	</td>
+		     
+		   
+  </tr>
+  </c:forEach>
+  
+  
+  
 </table>
 </div>
 </div>
