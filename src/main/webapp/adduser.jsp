@@ -44,10 +44,23 @@
       <option value="AIML">AI and Machine Learning</option>
       </select> <br><br>
       
-      <label for="other"><b>Other:</b>&emsp;&emsp;&emsp;&nbsp;</label>
-      <input type="text" id="other" name="other"><br><br><br><br>
+  <br><br><br><br>
       <button class="button button2">Submit</button>
       </form>
+      
+          <div class="container2">
+  <a class="button button2" href="#popup">Add Service Line</a>&emsp;&emsp;
+  <div class="popup" id="popup">
+    <div class="popup-inner">
+      <div class="popuptext">      
+        <p><label for="pnameother"><b>Add New Service Line:</b></label>
+      <input type="text" id="pnameother" name="pName"><br><br></p>
+      <button class="button button2">Submit</button>
+      </div>
+      <a class="closepopup" href="#">X</a>
+    </div>
+  </div>
+</div>
       
      
       <div>
