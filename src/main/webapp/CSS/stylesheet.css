@@ -80,10 +80,6 @@ li a hover {
 	
 }
 
-div.footer2 {
-	
-	top: 300px;
-}
 
 #fname{
   width: 280px;
@@ -204,6 +200,7 @@ select {
   text-decoration: none;
 }
 
+
 #select {
 	width: 200px;
     padding: 5px;}
@@ -304,6 +301,30 @@ div.container3{
 	left: 430px;
 }
 
+div.containerusername{
+	position: relative;
+	top: 345px;
+	left: 315px;
+}
+
+div.containerpassword{
+	position: relative;
+	top: 360px;
+	left: 695px;
+}
+
+div.loginbutton{
+	position: relative;
+	top: 370px;
+	left: 800px;
+}
+
+div.register{
+	position: relative;
+	top: 315px;
+	left: 920px;
+}
+
 div.logo{
 	position: relative;
 	top: 200px;
@@ -321,6 +342,7 @@ div.logo{
   padding: 1rem 1rem;
   font-weight: 900;
 }
+
  
 .popup {
   display: flex;
@@ -329,6 +351,23 @@ div.logo{
   position: fixed;
   width: 100vw;
   height: 100vh;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  overflow: hiden;
+  transition: .64s ease-in-out;
+}
+
+div.loginpopup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  height: 200vh;
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.8);
