@@ -33,10 +33,10 @@ public class ProjectDbUtil {
 			
 			myRs = myStmt.executeQuery(sql);
 			while (myRs.next()) {
-				//int pId = myRs.getInt("ProID");
+				int projId = myRs.getInt("ProID");
 				String pName = myRs.getString("Project");
 				
-				Project tempProject = new Project(pName);
+				Project tempProject = new Project(projId, pName);
 				projects.add(tempProject);
 			}
 		
@@ -83,8 +83,8 @@ public class ProjectDbUtil {
 			
 			myStmt = myConn.prepareStatement(sql);
 			
-			//myStmt.setInt(1, theProject.getProjId());
-			myStmt.setString(1, theProject.getProjName());
+			myStmt.setInt(1, theProject.getProjId());
+			myStmt.setString(1, theProject.getprojName());
 			
 			
 			myStmt.execute();
@@ -96,4 +96,36 @@ public class ProjectDbUtil {
 		}
 		
 	}
+	
+	public void deleteProject(String theProjects) throws Exception {
+		
+		Connection myConn = null;
+		PreparedStatement myStmt = null;
+	
+		try {
+			//convert employee id to int
+			int ProjId = Integer.parseInt(theProjects);
+			
+			//get connection to database
+			myConn = dataSource.getConnection();
+			
+			//create sql to delete student
+			String sql = "delete from Projects where ProID=?";
+			
+			//prep statement
+			myStmt = myConn.prepareStatement(sql);
+			
+			//set params
+			myStmt.setInt(1, ProjId);
+			
+			//execute sql statement
+			myStmt.execute();
+			
+		}
+		finally {
+			//clean up JDBC code
+			close(myConn, myStmt, null);
+		}
+		
+}
 	}
