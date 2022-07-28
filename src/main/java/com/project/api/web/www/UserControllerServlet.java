@@ -155,6 +155,11 @@ public class UserControllerServlet extends HttpServlet {
         
 		private void listProjects(HttpServletRequest request, HttpServletResponse response) 
 	        	throws Exception {
+			int whereTo = 0;
+			
+			if (request.getParameter("whereTo") != null) {
+				whereTo = Integer.parseInt(request.getParameter("whereTo"));
+			}
 			// get users from db util
 	        	List<Project> projects = projectDbUtil.getProjects();
 	        	
@@ -162,9 +167,15 @@ public class UserControllerServlet extends HttpServlet {
 	        	request.setAttribute("PROJECT_LIST", projects);
 	        	
 	        // send to jsp page
-	        	RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
-	        	dispatcher.forward(request, response);
 			
+	        if (whereTo == 2) {
+	        	RequestDispatcher dispatcher = request.getRequestDispatcher("/addproject.jsp");
+		        dispatcher.forward(request, response);
+	        	
+	        } else {
+		        RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+		        dispatcher.forward(request, response);
+	        	}
 		}
 
 
@@ -203,14 +214,13 @@ public class UserControllerServlet extends HttpServlet {
         	
         // send to jsp page
 
-
         	if (whereTo == 1) {
         		RequestDispatcher dispatcher = request.getRequestDispatcher("/adduser.jsp");
 	        	dispatcher.forward(request, response);
+	        	
         	} else {
 	        	RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
 	        	dispatcher.forward(request, response);
         	}  			
-        
 	}
-		
+}		
