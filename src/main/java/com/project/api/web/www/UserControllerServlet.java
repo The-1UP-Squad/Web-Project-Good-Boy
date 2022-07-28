@@ -85,7 +85,9 @@ public class UserControllerServlet extends HttpServlet {
 				case "ADDEMPLOYEEPROJECT":
 					addEmployeeProject(request, response);
 					break;
-					
+				case "LOAD":
+					loadEmployees(request, response);
+					break;
 				default:
 					listEmployees(request, response);
 					}
@@ -99,14 +101,32 @@ public class UserControllerServlet extends HttpServlet {
 
 
 
-        private void deleteEmployee(HttpServletRequest request, HttpServletResponse response)
+        private void loadEmployees(HttpServletRequest request, HttpServletResponse response) 
+        	throws Exception{ 
+        	
+        	//read student id form from id
+            String theEmployeeID = request.getParameter("EmpId");	
+            	
+            Employee theEmployee = userDbUtil.getEmployee(theEmployeeID);
+            
+            request.setAttribute("THE_EMPLOYEE", theEmployee);
+            
+            RequestDispatcher dispatcher = 
+            		request.getRequestDispatcher("/modifyuser.jsp");
+            dispatcher.forward(request, response);
+        	
+		 
+	}
+
+
+		private void deleteEmployee(HttpServletRequest request, HttpServletResponse response)
         throws Exception {
 		
 		//read student id form from id
         String theEmployeeID = request.getParameter("EmpId");	
         	
         //delete student from data base
-        userDbUtil.deleteEmployee(theEmployeeID);	
+        userDbUtil.deleteEmployee(theEmployeeID);
         
         //send them back to servlet or index page, right?
 
@@ -117,7 +137,7 @@ public class UserControllerServlet extends HttpServlet {
         	
         	String pName = request.getParameter("pName");
         	String fName = request.getParameter("fName");
-        	//String lName = request.getParameter("lName");
+        	
         	String startDate = request.getParameter("startDate");
         	String endDate = request.getParameter("endDate");
         	
@@ -222,5 +242,6 @@ public class UserControllerServlet extends HttpServlet {
 	        	RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
 	        	dispatcher.forward(request, response);
         	}  			
+
 	}
 }		

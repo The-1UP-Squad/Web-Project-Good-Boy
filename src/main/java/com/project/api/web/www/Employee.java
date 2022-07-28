@@ -44,6 +44,13 @@ public class Employee {
 		this.email = email;
 	}
 
+	public Employee(int employeeId, String firstName, String lastName, String email) {
+		this.fName = firstName;
+		this.lName = lastName;
+		this.id = employeeId;
+				
+	}
+
 	public int getId() {
 		return id;
 	}
