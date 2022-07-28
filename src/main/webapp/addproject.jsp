@@ -29,22 +29,18 @@
 </nav>
   <br>
   
-  
    <div class="project-form">
    <form action="UserControllerServlet" method="GET">
 	<input type="hidden" name="command" value="ADDEMPLOYEEPROJECT"/>
 	
       <label for="serviceline"><b>Project name:</b></label>
-
       <select id="project" name="pName">
+
   		<c:forEach var="projects" items="${PROJECT_LIST}"> 
    		<option value="${projects.projId}">"${projects.projName}"</option>
 		</c:forEach>
 		</select>
  
-      <br><br>
-      <label for="pnameother"><b>Project other:</b></label>
-      <input type="text" id="pnameother" name="pName"><br><br>
       
       <label for="employee"><b>Employee:&emsp;&ensp;</b></label>
       <select id="pnameother" name="employees">
@@ -61,22 +57,22 @@
       <label for="enddate"><b>End Date:&emsp;&ensp;&ensp;</b></label>
       <input type="date" id="enddate" name="endDate"><br><br><br><br>
       
-      <button class="button button2">Submit</button>&emsp;&emsp;<button class="button button2">New Project</button>
+      <button class="button button2">Submit</button>
   </form>
- <form><button class="button button2">New Project</button></form>
-<div id="newProject" class="modal">
-
-  <div class="projectContents">
-    <span class="close">&times;</span>
-    <p>      
-    <label for="pnameother"><b>Project other:</b></label>
-      <input type="text" id="pnameother" name="pName"><br><br>
-      </p>
+    <div class="container">
+  <a class="button button2" href="#popup">Add Project</a>&emsp;&emsp;
+  <div class="popup" id="popup">
+    <div class="popup-inner">
+      <div class="popuptext">      
+        <p><label for="pnameother"><b>Add Project:</b></label>
+      <input type="text" id="pnameother" name="pName"><br><br></p>
+      <button class="button button2">Submit</button>
+      </div>
+      <a class="closepopup" href="#">X</a>
+    </div>
   </div>
-
 </div>
-  
-  
+ 
   
   <div>
   <h2>Current Projects at Cognizant</h2>

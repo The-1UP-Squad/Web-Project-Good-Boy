@@ -80,6 +80,7 @@ li a hover {
 	
 }
 
+
 #fname{
   width: 280px;
   padding: 10px 20px;
@@ -199,6 +200,7 @@ select {
   text-decoration: none;
 }
 
+
 #select {
 	width: 200px;
     padding: 5px;}
@@ -265,38 +267,178 @@ border-radius: 10px;
 ::-webkit-scrollbar-thumb:hover {
 background: #0000ff;
 }
-.modal {
-display: none; /* Hidden by default */
-position: fixed; /* Stay in place */
-z-index: 1; /* Sit on top */
-padding-top: 100px; /* Location of the box */
-left: 0;
-top: 0;
-width: 100%; /* Full width */
-height: 100%; /* Full height */
-overflow: auto; /* Enable scroll if needed */
-background-color: rgb(0,0,0); /* Fallback color */
-background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-.modal-content {
-background-color: #fefefe;
-margin: auto;
-padding: 20px;
-border: 1px solid #888;
-width: 80%;
-}
-.close {
-color: #aaaaaa;
-float: right;
-font-size: 28px;
-font-weight: bold;
-}
-.close:hover,
-.close:focus {
-color: #000;
-text-decoration: none;
-cursor: pointer;
-}
 
 
+* {
+  box-sizing: border-box;
+}
+ 
+html, body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+}
+ 
+@media screen and (max-width: 768px) {
+  html, body {
+    font-size: 12px;
+  }
+}
 
+div.container{
+	position: relative;
+	top: 17px;
+}
+
+div.container2{
+	position: relative;
+	top: 205px;
+}
+
+div.container3{
+	position: relative;
+	top: -345px;
+	left: 430px;
+}
+
+div.containerusername{
+	position: relative;
+	top: 345px;
+	left: 315px;
+}
+
+div.containerpassword{
+	position: relative;
+	top: 360px;
+	left: 695px;
+}
+
+div.loginbutton{
+	position: relative;
+	top: 370px;
+	left: 800px;
+}
+
+div.register{
+	position: relative;
+	top: 315px;
+	left: 920px;
+}
+
+div.logo{
+	position: relative;
+	top: 200px;
+	left: 700px;
+}
+ 
+.button {
+  text-decoration: none;
+  font-size: .875rem;
+  text-transform: uppercase;
+  display: inline-block;
+  border-radius: 1.0rem;
+  background-color: #fff;
+  color: #000048;
+  padding: 1rem 1rem;
+  font-weight: 900;
+}
+
+ 
+.popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  overflow: hiden;
+  transition: .64s ease-in-out;
+}
+
+div.loginpopup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  height: 200vh;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  overflow: hiden;
+  transition: .64s ease-in-out;
+}
+.popup-inner {
+  position: relative;
+  bottom: -100vw;
+  right: -100vh;
+  display: flex;
+  align-items: center;
+  max-width: 400px;
+  max-height: 220px;
+  width: 60%;
+  height: 80%;
+  background-color: #fff;
+  transform: rotate(32deg);
+  transition: .64s ease-in-out;
+}
+
+.popuptext {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+  height: 100%;
+  padding: 4rem;
+}
+.popuptext h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: #0A0A0A;
+}
+.popuptext p {
+  font-size: .875rem;
+  color: #686868;
+  line-height: 1.5;
+}
+ 
+.popuptext a {
+ text-decoration: none;
+ color:  #47BDFF;
+}
+.popup:target {
+  visibility: visible;
+  opacity: 1;
+}
+.popup:target .popup-inner {
+  bottom: 0;
+  right: 0;
+  transform: rotate(0);
+}
+.closepopup {
+  position: absolute;
+  right: -1rem;
+  top: -1rem;
+  width: 3rem;
+  height: 3rem;
+  font-size: .875rem;
+  font-weight: 300;
+  border-radius: 100%;
+  background-color: #000048;
+  z-index: 4;
+  color: #fff;
+  line-height: 3rem;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+}
