@@ -10,16 +10,23 @@
     <title>Project Planner Application - Add Project</title>
   </head>
   <h1><img src="logo.png" id="logo"><p style="color:#000048; p style=font-family:"arial";> New Project Form  </h1>
-
-  <nav>
-      <div class="menu">
-        <ul>
-          <li><a href="http://localhost:8086/Web-Project-Good-Boy/">Home</a></li>
-          <li><a href="http://localhost:8086/Web-Project-Good-Boy/UserControllerServlet?command=LISTEMPLOYEES&whereTo=1">Users</a></li>
-          <li><a href="addproject.jsp">Projects</a></li>
-        </ul>
-      </div>
-  </nav>
+<nav>
+    <div class="navbar">
+      <c:url var="addUserLink" value="UserControllerServlet">
+                <c:param name="command" value="LISTEMPLOYEES" />
+                <c:param name="whereTo" value="1" />
+		</c:url>
+            <c:url var="addProjectLink" value="UserControllerServlet" >
+                <c:param name="command" value="LISTPROJECTS" />
+                <c:param name="whereTo" value="2" />
+		</c:url>
+      <ul>
+        <li><a href="http://localhost:8086/Web-Project-Good-Boy/">Home</a></li>
+        <li><a href="${addUserLink}">Users</a></li>
+        <li><a href="${addProjectLink}">Projects</a></li>   
+      </ul>
+    </div>
+</nav>
   <br>
   
   
@@ -30,27 +37,24 @@
       <label for="serviceline"><b>Project name:</b></label>
 
       <select id="project" name="pName">
-      <option value="7 West">7 West</option>
-      <option value="SRG">Super Retail Group</option>
-      <option value="Telstra">Telstra</option>
-
-      </select> 
+  		<c:forEach var="projects" items="${PROJECT_LIST}"> 
+   		<option value="${projects.projId}">"${projects.projName}"</option>
+		</c:forEach>
+		</select>
+ 
       <br><br>
-
       <label for="pnameother"><b>Project other:</b></label>
       <input type="text" id="pnameother" name="pName"><br><br>
       
       <label for="employee"><b>Employee:&emsp;&ensp;</b></label>
-      <select id="employee" name="fName">
-
-      <option value="Matthew">Matthew</option>
-      <option value="Emma">Emma</option>
-      <option value="Siobhan">Siobhan</option>
-      
-      </select>
-      <br><br>
-
-
+      <select id="pnameother" name="employees">
+  		<c:forEach var="employees" items="${EMPLOYEE_LIST}"> 
+   		<option value="${employees.id}">"${employees.fName}"</option>
+		</c:forEach>
+		</select>
+      	<br><br>
+		
+	
       <label for="startdate"><b>Start Date:&emsp;&ensp;</b></label>
       <input type="date" id="startdate" name="startDate"><br><br>
       
@@ -59,7 +63,7 @@
       
       <button class="button button2">Submit</button>&emsp;&emsp;<button class="button button2">New Project</button>
   </form>
-  
+ <form><button class="button button2">New Project</button></form>
 <div id="newProject" class="modal">
 
   <div class="projectContents">
@@ -86,6 +90,24 @@
     <th style="width: 25%;">Delete Project</th>
     
   </tr>
+  
+        <c:forEach var="tempProject" items="${PROJECT_LIST}">
+  <tr>    
+    <td>${tempProject.projName}</td>
+    
+	<c:url var="deleteLink" value="UserControllerServlet">
+		<c:param name="command" value="DELETEPROJECTS" />
+		<c:param name="projId" value="${tempProject.projId}" />
+	</c:url>
+    
+		<td><a href="${deleteLink}"
+		onclick="if (!(confirm('Are you sure you want to delete this Employee?'))) return false">
+		Delete</a>	</td>
+		     
+		   
+  </tr>
+  </c:forEach>
+  
 </table>
 </div>
 </div>

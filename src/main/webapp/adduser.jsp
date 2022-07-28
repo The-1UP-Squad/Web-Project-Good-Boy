@@ -11,15 +11,23 @@
 
 <h1><img src="logo.png" id="logo"><p style="color:#000048; p style=font-family:"arial";> New User Form  </h1>
 
-  <nav>
-      <div class="menu">
-        <ul>
-          <li><a href="http://localhost:8086/Web-Project-Good-Boy/">Home</a></li>
-          <li><a href="${addUserLink}">Users</a></li>
-          <li><a href="addproject.jsp">Projects</a></li>
-        </ul>
-      </div>
-  </nav>
+<nav>
+    <div class="navbar">
+      <c:url var="addUserLink" value="UserControllerServlet">
+                <c:param name="command" value="LISTEMPLOYEES" />
+                <c:param name="whereTo" value="1" />
+		</c:url>
+            <c:url var="addProjectLink" value="UserControllerServlet">
+                <c:param name="command" value="LISTPROJECTS" />
+                <c:param name="whereTo" value="2" />
+		</c:url>
+      <ul>
+        <li><a href="http://localhost:8086/Web-Project-Good-Boy/">Home</a></li>
+        <li><a href="${addUserLink}">Users</a></li>
+        <li><a href="${addProjectLink}">Projects</a></li>   
+      </ul>
+    </div>
+</nav>
   
   <br>
   
