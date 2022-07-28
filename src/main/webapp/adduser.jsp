@@ -62,16 +62,19 @@
       <h2> Current Employees at Cognizant</h2>
       <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Employees..">
      
-     <div style="overflow: auto; max-height: 350px; width: 1000px;">
-        <table id="myTableUser">
+     <div style="overflow: auto; max-height: 350px; width: 900px;">
+        <table id="myTableUser" style="width: 100%;">
   <tr class="header">
 
 
 
-    <th style="width: 15%;">First Name</th>
-    <th style="width: 15%;">Last Name</th>
-    <th style="width: 15%;">Email</th>
-    <th style="width: 15%;">Delete</th>
+    <th style="width: 33%;">Name</th>
+    <th style="width: 33%;">Email</th>
+    <th style="width: 10%;">Delete</th>
+  
+ 
+
+        
  
     
     </tr>
