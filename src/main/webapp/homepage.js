@@ -1,10 +1,12 @@
-function myFunction() {
+  
+function myFunction(input1, table1, tableRow) {
   // Declare variables
   var input, filter, table, tr, td, i, txtValue;
-   input = document.getElementById("myInput");
+   input = document.getElementById(input1);
   filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
+  table = document.getElementById(table1);
+  tr = table.getElementsByTagName(tableRow);
+  
 
   // Loop through all table rows, and hide those who don't match the search query
   for (i = 0; i < tr.length; i++) {
@@ -18,7 +20,10 @@ function myFunction() {
       }
     }
   }
-
-      
 }
+
+my
+
+
+
 
