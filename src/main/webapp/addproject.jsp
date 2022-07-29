@@ -37,15 +37,15 @@
       <select id="project" name="pName">
 
   		<c:forEach var="projects" items="${PROJECT_LIST}"> 
-   		<option value="${projects.projId}">"${projects.projName}"</option>
+   		<option>${projects.projName}</option>
 		</c:forEach>
 		</select>
  
-      
+      <p>
       <label for="employee"><b>Employee:&emsp;&ensp;</b></label>
-      <select id="pnameother" name="employees">
+      <select id="pnameother" name="fName">
   		<c:forEach var="employees" items="${EMPLOYEE_LIST}"> 
-   		<option value="${employees.id}">"${employees.fName}"</option>
+   		<option>${employees.fName} ${employees.lName}</option>
 		</c:forEach>
 		</select>
       	<br><br>
@@ -59,6 +59,8 @@
       
       <button class="button button2">Submit</button>
   </form>
+ <form action="UserControllerServlet" method="GET">
+ 	<input type="hidden" name="command" value="ADDPROJECT">
     <div class="container">
   <a class="button button2" href="#popup">Add Project</a>&emsp;&emsp;
   <div class="popup" id="popup">
@@ -72,7 +74,7 @@
     </div>
   </div>
 </div>
- 
+</form> 
   
   <div>
   <h2>Current Projects at Cognizant</h2>
