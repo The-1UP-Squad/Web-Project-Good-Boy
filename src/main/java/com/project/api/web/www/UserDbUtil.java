@@ -33,9 +33,8 @@ public List<Employee> getEmployees() throws Exception {
 			String fName = myRs.getString("First_Name");
 			String lName = myRs.getString("Last_Name");
 			String email = myRs.getString("Email_address");
-		//	String serviceLine = myRs.getString("serviceLine");
-		//	String other = myRs.getString("other");
-			Employee tempEmployee = new Employee(fName, lName, email, id);
+			String serviceLine = myRs.getString("Service_Line");
+			Employee tempEmployee = new Employee(id, fName, lName, email, serviceLine);
 			employees.add(tempEmployee);
 		}
 	
@@ -77,14 +76,15 @@ public void addEmployee(Employee theEmployee) throws Exception {
 		myConn = dataSource.getConnection();
 		
 		String sql = "insert into Employees "
-				+ "(First_Name, Last_Name, Email_address) "
-				+ "values (?, ?, ?)";
+				+ "(First_Name, Last_Name, Email_address, Service_Line) "
+				+ "values (?, ?, ?, ?)";
 		
 		myStmt = myConn.prepareStatement(sql);
 		
 		myStmt.setString(1, theEmployee.getfName());
 		myStmt.setString(2, theEmployee.getlName());
 		myStmt.setString(3, theEmployee.getEmail());
+		myStmt.setString(4, theEmployee.getServiceLine());
 		
 		myStmt.execute();
 		
@@ -152,8 +152,9 @@ public void addEmployee(Employee theEmployee) throws Exception {
 				   String firstName = myRs.getString("First_Name");
 				   String lastName = myRs.getString("Last_Name");
 				   String email = myRs.getString("Email_address");
+				   String serviceLine = myRs.getString("Service_Line");
 				  
-				   theEmployee = new Employee(employeeId, firstName, lastName, email );
+				   theEmployee = new Employee(employeeId, firstName, lastName, email, serviceLine);
 			   }
 			   else {
 				   throw new Exception ("could not find id:" + employeeId);
@@ -168,4 +169,30 @@ public void addEmployee(Employee theEmployee) throws Exception {
 				close(myConn, myStmt, myRs);
 				}
 	}
+
+	public void updateEmployee(Employee theEmployee)throws Exception {
+		Connection myConn = null;
+		PreparedStatement myStmt = null;
+		
+		try {
+		
+			myConn = dataSource.getConnection();
+			String sql = "update employees "
+					+ "set First_Name=?, last_Name=?, Email_address=? "
+					+ "where EmpID=? ";
+			
+			myStmt = myConn.prepareStatement(sql);
+			
+			myStmt.setString(1, theEmployee.getfName());
+			myStmt.setString(2, theEmployee.getlName());
+			myStmt.setString(3, theEmployee.getEmail());
+			myStmt.setInt(4, theEmployee.getId());
+			
+			myStmt.execute();
+			
+			}
+		finally {
+			close(myConn, myStmt, null);
 	}
+	}
+}

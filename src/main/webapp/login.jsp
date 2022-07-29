@@ -30,7 +30,9 @@
       <input type="text" id="email" name="enrollEmail"><br><br></p>
        <p><label for="password"><b>Password:</b></label>
       <input type="text" id="password" name="enrollPassword"><br><br></p>
-      <button class="button button2">Submit</button>
+      <a href="http://localhost:8086/Web-Project-Good-Boy/"> <button class="button button2">Submit</button> </a>
+      
+      
       </div>
       <a class="closepopup" href="#">X</a>
     </div>

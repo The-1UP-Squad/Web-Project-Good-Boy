@@ -22,6 +22,7 @@ public class UserControllerServlet extends HttpServlet {
 	private UserDbUtil userDbUtil;
 	private ProjectDbUtil projectDbUtil;
 	private EmpProjectDbUtil employeeProjectDbUtil;
+	private ServiceLineDbUtil serviceLineDbUtil;
 	
 	@Resource(name="jdbc/webapi")
 	private DataSource dataSource;
@@ -36,6 +37,7 @@ public class UserControllerServlet extends HttpServlet {
 			userDbUtil = new UserDbUtil(dataSource);
 			projectDbUtil = new ProjectDbUtil(dataSource);
 			employeeProjectDbUtil = new EmpProjectDbUtil(dataSource);
+			serviceLineDbUtil = new ServiceLineDbUtil (dataSource);
 			
 		}
 		catch (Exception exc) {
@@ -86,6 +88,14 @@ public class UserControllerServlet extends HttpServlet {
 					addEmployeeProject(request, response);
 					break;
 
+				case "LISTSERVICELINES":
+					listServiceLines(request, response);
+					break;
+					
+				case "ADDSERVICELINE":
+					addServiceLine(request, response);
+          				break;
+
 				case "LOAD":
 					loadEmployees(request, response);
 					break;
@@ -94,6 +104,10 @@ public class UserControllerServlet extends HttpServlet {
 					deleteProject(request, response);
 					break;
 					
+				case "UPDATE":
+					updateEmployee(request, response);
+					break;
+			
 				default:
 					listEmployees(request, response);
 					}
@@ -106,12 +120,41 @@ public class UserControllerServlet extends HttpServlet {
 	}
 
 
+  
+    
+	
+	
+	
+	
+	
+	private void updateEmployee(HttpServletRequest request, HttpServletResponse response) throws Exception 
+	{ 
+		int id = Integer.parseInt(request.getParameter("employeeId"));
+		String firstName = request.getParameter("fName");
+	    String lastName = request.getParameter("lName");
+	    String email = request.getParameter("email");
+	    
+	    Employee theEmployee = new Employee(id, firstName, lastName, email);
+	    
+	    userDbUtil.updateEmployee(theEmployee);
+	    
+	    listEmployees(request, response);
+	    
+	    
+		
+		
+		
+		
+	}
 
-        private void loadEmployees(HttpServletRequest request, HttpServletResponse response) 
+
+	private void loadEmployees(HttpServletRequest request, HttpServletResponse response) 
         	throws Exception{ 
         	
+
         	//read student id form from id
-            String theEmployeeID = request.getParameter("EmpId");	
+            String theEmployeeID = request.getParameter("EmpId"); 
+
             	
             Employee theEmployee = userDbUtil.getEmployee(theEmployeeID);
             
@@ -170,7 +213,7 @@ public class UserControllerServlet extends HttpServlet {
 
 		private void addProject(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-        	String pName = request.getParameter("ProID");
+        	String pName = request.getParameter("pName");
         	
         	Project theProject = new Project(pName);
         	
@@ -186,6 +229,11 @@ public class UserControllerServlet extends HttpServlet {
 			if (request.getParameter("whereTo") != null) {
 				whereTo = Integer.parseInt(request.getParameter("whereTo"));
 			}
+			
+        		List<Employee> employees = userDbUtil.getEmployees();
+        	
+        		request.setAttribute("EMPLOYEE_LIST", employees);
+
 			// get users from db util
 	        	List<Project> projects = projectDbUtil.getProjects();
 	        	
@@ -271,4 +319,42 @@ public class UserControllerServlet extends HttpServlet {
 		        listProjects(request, response);//not sure about this line??
 		        }
 		
-}
+
+
+private void listServiceLine(HttpServletRequest request, HttpServletResponse response) 
+    	throws Exception {
+		int whereTo = 0;
+		
+		if (request.getParameter("whereTo") != null) {
+			whereTo = Integer.parseInt(request.getParameter("whereTo"));
+		}
+
+    	List<ServiceLine> serviceLines = serviceLineDbUtil.getEmployees();
+    	
+    
+    	request.setAttribute("SERVICELINE_LIST", serviceLines);
+    	
+    
+
+    	if (whereTo == 1) {
+    		RequestDispatcher dispatcher = request.getRequestDispatcher("/addserviceline.jsp");
+        	dispatcher.forward(request, response);
+        	
+    	} else {
+        	RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+        	dispatcher.forward(request, response);
+    	}  			
+    	private void addServiceList(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    		
+        	String slname = request.getParameter("slname");
+        	
+        	
+        	ServiceLine theServiceLine = new ServiceLine(slname);
+        	
+        	serviceLineDbUtil.addServiceLine(theServiceLine);
+        	
+        	listServiceLines(request, response);
+        	
+	} 
+    	
+	}
