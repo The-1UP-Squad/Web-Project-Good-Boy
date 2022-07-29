@@ -22,6 +22,7 @@ public class UserControllerServlet extends HttpServlet {
 	private UserDbUtil userDbUtil;
 	private ProjectDbUtil projectDbUtil;
 	private EmpProjectDbUtil employeeProjectDbUtil;
+	private ServiceLineDbUtil serviceLineDbUtil;
 	
 	@Resource(name="jdbc/webapi")
 	private DataSource dataSource;
@@ -36,6 +37,7 @@ public class UserControllerServlet extends HttpServlet {
 			userDbUtil = new UserDbUtil(dataSource);
 			projectDbUtil = new ProjectDbUtil(dataSource);
 			employeeProjectDbUtil = new EmpProjectDbUtil(dataSource);
+			serviceLineDbUtil = new ServiceLineDbUtil (dataSource);
 			
 		}
 		catch (Exception exc) {
@@ -85,6 +87,13 @@ public class UserControllerServlet extends HttpServlet {
 				case "ADDEMPLOYEEPROJECT":
 					addEmployeeProject(request, response);
 					break;
+					
+				case "LISTSERVICELINES":
+					listServiceLines(request, response);
+					break;
+					
+				case "ADDSERVICELINE":
+					addServiceLine(request, response);
 
 				case "LOAD":
 					loadEmployees(request, response);
@@ -272,3 +281,40 @@ public class UserControllerServlet extends HttpServlet {
 		        }
 		
 }
+private void listServiceLine(HttpServletRequest request, HttpServletResponse response) 
+    	throws Exception {
+		int whereTo = 0;
+		
+		if (request.getParameter("whereTo") != null) {
+			whereTo = Integer.parseInt(request.getParameter("whereTo"));
+		}
+
+    	List<ServiceLine> serviceLines = serviceLineDbUtil.getEmployees();
+    	
+    
+    	request.setAttribute("SERVICELINE_LIST", serviceLines);
+    	
+    
+
+    	if (whereTo == 1) {
+    		RequestDispatcher dispatcher = request.getRequestDispatcher("/addserviceline.jsp");
+        	dispatcher.forward(request, response);
+        	
+    	} else {
+        	RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+        	dispatcher.forward(request, response);
+    	}  			
+    	private void addServiceList(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    		
+        	String slname = request.getParameter("slname");
+        	
+        	
+        	ServiceLine theServiceLine = new ServiceLine(slname);
+        	
+        	serviceLineDbUtil.addServiceLine(theServiceLine);
+        	
+        	listServiceLines(request, response);
+        	
+	} 
+    	
+	}
