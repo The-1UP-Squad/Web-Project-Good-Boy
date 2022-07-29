@@ -4,8 +4,8 @@
     <title>Project Planner Application - Login</title>
   </head>
   <body>
-  <div style="width: 100%;">
-  <form class="loginPage"></form>
+  <div>
+  <form class="loginPage">
 <div class="logo">
 <img src="logo.png" id="logo"><p style=color:#000048; p style=font-family:"arial";>
 </div>
@@ -39,8 +39,7 @@
     </div>
   </div>
 </div>
-     
-</form>
+</form>    
   <div style="clear:both;"></div>
   <p>
   <br>
