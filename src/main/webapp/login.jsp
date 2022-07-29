@@ -3,8 +3,11 @@
     <link rel="stylesheet" href="./CSS/stylesheet.css">
     <title>Project Planner Application - Login</title>
   </head>
+  <body>
+  <div style="width: 100%;">
+  <form class="loginPage"></form>
 <div class="logo">
-<img src="logo.png" id="logo"><p style="color:#000048; p style=font-family:"arial";>
+<img src="logo.png" id="logo"><p style=color:#000048; p style=font-family:"arial";>
 </div>
   <br>
   
@@ -37,7 +40,7 @@
   </div>
 </div>
      
-
+</form>
   <div style="clear:both;"></div>
   <p>
   <br>
@@ -46,6 +49,6 @@
 <br>
 <br>
 
-
-  
+	</div>
+  </body>
 </html>

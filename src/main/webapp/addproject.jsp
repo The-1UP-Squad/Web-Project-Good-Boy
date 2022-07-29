@@ -41,7 +41,7 @@
 		</c:forEach>
 		</select>
  
-      
+      <p>
       <label for="employee"><b>Employee:&emsp;&ensp;</b></label>
       <select id="pnameother" name="employees">
   		<c:forEach var="employees" items="${EMPLOYEE_LIST}"> 
