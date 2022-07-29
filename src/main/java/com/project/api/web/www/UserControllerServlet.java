@@ -94,7 +94,7 @@ public class UserControllerServlet extends HttpServlet {
 					
 				case "ADDSERVICELINE":
 					addServiceLine(request, response);
-          break;
+          				break;
 
 				case "LOAD":
 					loadEmployees(request, response);
@@ -213,7 +213,7 @@ public class UserControllerServlet extends HttpServlet {
 
 		private void addProject(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-        	String pName = request.getParameter("ProID");
+        	String pName = request.getParameter("pName");
         	
         	Project theProject = new Project(pName);
         	
