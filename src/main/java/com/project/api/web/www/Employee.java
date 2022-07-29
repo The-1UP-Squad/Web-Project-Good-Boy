@@ -48,6 +48,7 @@ public class Employee {
 	public Employee(int employeeId, String firstName, String lastName, String email) {
 		this.fName = firstName;
 		this.lName = lastName;
+		this.email = email;
 		this.id = employeeId;
 				
 	}

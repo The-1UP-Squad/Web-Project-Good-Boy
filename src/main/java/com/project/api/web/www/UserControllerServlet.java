@@ -87,13 +87,14 @@ public class UserControllerServlet extends HttpServlet {
 				case "ADDEMPLOYEEPROJECT":
 					addEmployeeProject(request, response);
 					break;
-					
+
 				case "LISTSERVICELINES":
 					listServiceLines(request, response);
 					break;
 					
 				case "ADDSERVICELINE":
 					addServiceLine(request, response);
+          break;
 
 				case "LOAD":
 					loadEmployees(request, response);
@@ -103,6 +104,10 @@ public class UserControllerServlet extends HttpServlet {
 					deleteProject(request, response);
 					break;
 					
+				case "UPDATE":
+					updateEmployee(request, response);
+					break;
+			
 				default:
 					listEmployees(request, response);
 					}
@@ -115,12 +120,41 @@ public class UserControllerServlet extends HttpServlet {
 	}
 
 
+  
+    
+	
+	
+	
+	
+	
+	private void updateEmployee(HttpServletRequest request, HttpServletResponse response) throws Exception 
+	{ 
+		int id = Integer.parseInt(request.getParameter("employeeId"));
+		String firstName = request.getParameter("fName");
+	    String lastName = request.getParameter("lName");
+	    String email = request.getParameter("email");
+	    
+	    Employee theEmployee = new Employee(id, firstName, lastName, email);
+	    
+	    userDbUtil.updateEmployee(theEmployee);
+	    
+	    listEmployees(request, response);
+	    
+	    
+		
+		
+		
+		
+	}
 
-        private void loadEmployees(HttpServletRequest request, HttpServletResponse response) 
+
+	private void loadEmployees(HttpServletRequest request, HttpServletResponse response) 
         	throws Exception{ 
         	
         	//read student id form from id
-            String theEmployeeID = request.getParameter("EmpId");	
+            String theEmployeeID = request.getParameter("EmpId"); 
+            
+            
             	
             Employee theEmployee = userDbUtil.getEmployee(theEmployeeID);
             
@@ -179,7 +213,7 @@ public class UserControllerServlet extends HttpServlet {
 
 		private void addProject(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-        	String pName = request.getParameter("pName");
+        	String pName = request.getParameter("ProID");
         	
         	Project theProject = new Project(pName);
         	
@@ -199,6 +233,7 @@ public class UserControllerServlet extends HttpServlet {
         		List<Employee> employees = userDbUtil.getEmployees();
         	
         		request.setAttribute("EMPLOYEE_LIST", employees);
+
 			// get users from db util
 	        	List<Project> projects = projectDbUtil.getProjects();
 	        	
@@ -284,6 +319,7 @@ public class UserControllerServlet extends HttpServlet {
 		        listProjects(request, response);//not sure about this line??
 		        }
 		
+
 
 private void listServiceLine(HttpServletRequest request, HttpServletResponse response) 
     	throws Exception {
