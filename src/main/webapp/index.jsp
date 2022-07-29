@@ -45,20 +45,20 @@
          out.print( "<h2 align=\"right\">" + ft.format(dNow) + "</h2>");
       %></div>
       
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for projects..">
+<input type="text" id="myInput" onkeyup="myFunction(`myInput`, `myTable`, `tr`)" placeholder="Search for projects..">
 
 
 <table id="myTable">
   <tr class="header">
 
-    <th style="width: 20%;">Project</th>
-    <th style="width: 20%;">Employee</th>
-    <th style="width: 20%;">Email</th>
-    <th style="width: 20%;">Start Date</th>
-    <th style="width: 25%;">End Date</th>
-    <th style="width: 25%;">Modify</th>
-    <th style="width: 25%;">Delete</th>
-    <th style="width: 25%;"></th>
+    <th style="width: 12.5%;">Project</th>
+    <th style="width: 12.5%;">Employee</th>
+    <th style="width: 12.5%;">Email</th>
+    <th style="width: 12.5%;">Start Date</th>
+    <th style="width: 12.5%;">End Date</th>
+    <th style="width: 12.5%;">Modify</th>
+    <th style="width: 12.5%;">Delete</th>
+    <th style="width: 12.5%;"></th>
 
   </tr>
   <c:forEach var="tempEmployee" items="${EMPLOYEE_LIST}">
@@ -84,9 +84,7 @@
 		<c:param name="EmpId" value="${tempEmployee.id}" />
 	</c:url>
     
-    	<td> <a href="${templink}"
-		onclick="if (!(confirm('Are you sure you want to edit this Employee?'))) return false">
-		Edit</a>	</td>
+    	<td> <a href="${templink}">Edit</a>	</td>
 		
 		<td><a href="${deleteLink}"
 		onclick="if (!(confirm('Are you sure you want to delete this Employee?'))) return false">

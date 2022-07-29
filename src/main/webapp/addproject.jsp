@@ -76,7 +76,7 @@
   
   <div>
   <h2>Current Projects at Cognizant</h2>
-  <input type="text" id="myInput1" onkeyup="myFunction()" placeholder="Search for projects..">
+  <input type="text" id="myInput" onkeyup="myFunction(`myInput`, `myTableProject`, `tr`)" placeholder="Search for projects..">
   
       
   <table id="myTableProject">

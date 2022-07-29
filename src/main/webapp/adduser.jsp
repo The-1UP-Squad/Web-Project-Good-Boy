@@ -73,11 +73,12 @@
      
       <div>
       <h2> Current Employees at Cognizant</h2>
-      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Employees..">
-     
+      
+     <input type="text" id="myInput" onkeyup="myFunction(`myInput`, `myTableUser`, `tr`)" placeholder="Search for Employees..">
+      
      <div style="overflow: auto; max-height: 350px; width: 900px;">
-        <table id="myTableUser" style="width: 100%;">
-  <tr class="header">
+    <table id="myTableUser" style="width: 100%;">
+  	<tr class="header">
 
 
 

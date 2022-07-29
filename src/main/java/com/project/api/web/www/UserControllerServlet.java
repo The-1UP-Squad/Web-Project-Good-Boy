@@ -110,8 +110,7 @@ public class UserControllerServlet extends HttpServlet {
         private void loadEmployees(HttpServletRequest request, HttpServletResponse response) 
         	throws Exception{ 
         	
-        	//read student id form from id
-            String theEmployeeID = request.getParameter("EmpId");	
+        	String theEmployeeID = request.getParameter("EmpId");	
             	
             Employee theEmployee = userDbUtil.getEmployee(theEmployeeID);
             
