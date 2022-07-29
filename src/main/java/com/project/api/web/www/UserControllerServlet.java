@@ -280,7 +280,7 @@ public class UserControllerServlet extends HttpServlet {
 		        listProjects(request, response);//not sure about this line??
 		        }
 		
-}
+
 private void listServiceLine(HttpServletRequest request, HttpServletResponse response) 
     	throws Exception {
 		int whereTo = 0;
