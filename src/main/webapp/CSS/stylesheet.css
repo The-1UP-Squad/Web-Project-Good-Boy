@@ -306,28 +306,28 @@ div.container3{
 
 div.containerusername{
 	position: relative;
-	top: 40%;
+	top: 38%;
 	left: 40%;
 	max-width: 400px;
 }
 
 div.containerpassword{
 	position: relative;
-	top: 360px;
+	top: 39%;
 	left: 38.2%;
 	max-width: 400px	
 }
 
 div.loginbutton{
 	position: relative;
-	top: 370px;
+	top: 41%;
 	left: 43%;
 	max-width: 400px;
 }
 
 div.register{
 	position: relative;
-	top: 315px;
+	top: 35%;
 	left: 50%;
 	max-width: 400px;
 }
@@ -335,7 +335,7 @@ div.register{
 div.logo{
 	justify-content: center;
 	position: relative;
-	top: 40%;
+	top: 30%;
 	left: 39%;
 	max-width:400px;
 }

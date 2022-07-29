@@ -4,8 +4,6 @@
     <title>Project Planner Application - Login</title>
   </head>
   <body>
-  <div>
-  <form class="loginPage">
 <div class="logo">
 <img src="logo.png" id="logo"><p style=color:#000048; p style=font-family:"arial";>
 </div>
@@ -38,8 +36,7 @@
       <a class="closepopup" href="#">X</a>
     </div>
   </div>
-</div>
-</form>    
+</div>   
   <div style="clear:both;"></div>
   <p>
   <br>
@@ -48,6 +45,5 @@
 <br>
 <br>
 
-	</div>
   </body>
 </html>
