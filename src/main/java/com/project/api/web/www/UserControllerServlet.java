@@ -179,7 +179,7 @@ public class UserControllerServlet extends HttpServlet {
 
 		private void addProject(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-        	String pName = request.getParameter("ProID");
+        	String pName = request.getParameter("pName");
         	
         	Project theProject = new Project(pName);
         	
@@ -195,6 +195,10 @@ public class UserControllerServlet extends HttpServlet {
 			if (request.getParameter("whereTo") != null) {
 				whereTo = Integer.parseInt(request.getParameter("whereTo"));
 			}
+			
+        		List<Employee> employees = userDbUtil.getEmployees();
+        	
+        		request.setAttribute("EMPLOYEE_LIST", employees);
 			// get users from db util
 	        	List<Project> projects = projectDbUtil.getProjects();
 	        	
