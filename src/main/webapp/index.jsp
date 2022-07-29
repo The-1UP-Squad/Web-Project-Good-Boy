@@ -20,6 +20,10 @@
 <h2>Welcome!</h2>
 <p>What would you like to do?</p>
 
+   <div class="Logout">
+   <button class="button button2">Logout</button>
+   </div>
+
 <nav>
     <div class="navbar">
       <c:url var="addUserLink" value="UserControllerServlet">
@@ -37,6 +41,7 @@
         <li><a href="${addProjectLink}">Projects</a></li>  
       </ul>
     </div>
+    
 <h2>Project List</h2>
 <div id="time" ><% 
          Date dNow = new Date( );

@@ -11,6 +11,10 @@
 
 <h1><img src="logo.png" id="logo"><p style="color:#000048; p style=font-family:"arial";> New User Form  </h1>
 
+   <div class="Logout">
+   <button class="button button2">Logout</button>
+   </div>
+
 <nav>
     <div class="navbar">
       <c:url var="addUserLink" value="UserControllerServlet">
@@ -24,7 +28,7 @@
       <ul>
         <li><a href="http://localhost:8086/Web-Project-Good-Boy/">Home</a></li>
         <li><a href="${addUserLink}">Users</a></li>
-        <li><a href="${addProjectLink}">Projects</a></li>   
+        <li><a href="${addProjectLink}">Projects</a></li> 
       </ul>
     </div>
 </nav>
@@ -118,7 +122,6 @@
 
   <div style="clear:both;"></div>
   <p>
-  <a href="UserControllerServlet">Back to List</a>
   <br>
   <br>
 <br>

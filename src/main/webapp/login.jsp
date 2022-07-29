@@ -3,8 +3,9 @@
     <link rel="stylesheet" href="./CSS/stylesheet.css">
     <title>Project Planner Application - Login</title>
   </head>
+  <body>
 <div class="logo">
-<img src="logo.png" id="logo"><p style="color:#000048; p style=font-family:"arial";>
+<img src="logo.png" id="logo"><p style=color:#000048; p style=font-family:"arial";>
 </div>
   <br>
   
@@ -14,7 +15,7 @@
 </div>
 <div class="containerpassword">	  
       <label for="lName"><b>Password:</b></label>
-      <input type="text" id="lName" name="lName"/><br><br>
+      <input type="password" id="lName" name="lName"/><br><br>
 </div>
       
       <div class="loginbutton">
@@ -37,9 +38,7 @@
       <a class="closepopup" href="#">X</a>
     </div>
   </div>
-</div>
-     
-
+</div>   
   <div style="clear:both;"></div>
   <p>
   <br>
@@ -48,6 +47,5 @@
 <br>
 <br>
 
-
-  
+  </body>
 </html>
