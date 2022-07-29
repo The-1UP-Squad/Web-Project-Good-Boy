@@ -7,25 +7,25 @@ public class Employee {
 	private String lName;
 	private String email;
 	private String serviceLine;
-	private String other;
 	
-	public Employee(String fName, String lName, String email, String serviceLine, String other) {
+	
+	public Employee(String fName, String lName, String email, String serviceLine) {
 		
 		this.fName = fName;
 		this.lName = lName;
 		this.email = email;
 		this.serviceLine = serviceLine;
-		this.other = other;
+		
 	}
 
-	public Employee(int id, String fName, String lName, String email, String serviceLine, String other) {
+	public Employee(int id, String fName, String lName, String email, String serviceLine) {
 		
 		this.id = id;
 		this.fName = fName;
 		this.lName = lName;
 		this.email = email;
 		this.serviceLine = serviceLine;
-		this.other = other;
+		
 	}
 	
 
@@ -35,6 +35,7 @@ public class Employee {
 		this.lName = lName;
 		this.email = email;
 		this.id = id;
+		
 	}
 
 	public Employee(String fName, String lName, String email) {
