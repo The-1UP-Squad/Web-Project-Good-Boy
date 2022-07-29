@@ -11,6 +11,11 @@
   </head>
   <h1><img src="logo.png" id="logo"><p style="color:#000048; p style=font-family:"arial";> New Project Form  </h1>
 <nav>
+
+   <div class="Logout">
+   <button class="button button2">Logout</button>
+   </div>
+
     <div class="navbar">
       <c:url var="addUserLink" value="UserControllerServlet">
                 <c:param name="command" value="LISTEMPLOYEES" />

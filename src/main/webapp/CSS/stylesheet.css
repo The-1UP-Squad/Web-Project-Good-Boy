@@ -340,6 +340,14 @@ div.logo{
 	max-width:400px;
 }
 
+div.logout{
+	position: relative;
+	top: -5%;
+	left: 90%;
+	max-width: 400px;
+}
+
+
  
 .button {
   text-decoration: none;

@@ -15,7 +15,7 @@
 </div>
 <div class="containerpassword">	  
       <label for="lName"><b>Password:</b></label>
-      <input type="text" id="lName" name="lName"/><br><br>
+      <input type="password" id="lName" name="lName"/><br><br>
 </div>
       
       <div class="loginbutton">
