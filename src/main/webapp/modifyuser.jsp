@@ -27,23 +27,19 @@
   <form action="UserControllerServlet" method="GET">
 <input type="hidden" name="command" value="UPDATE"/>
 <input type="hidden" name="employeeId" value="${ THE_EMPLOYEE.id}"/>
-      <label for="fName"><b>First name:</b>&ensp;&nbsp;&nbsp; </label>
-	  <input type="text" id="fName" name="fName" value=${THE_EMPLOYEE.fName }/><br><br>
+      
 	  
 	  
-      <label for="lName"><b>Last name:</b>&ensp;&nbsp;&nbsp; </label>
-      <input type="text" id="lName" name="lName" value=${THE_EMPLOYEE.lName }/><br><br>
+      <label for="fName"><b>First Name:</b>&ensp;&nbsp;&nbsp; </label>
+      <input type="text" id="fName" name="fName" value=${THE_EMPLOYEE.fName }><br><br>
       
-      <label for="email"><b>Email:</b>&emsp;&emsp;&emsp;&nbsp;</label>
-      <input type="text" id="email" name="email" value=${THE_EMPLOYEE.email }/><br><br>
+      <label for="lName"><b>Last Name:</b>&emsp;&emsp;&emsp;&nbsp;</label>
+      <input type="text" id="lName" name="lName" value=${THE_EMPLOYEE.lName }><br><br>
       
-      <label for="serviceline"><b>Service Line:</b></label>
-      <select id="serviceline" name="serviceline">
+      <label for="email"><b>Email:</b></label>
+      <input type="email" id="email" name="email" value=${THE_EMPLOYEE.email }><br><br>
       
-      <option value="software">Software Development</option>
-      <option value="cloud">Cloud</option>
-      <option value="AIML">AI and Machine Learning</option>
-      </select> <br><br>
+      
       
       <label for="other"><b>Other:</b>&emsp;&emsp;&emsp;&nbsp;</label>
       <input type="text" id="other" name="other"><br><br><br><br>
@@ -52,22 +48,8 @@
       
      
       <div>
-      <h2> Current Employees at Cognizant</h2>
-      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Employees..">
+      
      
-     <div style="overflow: auto; max-height: 350px; width: 1000px;">
-        <table id="myTableUser">
-  <tr class="header">
-
-
-
-    <th style="width: 15%;">First Name</th>
-    <th style="width: 15%;">Last Name</th>
-    <th style="width: 15%;">Email</th>
-    <th style="width: 15%;">Delete</th>
- 
-    
-    </tr>
    
       <c:forEach var="tempEmployee" items="${EMPLOYEE_LIST}">
   <tr>    

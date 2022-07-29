@@ -36,21 +36,22 @@
   
    <div class="project-form">
    <form action="UserControllerServlet" method="GET">
-	<input type="hidden" name="command" value="ADDEMPLOYEEPROJECT"/>
+<input type="hidden" name="command" value="ADDEMPLOYEEPROJECT"/>
 	
       <label for="serviceline"><b>Project name:</b></label>
       <select id="project" name="pName">
 
   		<c:forEach var="projects" items="${PROJECT_LIST}"> 
-   		<option value="${projects.projId}">"${projects.projName}"</option>
+   		<option>${projects.projName}</option>
 		</c:forEach>
 		</select>
+		<p>
  
       <p>
       <label for="employee"><b>Employee:&emsp;&ensp;</b></label>
-      <select id="pnameother" name="employees">
+      <select id="pnameother" name="fName">
   		<c:forEach var="employees" items="${EMPLOYEE_LIST}"> 
-   		<option value="${employees.id}">"${employees.fName}"</option>
+   		<option>${employees.fName} ${employees.lName}</option>
 		</c:forEach>
 		</select>
       	<br><br>
@@ -64,6 +65,8 @@
       
       <button class="button button2">Submit</button>
   </form>
+ <form action="UserControllerServlet" method="GET">
+ 	<input type="hidden" name="command" value="ADDPROJECT">
     <div class="container">
   <a class="button button2" href="#popup">Add Project</a>&emsp;&emsp;
   <div class="popup" id="popup">
@@ -77,18 +80,23 @@
     </div>
   </div>
 </div>
- 
+</form> 
   
   <div>
   <h2>Current Projects at Cognizant</h2>
-  <input type="text" id="myInput1" onkeyup="myFunction()" placeholder="Search for projects..">
+  <input type="text" id="myInput" onkeyup="myFunction(`myInput`, `myTableProject`, `tr`)" placeholder="Search for projects..">
   
+  <div style="overflow: auto; max-height: 350px; width: 900px;">
       
-  <table id="myTableProject">
+  <table id="myTableProject" style="width: 100%;">
   <tr class="header">
 
-    <th style="width: 20%;">Project Name</th>
-    <th style="width: 25%;">Delete Project</th>
+    <th style="width: 22%;">Project Name</th>
+    <th style="width: 31%;"></th>
+    <th style="width: 15%;">Delete Project</th>
+    <th style="width: 33%;"></th>
+    <th style="width: 33%;"></th>
+   
     
   </tr>
   
@@ -101,7 +109,8 @@
 		<c:param name="ProID" value="${tempProject.projId}" />
 		<c:param name="nameProject" value="${tempProject.projName}"/>
 	</c:url>
-    
+   <td></td>
+   
 		<td><a href="${deleteLink}"
 		onclick="if (!(confirm('Are you sure you want to delete this Project?'))) return false">
 		Delete</a>	</td>
@@ -112,9 +121,9 @@
 </table>
 </div>
 </div>
+</div>
 
-
-<div style="clear:both;"></div>
+  <div style="clear:both;"></div>
   <p>
   <a href="UserControllerServlet">Back to List</a>
   <br>
@@ -123,7 +132,6 @@
 <br>
 <br>
 <div id="footer" >
-
 <a href="index.jsp" style="color: white">Request One IT Support</a>
 
 </div>
