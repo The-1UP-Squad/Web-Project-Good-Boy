@@ -33,7 +33,7 @@
   
     
   <div class="formUser">
-  <form action="UserControllerServlet" method="GET">
+  <form action="UserControllerServlet" method="GET" autocomplete="ON">
 <input type="hidden" name="command" value="ADDEMPLOYEE"/>
       <label for="fName"><b>First name:</b>&ensp;&nbsp;&nbsp; </label>
 	  <input type="text" id="fName" name="fName"/><br><br>
