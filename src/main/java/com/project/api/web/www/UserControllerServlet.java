@@ -85,9 +85,19 @@ public class UserControllerServlet extends HttpServlet {
 				case "ADDEMPLOYEEPROJECT":
 					addEmployeeProject(request, response);
 					break;
+
 				case "LOAD":
 					loadEmployees(request, response);
 					break;
+	
+				case "DELETEPROJECT":
+					deleteProject(request, response);
+					break;
+					
+				case "UPDATE":
+					updateEmployee(request, response);
+					break;
+			
 				default:
 					listEmployees(request, response);
 					}
@@ -100,12 +110,41 @@ public class UserControllerServlet extends HttpServlet {
 	}
 
 
+  
+    
+	
+	
+	
+	
+	
+	private void updateEmployee(HttpServletRequest request, HttpServletResponse response) throws Exception 
+	{ 
+		int id = Integer.parseInt(request.getParameter("employeeId"));
+		String firstName = request.getParameter("fName");
+	    String lastName = request.getParameter("lName");
+	    String email = request.getParameter("email");
+	    
+	    Employee theEmployee = new Employee(id, firstName, lastName, email);
+	    
+	    userDbUtil.updateEmployee(theEmployee);
+	    
+	    listEmployees(request, response);
+	    
+	    
+		
+		
+		
+		
+	}
 
-        private void loadEmployees(HttpServletRequest request, HttpServletResponse response) 
+
+	private void loadEmployees(HttpServletRequest request, HttpServletResponse response) 
         	throws Exception{ 
         	
         	//read student id form from id
-            String theEmployeeID = request.getParameter("EmpId");	
+            String theEmployeeID = request.getParameter("EmpId"); 
+            
+            
             	
             Employee theEmployee = userDbUtil.getEmployee(theEmployeeID);
             
@@ -164,7 +203,7 @@ public class UserControllerServlet extends HttpServlet {
 
 		private void addProject(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-        	String pName = request.getParameter("pName");
+        	String pName = request.getParameter("ProID");
         	
         	Project theProject = new Project(pName);
         	
@@ -175,6 +214,11 @@ public class UserControllerServlet extends HttpServlet {
         
 		private void listProjects(HttpServletRequest request, HttpServletResponse response) 
 	        	throws Exception {
+			int whereTo = 0;
+			
+			if (request.getParameter("whereTo") != null) {
+				whereTo = Integer.parseInt(request.getParameter("whereTo"));
+			}
 			// get users from db util
 	        	List<Project> projects = projectDbUtil.getProjects();
 	        	
@@ -182,9 +226,15 @@ public class UserControllerServlet extends HttpServlet {
 	        	request.setAttribute("PROJECT_LIST", projects);
 	        	
 	        // send to jsp page
-	        	RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
-	        	dispatcher.forward(request, response);
 			
+	        if (whereTo == 2) {
+	        	RequestDispatcher dispatcher = request.getRequestDispatcher("/addproject.jsp");
+		        dispatcher.forward(request, response);
+	        	
+	        } else {
+		        RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+		        dispatcher.forward(request, response);
+	        	}
 		}
 
 
@@ -223,15 +273,35 @@ public class UserControllerServlet extends HttpServlet {
         	
         // send to jsp page
 
-
         	if (whereTo == 1) {
         		RequestDispatcher dispatcher = request.getRequestDispatcher("/adduser.jsp");
 	        	dispatcher.forward(request, response);
+	        	
         	} else {
 	        	RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
 	        	dispatcher.forward(request, response);
         	}  			
         
 		}
-}
 		
+		
+		private void deleteProject(HttpServletRequest request, HttpServletResponse response)
+		        throws Exception {
+				
+				//read student id form from id
+		        String pName = request.getParameter("ProID");
+		        
+		        //Project theProjects = new Project(pName);
+		        	
+		        //delete student from data base
+		        //ProjectDbUtil.deleteProject(theProjectID);
+		        
+		        projectDbUtil.deleteProject(pName);
+		  
+		        
+		        //send them back to servlet or index page, right?
+
+		        listProjects(request, response);//not sure about this line??
+		        }
+		
+}

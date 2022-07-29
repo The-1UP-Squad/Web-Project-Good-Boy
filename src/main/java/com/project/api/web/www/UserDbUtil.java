@@ -168,4 +168,30 @@ public void addEmployee(Employee theEmployee) throws Exception {
 				close(myConn, myStmt, myRs);
 				}
 	}
+
+	public void updateEmployee(Employee theEmployee)throws Exception {
+		Connection myConn = null;
+		PreparedStatement myStmt = null;
+		
+		try {
+		
+			myConn = dataSource.getConnection();
+			String sql = "update employees "
+					+ "set First_Name=?, last_Name=?, Email_address=? "
+					+ "where EmpID=? ";
+			
+			myStmt = myConn.prepareStatement(sql);
+			
+			myStmt.setString(1, theEmployee.getfName());
+			myStmt.setString(2, theEmployee.getlName());
+			myStmt.setString(3, theEmployee.getEmail());
+			myStmt.setInt(4, theEmployee.getId());
+			
+			myStmt.execute();
+			
+			}
+		finally {
+			close(myConn, myStmt, null);
 	}
+	}
+}
