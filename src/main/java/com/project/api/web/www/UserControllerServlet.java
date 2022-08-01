@@ -89,11 +89,11 @@ public class UserControllerServlet extends HttpServlet {
 					break;
 
 				case "LISTSERVICELINES":
-					listServiceLines(request, response);
+					listServiceLine(request, response);
 					break;
 					
 				case "ADDSERVICELINE":
-					addServiceLine(request, response);
+					addServiceList(request, response);
           				break;
 
 				case "LOAD":
@@ -199,6 +199,7 @@ public class UserControllerServlet extends HttpServlet {
 
 
 		private void listEmployeeProjects(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
 		List<EmployeeProject> employeeProjects = employeeProjectDbUtil.getEmployeeProjects();
 		
 		request.setAttribute("EMPLOYEEPROJECT_LIST", employeeProjects);
@@ -260,8 +261,8 @@ public class UserControllerServlet extends HttpServlet {
         	String fName = request.getParameter("fName");
         	String lName = request.getParameter("lName");
         	String email = request.getParameter("email");
-        	
-        	Employee theEmployee = new Employee(fName, lName, email);
+        	String serviceLine = request.getParameter("serviceLine");
+        	Employee theEmployee = new Employee(fName, lName, email, serviceLine);
         	
         	userDbUtil.addEmployee(theEmployee);
         	
@@ -286,9 +287,14 @@ public class UserControllerServlet extends HttpServlet {
         // add users to the request
         	request.setAttribute("EMPLOYEE_LIST", employees);
         	
+        	List<ServiceLine> serviceline = serviceLineDbUtil.getServiceLines();
+        	
+            
+        	request.setAttribute("SERVICELINE_LIST", serviceline);
         // send to jsp page
 
         	if (whereTo == 1) {
+        		
         		RequestDispatcher dispatcher = request.getRequestDispatcher("/adduser.jsp");
 	        	dispatcher.forward(request, response);
 	        	
@@ -329,10 +335,10 @@ private void listServiceLine(HttpServletRequest request, HttpServletResponse res
 			whereTo = Integer.parseInt(request.getParameter("whereTo"));
 		}
 
-    	List<ServiceLine> serviceLines = serviceLineDbUtil.getEmployees();
+    	List<ServiceLine> serviceline = serviceLineDbUtil.getServiceLines();
     	
     
-    	request.setAttribute("SERVICELINE_LIST", serviceLines);
+    	request.setAttribute("SERVICELINE_LIST", serviceline);
     	
     
 
@@ -342,7 +348,7 @@ private void listServiceLine(HttpServletRequest request, HttpServletResponse res
         	
     	} else {
         	RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
-        	dispatcher.forward(request, response);
+        	dispatcher.forward(request, response);}
     	}  			
     	private void addServiceList(HttpServletRequest request, HttpServletResponse response) throws Exception {
     		
@@ -353,7 +359,7 @@ private void listServiceLine(HttpServletRequest request, HttpServletResponse res
         	
         	serviceLineDbUtil.addServiceLine(theServiceLine);
         	
-        	listServiceLines(request, response);
+        	listServiceLine(request, response);
         	
 	} 
     	
