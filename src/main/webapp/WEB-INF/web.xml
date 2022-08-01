@@ -3,7 +3,7 @@
   <display-name>Web-Project-Good-Boy</display-name>
 
   <welcome-file-list>
-  	<welcome-file></welcome-file>
+  	<welcome-file>login.jsp</welcome-file>
   	<welcome-file>UserControllerServlet</welcome-file>
   	<welcome-file>index.jsp</welcome-file>
   	</welcome-file-list>

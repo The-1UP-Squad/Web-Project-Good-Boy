@@ -22,7 +22,6 @@ function myFunction(input1, table1, tableRow) {
   }
 }
 
-my
 
 
 

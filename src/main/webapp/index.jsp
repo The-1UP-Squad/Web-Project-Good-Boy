@@ -21,7 +21,7 @@
 <p>What would you like to do?</p>
 
    <div class="Logout">
-   <button class="button button2">Logout</button>
+   <a class="button button2" href="http://localhost:8086/Web-Project-Good-Boy/login.jsp"> Log Out </a>
    </div>
 
 <nav>
@@ -36,7 +36,7 @@
                 <c:param name="whereTo" value="2" />
 		</c:url>
       <ul>
-        <li><a href="http://localhost:8086/Web-Project-Good-Boy/">Home</a></li>
+        <li><a href="http://localhost:8086/Web-Project-Good-Boy/UserControllerServlet">Home</a></li>
         <li><a href="${addUserLink}">Users</a></li>
         <li><a href="${addProjectLink}">Projects</a></li>  
       </ul>
