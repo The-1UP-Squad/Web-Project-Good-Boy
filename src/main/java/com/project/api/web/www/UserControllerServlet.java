@@ -18,10 +18,12 @@ import javax.sql.DataSource;
 @WebServlet("/UserControllerServlet")
 public class UserControllerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
+	private static final String theEmployeeProjectID = null;
 	
 	private UserDbUtil userDbUtil;
 	private ProjectDbUtil projectDbUtil;
-	private EmpProjectDbUtil employeeProjectDbUtil;
+	private EmpProjectDbUtil EmpProjectDbUtil;
 	private ServiceLineDbUtil serviceLineDbUtil;
 	
 	@Resource(name="jdbc/webapi")
@@ -36,7 +38,7 @@ public class UserControllerServlet extends HttpServlet {
 		try {
 			userDbUtil = new UserDbUtil(dataSource);
 			projectDbUtil = new ProjectDbUtil(dataSource);
-			employeeProjectDbUtil = new EmpProjectDbUtil(dataSource);
+			EmpProjectDbUtil = new EmpProjectDbUtil(dataSource);
 			serviceLineDbUtil = new ServiceLineDbUtil (dataSource);
 			
 		}
@@ -89,11 +91,11 @@ public class UserControllerServlet extends HttpServlet {
 					break;
 
 				case "LISTSERVICELINES":
-					listServiceLines(request, response);
+					listServiceLine(request, response);
 					break;
 					
 				case "ADDSERVICELINE":
-					addServiceLine(request, response);
+					addServiceList(request, response);
           				break;
 
 				case "LOAD":
@@ -192,16 +194,18 @@ public class UserControllerServlet extends HttpServlet {
         	
         	EmployeeProject theEmpProject = new EmployeeProject(pName, fName, startDate, endDate);
         	
-        	employeeProjectDbUtil.addEmployeeProject(theEmpProject);
+        	EmpProjectDbUtil.addEmployeeProject(theEmpProject);
         	
         	listEmployeeProjects(request, response);
 	}
 
 
 		private void listEmployeeProjects(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		List<EmployeeProject> employeeProjects = employeeProjectDbUtil.getEmployeeProjects();
+			
+
+         	List<EmployeeProject> theEmployeeProject = EmpProjectDbUtil.getEmployeeProjects();
 		
-		request.setAttribute("EMPLOYEEPROJECT_LIST", employeeProjects);
+		request.setAttribute("EMPLOYEEPROJECT_LIST", theEmployeeProject);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
     	dispatcher.forward(request, response);
@@ -286,6 +290,10 @@ public class UserControllerServlet extends HttpServlet {
         // add users to the request
         	request.setAttribute("EMPLOYEE_LIST", employees);
         	
+         	List<EmployeeProject> theEmployeeProject = EmpProjectDbUtil.getEmployeeProjects();
+    		
+         	request.setAttribute("EMPLOYEEPROJECT_LIST", theEmployeeProject);
+        	
         // send to jsp page
 
         	if (whereTo == 1) {
@@ -329,7 +337,7 @@ private void listServiceLine(HttpServletRequest request, HttpServletResponse res
 			whereTo = Integer.parseInt(request.getParameter("whereTo"));
 		}
 
-    	List<ServiceLine> serviceLines = serviceLineDbUtil.getEmployees();
+    	List<ServiceLine> serviceLines = serviceLineDbUtil.getServiceLines();
     	
     
     	request.setAttribute("SERVICELINE_LIST", serviceLines);
@@ -342,7 +350,7 @@ private void listServiceLine(HttpServletRequest request, HttpServletResponse res
         	
     	} else {
         	RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
-        	dispatcher.forward(request, response);
+        	dispatcher.forward(request, response);}
     	}  			
     	private void addServiceList(HttpServletRequest request, HttpServletResponse response) throws Exception {
     		
@@ -353,7 +361,7 @@ private void listServiceLine(HttpServletRequest request, HttpServletResponse res
         	
         	serviceLineDbUtil.addServiceLine(theServiceLine);
         	
-        	listServiceLines(request, response);
+        	listServiceLine(request, response);
         	
 	} 
     	
