@@ -479,3 +479,20 @@ div.loginpopup {
   cursor: pointer;
   text-decoration: none;
 }
+
+.myContainer {
+	position: relative;
+	top: 0%;
+	left: 90%;
+	max-width: 200px;
+}
+
+
+.form-check {
+    transform: scale(1);
+}
+
+.bg-dark,
+.text-light {
+    transition: 0.5s;
+}

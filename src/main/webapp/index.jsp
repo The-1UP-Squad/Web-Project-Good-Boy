@@ -6,6 +6,7 @@
     <head>
    
       <link rel="stylesheet" href="./CSS/stylesheet.css">
+      <link rel="stylesheet" href="/CSS/bootstrap.min.css">
       <script src="homepage.js"></script>
       <title>Project Planner Application</title>
       
@@ -22,6 +23,13 @@
    <div class="Logout">
    <button class="button button2">Logout</button>
    </div>
+   
+ <div class="myContainer">
+   <div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" id="nightModeSwitch">
+    <label class="form-check-label" for="nightModeSwitch">Night Mode</label	>
+	</div>
+</div>
 
 <nav>
     <div class="navbar">
@@ -112,5 +120,8 @@
 
 </body>
 
+<script src="js/bootstrap.min.js"></script>
+<script src="jquery-3.5.1.min.js"></script>
+<script src="nightmode.js"></script>
 
 </html>
