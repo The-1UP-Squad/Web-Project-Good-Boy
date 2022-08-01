@@ -13,7 +13,7 @@
   <nav>
       <div class="menu">
         <ul>
-          <li><a href="http://localhost:8086/Web-Project-Good-Boy/">Home</a></li>
+          <li><a href="http://localhost:8086/Web-Project-Good-Boy/UserControllerServlet">Home</a></li>
           <li><a href="${addUserLink}">Users</a></li>
           <li><a href="addproject.jsp">Projects</a></li>
         </ul>
