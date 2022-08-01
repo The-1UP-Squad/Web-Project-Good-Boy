@@ -10,12 +10,12 @@
   <br>
   
 <div class="containerusername">
-        <label for="fName"><b>Email:</b> </label>
-	  <input type="text" id="fName" name="fName"/><br><br>
+        <label for="email"><b>Email:</b> </label>
+	  <input type="text" id="email" name="email"/><br><br>
 </div>
 <div class="containerpassword">	  
-      <label for="lName"><b>Password:</b></label>
-      <input type="password" id="lName" name="lName"/><br><br>
+      <label for="pass"><b>Password:</b></label>
+      <input type="password" id="pass" name="pass"/><br><br>
 </div>
       
       <div class="loginbutton">
@@ -28,9 +28,9 @@
     <div class="popup-inner">
       <div class="popuptext">      
         <p><label for="email"><b>Email:</b></label>
-      <input type="text" id="email" name="enrollEmail"><br><br></p>
+      <input type="text" id="email" name="enrollEmail"></p>
        <p><label for="password"><b>Password:</b></label>
-      <input type="text" id="password" name="enrollPassword"><br><br></p>
+      <input type="password" id="password" name="enrollPassword"><br></p>
       <a href="http://localhost:8086/Web-Project-Good-Boy/"> <button class="button button2">Submit</button> </a>
       
       

@@ -18,7 +18,6 @@
 
 <body>
 <h2>Welcome!</h2>
-<p>What would you like to do?</p>
 
    <div class="Logout">
    <button class="button button2">Logout</button>

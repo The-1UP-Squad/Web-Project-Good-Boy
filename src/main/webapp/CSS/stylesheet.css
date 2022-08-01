@@ -188,6 +188,24 @@ select {
   background-color: #f1f1f1;
 }
 
+#pass{
+  width: 280px;
+  padding: 10px 20px;
+  margin: 2px 0;
+  box-sizing: border-box;
+  border: 2px solid #000048;
+  border-radius: 4px;
+}
+
+#password{
+  width: 280px;
+  padding: 10px 20px;
+  margin: 2px 0;
+  box-sizing: border-box;
+  border: 2px solid #000048;
+  border-radius: 4px;
+}
+
 .button2:hover {
   background-color: #000048;
   color: white;
@@ -344,7 +362,7 @@ div.logout{
 	position: relative;
 	top: -5%;
 	left: 90%;
-	max-width: 400px;
+	max-width: 200px;
 }
 
 
@@ -402,7 +420,7 @@ div.loginpopup {
   display: flex;
   align-items: center;
   max-width: 400px;
-  max-height: 220px;
+  max-height: 280px;
   width: 60%;
   height: 80%;
   background-color: #fff;
