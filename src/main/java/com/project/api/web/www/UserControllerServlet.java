@@ -18,10 +18,12 @@ import javax.sql.DataSource;
 @WebServlet("/UserControllerServlet")
 public class UserControllerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
+	private static final String theEmployeeProjectID = null;
 	
 	private UserDbUtil userDbUtil;
 	private ProjectDbUtil projectDbUtil;
-	private EmpProjectDbUtil employeeProjectDbUtil;
+	private EmpProjectDbUtil EmpProjectDbUtil;
 	private ServiceLineDbUtil serviceLineDbUtil;
 	
 	@Resource(name="jdbc/webapi")
@@ -36,7 +38,7 @@ public class UserControllerServlet extends HttpServlet {
 		try {
 			userDbUtil = new UserDbUtil(dataSource);
 			projectDbUtil = new ProjectDbUtil(dataSource);
-			employeeProjectDbUtil = new EmpProjectDbUtil(dataSource);
+			EmpProjectDbUtil = new EmpProjectDbUtil(dataSource);
 			serviceLineDbUtil = new ServiceLineDbUtil (dataSource);
 			
 		}
@@ -192,17 +194,17 @@ public class UserControllerServlet extends HttpServlet {
         	
         	EmployeeProject theEmpProject = new EmployeeProject(pName, fName, startDate, endDate);
         	
-        	employeeProjectDbUtil.addEmployeeProject(theEmpProject);
+        	EmpProjectDbUtil.addEmployeeProject(theEmpProject);
         	
         	listEmployeeProjects(request, response);
 	}
 
 
 		private void listEmployeeProjects(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		List<EmployeeProject> theEmployeeProject = EmpProjectDbUtil.getEmployeeProjects();
 		
-		List<EmployeeProject> employeeProjects = employeeProjectDbUtil.getEmployeeProjects();
-		
-		request.setAttribute("EMPLOYEEPROJECT_LIST", employeeProjects);
+		request.setAttribute("EMPLOYEEPROJECT_LIST", theEmployeeProject);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
     	dispatcher.forward(request, response);
@@ -288,9 +290,13 @@ public class UserControllerServlet extends HttpServlet {
         	request.setAttribute("EMPLOYEE_LIST", employees);
         	
         	List<ServiceLine> serviceline = serviceLineDbUtil.getServiceLines();
-        	
-            
+        	 
         	request.setAttribute("SERVICELINE_LIST", serviceline);
+
+         	List<EmployeeProject> theEmployeeProject = EmpProjectDbUtil.getEmployeeProjects();
+    		
+         	request.setAttribute("EMPLOYEEPROJECT_LIST", theEmployeeProject);
+        	
         // send to jsp page
 
         	if (whereTo == 1) {
@@ -335,7 +341,7 @@ private void listServiceLine(HttpServletRequest request, HttpServletResponse res
 			whereTo = Integer.parseInt(request.getParameter("whereTo"));
 		}
 
-    	List<ServiceLine> serviceline = serviceLineDbUtil.getServiceLines();
+    	List<ServiceLine> serviceLines = serviceLineDbUtil.getServiceLines();
     	
     
     	request.setAttribute("SERVICELINE_LIST", serviceline);
