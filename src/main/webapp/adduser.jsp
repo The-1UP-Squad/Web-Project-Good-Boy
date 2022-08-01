@@ -48,32 +48,33 @@
       <label for="email"><b>Email:</b>&emsp;&emsp;&emsp;&nbsp;</label>
       <input type="text" id="email" name="email"/><br><br>
       
-      <label for="serviceline"><b>Service Line:</b></label>
-      <select id="serviceline" name="serviceline">
-      
-      <option value="software">Software Development</option>
-      <option value="cloud">Cloud</option>
-      <option value="AIML">AI and Machine Learning</option>
+      <label for="serviceLine"><b>Service Line:</b></label>	
+      <select id="serviceLine" name="serviceLine">
+		<c:forEach var="serviceline" items="${SERVICELINE_LIST}">
+		<option>${serviceline.slname}</option> 
+		</c:forEach> 
       </select> <br><br>
       
   <br><br><br><br>
       <button class="button button2">Submit</button>
       </form>
-      
+  
+  <form action="UserControllerServlet" method="get">
+  	<input type="hidden" name="command" value="ADDSERVICELINE">   
           <div class="container2">
   <a class="button button2" href="#popup">Add Service Line</a>&emsp;&emsp;
   <div class="popup" id="popup">
     <div class="popup-inner">
       <div class="popuptext">      
         <p><label for="pnameother"><b>Add New Service Line:</b></label>
-      <input type="text" id="pnameother" name="pName"><br><br></p>
+      <input type="text" id="pnameother" name="slname"><br><br></p>
       <button class="button button2">Submit</button>
       </div>
       <a class="closepopup" href="#">X</a>
     </div>
   </div>
 </div>
-      
+  </form>     
      
       <div>
       <h2> Current Employees at Cognizant</h2>
@@ -84,22 +85,17 @@
     <table id="myTableUser" style="width: 100%;">
   	<tr class="header">
 
-
-
-    <th style="width: 33%;">Name</th>
-    <th style="width: 33%;">Email</th>
+    <th style="width: 30%;">Name</th>
+    <th style="width: 30%;">ServiceLine</th>
+    <th style="width: 30%;">Email</th>
     <th style="width: 10%;">Delete</th>
-  
- 
-
-        
- 
     
     </tr>
    
       <c:forEach var="tempEmployee" items="${EMPLOYEE_LIST}">
   <tr>    
     <td>${tempEmployee.fName} ${tempEmployee.lName}</td>
+    <td>${tempEmployee.serviceLine}</td>
     <td>${tempEmployee.email}</td>
     
 	<c:url var="deleteLink" value="UserControllerServlet">

@@ -26,7 +26,7 @@ public class ServiceLineDbUtil {
 		try {
 			myConn = dataSource.getConnection();
 			
-			String sql = "select * from serviceline order by serviceline";
+			String sql = "select * from serviceline order by ServLine";
 			myStmt = myConn.createStatement();
 			
 			myRs = myStmt.executeQuery(sql);
@@ -69,13 +69,13 @@ public class ServiceLineDbUtil {
 			myConn = dataSource.getConnection();
 			
 			String sql = "INSERT INTO serviceline"
-						+ "(ServiceLine)"
+						+ "(ServLine)"
 						+ "values (?)";
 			
 			myStmt = myConn.prepareStatement(sql);
 			
-			myStmt.setInt(1, theServiceLine.getSlid());
-			myStmt.setString(2, theServiceLine.getSlname());
+			//myStmt.setInt(1, theServiceLine.getSlid());
+			myStmt.setString(1, theServiceLine.getSlname());
 			
 			myStmt.execute();
 			}
