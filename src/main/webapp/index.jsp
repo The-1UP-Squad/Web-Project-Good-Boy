@@ -58,29 +58,31 @@
 
     <th style="width: 12.5%;">Project</th>
     <th style="width: 12.5%;">Employee</th>
-    <th style="width: 12.5%;">Email</th>
+    
     <th style="width: 12.5%;">Start Date</th>
     <th style="width: 12.5%;">End Date</th>
     <th style="width: 12.5%;">Modify</th>
     <th style="width: 12.5%;">Delete</th>
-    <th style="width: 12.5%;"></th>
+   
 
   </tr>
-  <c:forEach var="tempEmployee" items="${EMPLOYEE_LIST}">
+  <c:forEach var="tempEmpProject" items="${EMPLOYEEPROJECT_LIST}">
   	
   	
   	<c:url var="templink" value="UserControllerServlet">
 		<c:param name="command" value="LOAD" />
-		<c:param name="EmpId" value="${tempEmployee.id}" />
+		<c:param name="ProjectID" value="${tempEmpProject.pId}" />
+		
 	</c:url>
-  <tr>    
-    <td>${tempEmployee.fName} </td>
-    <td>${tempEmployee.lName}</td>
-    <td>${tempEmployee.email}</td>
+  <tr>
+  	 
+    <td>${tempEmpProject.pName}</td> 
+    <td>${tempEmpProject.fName}</td>
+    <td>${tempEmpProject.startDate}</td> 
+    <td>${tempEmpProject.endDate} </td>
     
     
-	<td>10-07-2002</td>
-    <td>10-09-2002</td>
+	
     
     
     

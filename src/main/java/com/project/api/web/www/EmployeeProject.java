@@ -19,6 +19,7 @@ public class EmployeeProject {
 	
 	public EmployeeProject(String pName, String fName, String startDate, String endDate) {
 		
+		
 		this.pName = pName;
 		this.fName = fName;
 		this.startDate = startDate;

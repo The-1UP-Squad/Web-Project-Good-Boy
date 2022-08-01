@@ -33,12 +33,13 @@ public class EmpProjectDbUtil {
 			
 			myRs = myStmt.executeQuery(sql);
 			while (myRs.next()) {
+				int id = myRs.getInt("ProjectID");
 				String pName = myRs.getString("Project");
 				String fName = myRs.getString("Name");
 				String startDate = myRs.getString("Start_Date");
 				String endDate = myRs.getString("End_Date");
 				
-				EmployeeProject tempEmpProject = new EmployeeProject(pName, fName, startDate, endDate);
+				EmployeeProject tempEmpProject = new EmployeeProject(id, pName, fName, startDate, endDate);
 				employeeProjects.add(tempEmpProject);
 			}
 		
@@ -101,41 +102,42 @@ public class EmpProjectDbUtil {
 	}
 
 
-	public Employee getEmployee(String theEmployeeID) throws Exception{
-	   Employee theEmployee = null; 
+	public EmployeeProject getEmployeeProject(String theEmployeeProjectID) throws Exception{
+	   EmployeeProject theEmployeeProject = null; 
 	   PreparedStatement myStmt = null;
 	   Connection myConn = null;
 	   ResultSet myRs = null;
-	   int employeeId;
+	   int employeeProjectId;
 	   
 	   try {
-		   employeeId = Integer.parseInt(theEmployeeID);
+		   employeeProjectId = Integer.parseInt(theEmployeeProjectID);
 		   
 		   myConn = dataSource.getConnection();
 		   
-		   String sql = "select * from Employee where ID =?";
+		   String sql = "select * from addprojects where ProjectID =?";
 		   
 		   myStmt = myConn.prepareStatement(sql);
 		   
-		   myStmt.setInt(1, employeeId);
+		   myStmt.setInt(1, employeeProjectId);
 		   
 		   myRs = myStmt.executeQuery();
 		   
 		   if (myRs.next()) {
+			   String pName = myRs.getString("Project");
 			   String firstName = myRs.getString("First_Name");
-			   String lastName = myRs.getString("Last_Name");
-			   String email = myRs.getString("Email_address");
-			  
-			   theEmployee = new Employee(employeeId, firstName, lastName, email );
+			   String startDate = myRs.getString("Start_Date");
+			   String endDate = myRs.getString("End_Date");
+	;		  
+			   theEmployeeProject = new EmployeeProject(employeeProjectId, pName, firstName, startDate, endDate);
 		   }
 		   else {
-			   throw new Exception ("could not find id:" + employeeId);
+			   throw new Exception ("could not find id:" + employeeProjectId);
 		   }
 					   
 		   
 		  
 		     
-		   return theEmployee;
+		   return theEmployeeProject;
 	   }
 		finally {
 			close(myConn, myStmt, myRs);
