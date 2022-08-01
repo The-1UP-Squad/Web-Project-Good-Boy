@@ -6,7 +6,7 @@
     <head>
    
       <link rel="stylesheet" href="./CSS/stylesheet.css">
-      <link rel="stylesheet" href="/CSS/bootstrap.min.css">
+      <link rel="stylesheet" href="./CSS/bootstrap.min.css">
       <script src="homepage.js"></script>
       <title>Project Planner Application</title>
       
