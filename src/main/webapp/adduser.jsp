@@ -12,7 +12,7 @@
 <h1><img src="logo.png" id="logo"><p style="color:#000048; p style=font-family:"arial";> New User Form  </h1>
 
    <div class="Logout">
-   <button class="button button2">Logout</button>
+   <a class="button button2" href="http://localhost:8086/Web-Project-Good-Boy/login.jsp"> Log Out </a>
    </div>
 
 <nav>
@@ -26,7 +26,7 @@
                 <c:param name="whereTo" value="2" />
 		</c:url>
       <ul>
-        <li><a href="http://localhost:8086/Web-Project-Good-Boy/">Home</a></li>
+        <li><a href="http://localhost:8086/Web-Project-Good-Boy/UserControllerServlet">Home</a></li>
         <li><a href="${addUserLink}">Users</a></li>
         <li><a href="${addProjectLink}">Projects</a></li> 
       </ul>

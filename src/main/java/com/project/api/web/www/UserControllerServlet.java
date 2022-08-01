@@ -89,11 +89,11 @@ public class UserControllerServlet extends HttpServlet {
 					break;
 
 				case "LISTSERVICELINES":
-					listServiceLines(request, response);
+					listServiceLine(request, response);
 					break;
 					
 				case "ADDSERVICELINE":
-					addServiceLine(request, response);
+					addServiceList(request, response);
           				break;
 
 				case "LOAD":
@@ -329,7 +329,7 @@ private void listServiceLine(HttpServletRequest request, HttpServletResponse res
 			whereTo = Integer.parseInt(request.getParameter("whereTo"));
 		}
 
-    	List<ServiceLine> serviceLines = serviceLineDbUtil.getEmployees();
+    	List<ServiceLine> serviceLines = serviceLineDbUtil.getServiceLines();
     	
     
     	request.setAttribute("SERVICELINE_LIST", serviceLines);
@@ -342,7 +342,7 @@ private void listServiceLine(HttpServletRequest request, HttpServletResponse res
         	
     	} else {
         	RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
-        	dispatcher.forward(request, response);
+        	dispatcher.forward(request, response);}
     	}  			
     	private void addServiceList(HttpServletRequest request, HttpServletResponse response) throws Exception {
     		
@@ -353,7 +353,7 @@ private void listServiceLine(HttpServletRequest request, HttpServletResponse res
         	
         	serviceLineDbUtil.addServiceLine(theServiceLine);
         	
-        	listServiceLines(request, response);
+        	listServiceLine(request, response);
         	
 	} 
     	

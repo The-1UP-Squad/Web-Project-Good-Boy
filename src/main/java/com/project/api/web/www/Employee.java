@@ -93,18 +93,12 @@ public class Employee {
 		this.serviceLine = serviceLine;
 	}
 
-	public String getOther() {
-		return other;
-	}
-
-	public void setOther(String other) {
-		this.other = other;
-	}
+	
 
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", fName=" + fName + ", lName=" + lName + ", email=" + email + ", serviceLine="
-				+ serviceLine + ", other=" + other + "]";
+				+ serviceLine  + "]";
 	}
 	
 
