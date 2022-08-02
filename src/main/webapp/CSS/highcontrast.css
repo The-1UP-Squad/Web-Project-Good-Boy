@@ -1,0 +1,148 @@
+@charset "UTF-8";
+
+body.darktheme #mytable{
+	color:#ffff00;
+	background-color:#000
+	}
+	
+body.darktheme #myinput{
+	color:#ffff00;
+	background-color:#000
+	}
+	
+	
+	
+
+body.darktheme {
+	color:#ffff00;
+	background-color:#000
+	}
+	
+body.darktheme ul{
+	color:#ffff00;
+	background-color:#000
+}
+
+
+body.darktheme th{
+	color:#ffff00;
+	background-color:#000
+}
+
+body.darktheme tr{
+	color:#ffff00;
+	background-color:#000;
+	border-bottom: 1px solid #ffff00;
+}
+
+body.darktheme td{
+	color:#ffff00;
+	background-color:#000
+}
+	
+
+body.darktheme tr.header{
+	color:#ffff00;
+	background-color:#000
+}
+
+body.darktheme li a{
+	color:#ffff00;
+	background-color:#000
+}
+
+body.darktheme #footer{
+	color:#ffff00;
+	background-color:#000
+}
+
+body.darktheme a{
+	color:#ffff00;
+	background-color:#000
+}
+
+body.darktheme p{
+	color:#ffff00;
+	background-color:#000
+}
+
+body.darktheme mainlogo{
+	color:#ffff00;
+	background-color:#000
+}
+body.darktheme .button2{
+	color:#ffff00;
+	background-color:#000;
+	border: 2px solid #ffff00;
+}
+
+body.darktheme .button{
+	color:#ffff00;
+	background-color:#000
+	
+}
+
+body.darktheme .popup-inner{
+	color:#ffff00;
+	background-color:#000
+	
+}
+
+body.darktheme ::-webkit-scrollbar-track{
+border: 1px solid #ffff00;
+}
+
+body.darktheme ::-webkit-scrollbar-thumb {
+background: #ffff00
+}
+
+body.darktheme ::-webkit-scrollbar-thumb:hover {
+background: #ffff80;
+}
+
+body.darktheme #fname{
+	border: 2px solid #ffff00;
+	background: #000;
+	color: #ffff00;
+}
+
+body.darktheme #lname{
+	border: 2px solid #ffff00;
+	background: #000;
+	color: #ffff00;
+}
+
+body.darktheme #email{
+	border: 2px solid #ffff00;
+	background: #000;
+	color: #ffff00;
+}
+
+body.darktheme #serviceline{
+	border: 2px solid #ffff00;
+	background: #000;
+	color: #ffff00;
+}
+
+body.darktheme #pnameother{
+	border: 2px solid #ffff00;
+	background: #000;
+	color: #ffff00;
+}
+
+body.darktheme #project{
+	border: 2px solid #ffff00;
+	background: #000;
+	color: #ffff00;
+}
+
+body.darktheme #startdate{
+	border: 2px solid #ffff00;
+	background: #000;
+	color: #ffff00;
+}
+body.darktheme #enddate{
+	border: 2px solid #ffff00;
+	background: #000;
+	color: #ffff00;
+}

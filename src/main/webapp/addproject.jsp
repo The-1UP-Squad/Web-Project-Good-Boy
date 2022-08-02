@@ -6,14 +6,24 @@
   <head>
     <link rel="stylesheet" href="./CSS/REALprojectCSS.css">
     <link rel="stylesheet" href="./CSS/stylesheet.css">
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./CSS/highcontrast.css">
     <script src="homepage.js"></script>
     <title>Project Planner Application - Add Project</title>
   </head>
-  <h1><img src="logo.png" id="logo"><p style="color:#000048; p style=font-family:"arial";> New Project Form  </h1>
+  
+  <div class="mainlogo">
+  <h1><img src="logo.png" id="logo"><p style=font-family:"arial";> New Project Form</h1>
+  </div>
+  
 <nav>
 
    <div class="Logout">
    <a class="button button2" href="http://localhost:8086/Web-Project-Good-Boy/login.jsp"> Log Out </a>
+   </div>
+   
+        <div class="highcontrast2">
+   <a class="button button2" href='javascript:void(0);' onclick='retheme()' title='Change Theme'>High Contrast</a>
    </div>
 
     <div class="navbar">
@@ -135,5 +145,9 @@
 <a href="index.jsp" style="color: white">Request One IT Support</a>
 
 </div>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="jquery-3.6.0.min.js"></script>
+<script src="nightmode.js"></script>
     
 </html>
