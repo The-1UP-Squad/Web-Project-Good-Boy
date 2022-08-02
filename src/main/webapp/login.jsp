@@ -1,52 +1,42 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="./CSS/stylesheet.css">
-    <title>Project Planner Application - Login</title>
-  </head>
-  <body>
-<div class="logo">
-<img src="logo.png" id="logo"><p style=color:#000048; p style=font-family:"arial";>
-</div>
-  <br>
-  
-<div class="containerusername">
-        <label for="email"><b>Email:</b> </label>
-	  <input type="text" id="email" name="email"/><br><br>
-</div>
-<div class="containerpassword">	  
-      <label for="pass"><b>Password:</b></label>
-      <input type="password" id="pass" name="pass"/><br><br>
-</div>
-      
-      <div class="loginbutton">
-      <a class="button button2" href="http://localhost:8086/Web-Project-Good-Boy/UserControllerServlet"> Login </a>
-      </div>
-      
-<div class="register">
-  <a class="button button2" href="#popup">Register</a>&emsp;&emsp;
-  <div class="popup" id="popup">
-    <div class="popup-inner">
-      <div class="popuptext">      
-        <p><label for="email"><b>Email:</b></label>
-      <input type="text" id="email" name="enrollEmail"></p>
-       <p><label for="password"><b>Password:</b></label>
-       
-      <input type="text" id="password" name="enrollPassword"><br><br></p>
-      <a class="button button2" href="http://localhost:8086/Web-Project-Good-Boy/UserControllerServlet"> Submit </a>
-      
-      
-      </div>
-      <a class="closepopup" href="#">X</a>
-    </div>
-  </div>
-</div>   
-  <div style="clear:both;"></div>
-  <p>
-  <br>
-  <br>
-<br>
-<br>
-<br>
+<head>
+<title>Project Planner Application - Login</title>
+<link rel="stylesheet" href="./CSS/stylesheet.css"/>
+<link rel="stylesheet" href="./CSS/style.css"/>
+<link rel="stylesheet" href="./CSS/REALprojectCSS.css"/>
+<script src="login.js"></script>
+</head>
 
-  </body>
+<body>
+
+
+<img src="logo.png" id="logo" class="middle"  />
+
+<div class="container">
+<div class="main">
+
+
+<h2>Project Planner Application - Login</h2>
+
+<form id="form_id" method="post" name="myform">
+
+<p style=color:#000048; p style=font-family:"arial";>
+
+<label>User Name :</label>
+<input type="text" name="username" id="username"/>
+
+<label>Password :</label>
+<input type="password" name="password" id="password"/>
+<br/>
+<input type="button" value="Login" id="submit" onclick="validate()"/>
+<span><b class="note">Note : </b>For this project use following username and password. 
+<br/><b class="valid">User Name : User<br/>Password : Password</b></span>
+</form>
+<br/>
+New User?
+<a href="http://localhost:8086/Web-Project-Good-Boy/newLogin.jsp" >Register Here</a>
+</div>
+</div>
+</body>
 </html>

@@ -1,12 +1,13 @@
 @charset "UTF-8";
 @import url(http://fonts.googleapis.com/css?family=Raleway);
 h2{
-background-color: #FEFFED;
+background-color: #FFFFFF;
 padding: 30px 35px;
 margin: -10px -50px;
 text-align:center;
 border-radius: 10px 10px 0 0;
 }
+
 hr{
 margin: 10px -50px;
 border: 0;
@@ -16,29 +17,34 @@ margin-bottom: 40px;
 div.container{
 width: 900px;
 height: 610px;
-margin:35px auto;
+margin: 0px;
+top: 30%;
+left: 50%;
+transform: translate(-50%, -50%);;
+max-width: 400px;
 font-family: 'Raleway', sans-serif;
 }
 div.main{
-width: 300px;
+width: 400px;
 padding: 10px 50px 25px;
 border: 2px solid gray;
 border-radius: 10px;
 font-family: raleway;
-float:left;
-margin-top:50px;
+
+margin-top:175px;
 }
 input[type=text],input[type=password]{
-width: 100%;
+width: 300px;
 height: 40px;
 padding: 5px;
 margin-bottom: 25px;
 margin-top: 5px;
-border: 2px solid #ccc;
+border: 2px solid #000048;
 color: #4f4f4f;
 font-size: 16px;
 border-radius: 5px;
 }
+
 label{
 color: #464646;
 text-shadow: 0 1px 0 #fff;
@@ -47,6 +53,7 @@ font-weight: bold;
 }
 center{
 font-size:32px;
+
 }
 .note{
 color:red;
@@ -63,17 +70,42 @@ border-radius: 2px;
 color: black;
 }
 input[type=button]{
-font-size: 16px;
-background: linear-gradient(#ffbc00 5%, #ffdd7f 100%);
-border: 1px solid #e5a900;
-color: #4E4D4B;
+font-size: 25px;
+background-color: white;
+border: 1px solid #000048;
+color: black;
 font-weight: bold;
 cursor: pointer;
-width: 100%;
+width: 300px;
 border-radius: 5px;
 padding: 10px 0;
 outline:none;
 }
 input[type=button]:hover{
-background: linear-gradient(#ffdd7f 5%, #ffbc00 100%);
+background-color: #000048;
+color:white
 }
+
+.middle {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+[type=thebutton]{
+font-size: 25px;
+background-color: white;
+border: 1px solid #000048;
+color: black;
+font-weight: bold;
+cursor: pointer;
+width: 300px;
+border-radius: 5px;
+padding: 10px 0;
+outline:none;
+}
+[type=thebutton]hover{
+background-color: #000048;
+color:white
+
