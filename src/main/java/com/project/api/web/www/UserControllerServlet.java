@@ -344,7 +344,7 @@ private void listServiceLine(HttpServletRequest request, HttpServletResponse res
     	List<ServiceLine> serviceLines = serviceLineDbUtil.getServiceLines();
     	
     
-    	request.setAttribute("SERVICELINE_LIST", serviceline);
+    	request.setAttribute("SERVICELINE_LIST", serviceLines);
     	
     
 

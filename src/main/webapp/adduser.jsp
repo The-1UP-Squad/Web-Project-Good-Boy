@@ -5,6 +5,8 @@
 <html>
   <head>
     <link rel="stylesheet" href="./CSS/stylesheet.css">
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./CSS/highcontrast.css">
     <script src="homepage.js"></script>
     <title>Project Planner Application - Add User</title>
   </head>
@@ -13,6 +15,10 @@
 
    <div class="Logout">
    <a class="button button2" href="http://localhost:8086/Web-Project-Good-Boy/login.jsp"> Log Out </a>
+   </div>
+   
+        <div class="highcontrast">
+   <a class="button button2" href='javascript:void(0);' onclick='retheme()' title='Change Theme'>High Contrast</a>
    </div>
 
 <nav>
@@ -129,5 +135,8 @@
 
 </div>
 
+<script src="js/bootstrap.min.js"></script>
+<script src="jquery-3.6.0.min.js"></script>
+<script src="nightmode.js"></script>
   
 </html>

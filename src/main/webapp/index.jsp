@@ -7,6 +7,7 @@
    
       <link rel="stylesheet" href="./CSS/stylesheet.css">
       <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+      <link rel="stylesheet" href="./CSS/highcontrast.css">
       <script src="homepage.js"></script>
       <title>Project Planner Application</title>
       
@@ -18,18 +19,16 @@
 <h1><img src="logo.png" id="logo"><p style="color:#000048; p style=font-family:"arial";> Project Planner  </h1>
 
 <body>
+<br>	
 <h2>Welcome!</h2>
 
    <div class="Logout">
    <a class="button button2" href="http://localhost:8086/Web-Project-Good-Boy/login.jsp"> Log Out </a>
    </div>
    
- <div class="myContainer">
-   <div class="form-check form-switch">
-    <input class="form-check-input" type="checkbox" id="nightModeSwitch">
-    <label class="form-check-label" for="nightModeSwitch">Night Mode</label	>
-	</div>
-</div>
+     <div class="highcontrast">
+   <a class="button button2" href='javascript:void(0);' onclick='retheme()' title='Change Theme'>High Contrast</a>
+   </div>
 
 <nav>
     <div class="navbar">
@@ -54,7 +53,7 @@
          Date dNow = new Date( );
          SimpleDateFormat ft = 
          new SimpleDateFormat ("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
-         out.print( "<h2 align=\"right\">" + ft.format(dNow) + "</h2>");
+         out.print( "<h6 align=\"right\">" + ft.format(dNow) + "</h6>");
       %></div>
       
 <input type="text" id="myInput" onkeyup="myFunction(`myInput`, `myTable`, `tr`)" placeholder="Search for projects..">
@@ -123,7 +122,7 @@
 </body>
 
 <script src="js/bootstrap.min.js"></script>
-<script src="jquery-3.5.1.min.js"></script>
+<script src="jquery-3.6.0.min.js"></script>
 <script src="nightmode.js"></script>
 
 </html>

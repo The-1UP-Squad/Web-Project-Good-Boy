@@ -13,6 +13,7 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  width: 100%;
   overflow: hidden;
   background-color: #000048;
 }
@@ -29,7 +30,6 @@ li a {
   text-decoration: none;
 }
 
-/* Change the link color to #111 (black) on hover */
 li a hover {
   background-color: #111;
 }
@@ -360,12 +360,24 @@ div.logo{
 
 div.logout{
 	position: relative;
-	top: -5%;
+	top: 1.5%;
 	left: 90%;
 	max-width: 200px;
 }
 
+div.highcontrast{
+	position: relative;
+	top: -5%;
+	left: 78%;
+	max-width: 200px;
+}
 
+div.highcontrast2{
+	position: relative;
+	top: 20%;
+	left: 78%;
+	max-width: 200px;
+}
  
 .button {
   text-decoration: none;
@@ -478,21 +490,4 @@ div.loginpopup {
   text-align: center;
   cursor: pointer;
   text-decoration: none;
-}
-
-.myContainer {
-	position: relative;
-	top: 0%;
-	left: 90%;
-	max-width: 200px;
-}
-
-
-.form-check {
-    transform: scale(1);
-}
-
-.bg-dark,
-.text-light {
-    transition: 0.5s;
 }
