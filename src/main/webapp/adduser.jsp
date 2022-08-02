@@ -11,7 +11,9 @@
     <title>Project Planner Application - Add User</title>
   </head>
 
-<h1><img src="logo.png" id="logo"><p style="color:#000048; p style=font-family:"arial";> New User Form  </h1>
+<div class="mainlogo">
+<h1><img src="logo.png" id="logo"><p style=font-family:"arial";> New User Form  </h1>
+</div>
 
    <div class="Logout">
    <a class="button button2" href="http://localhost:8086/Web-Project-Good-Boy/login.jsp"> Log Out </a>

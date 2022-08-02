@@ -15,8 +15,9 @@
      
     </head>
     
-
-<h1><img src="logo.png" id="logo"><p style="color:#000048; p style=font-family:"arial";> Project Planner  </h1>
+<div class="mainlogo">
+<h1><img src="logo.png" id="logo"><p style=font-family:"arial";> Project Planner  </h1>
+</div>
 
 <body>
 <br>	

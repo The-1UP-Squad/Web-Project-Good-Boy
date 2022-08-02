@@ -69,6 +69,11 @@ li a hover {
   float: left;    
  margin: 0 15px 0 0;
 }
+ 
+ div.mainlogo{
+	color:#000048
+	}
+
 #footer {
 	
 	left: 0;

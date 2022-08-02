@@ -11,7 +11,11 @@
     <script src="homepage.js"></script>
     <title>Project Planner Application - Add Project</title>
   </head>
-  <h1><img src="logo.png" id="logo"><p style="color:#000048; p style=font-family:"arial";> New Project Form  </h1>
+  
+  <div class="mainlogo">
+  <h1><img src="logo.png" id="logo"><p style=font-family:"arial";> New Project Form</h1>
+  </div>
+  
 <nav>
 
    <div class="Logout">
