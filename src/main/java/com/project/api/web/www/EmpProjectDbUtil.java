@@ -143,4 +143,33 @@ public class EmpProjectDbUtil {
 			close(myConn, myStmt, myRs);
 			}
 	}
-	}
+	public void deleteEmployeeProject(String theEmployeeProjectID) throws Exception {
+		
+		Connection myConn = null;
+		PreparedStatement myStmt = null;
+	
+		try {
+			//convert employee id to int
+			int id = Integer.parseInt(theEmployeeProjectID);
+			
+			//get connection to database
+			myConn = dataSource.getConnection();
+			
+			//create sql to delete student
+			String sql = "delete from addprojects where ProjectID=?";
+			
+			//prep statement
+			myStmt = myConn.prepareStatement(sql);
+			
+			//set params
+			myStmt.setInt(1, id);
+			
+			//execute sql statement
+			myStmt.execute();
+			
+		}
+		finally {
+			//clean up JDBC code
+			close(myConn, myStmt, null);
+		}
+	}}
