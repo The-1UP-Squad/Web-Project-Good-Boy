@@ -33,21 +33,9 @@
       <label for="enddate"><b>End Date:&emsp;&ensp;&ensp;</b></label>
       <input type="date" id="enddate" name="enddate"><br><br><br><br>
       
-      <button class="button button2">Submit</button>&emsp;&emsp;<button onclick="document.location= 'http://localhost:8086/Web-Project-Good-Boy/'" class="button button2">Back</button>
+      <button class="button button2">Submit</button>&emsp;&emsp;<button onclick="document.location= 'http://localhost:8086/Web-Project-Good-Boy/UserControllerServlet'" class="button button2">Back</button>
       
-          <div class="container3">
-  <a class="button button2" href="#popup">Add Project</a>&emsp;&emsp;
-  <div class="popup" id="popup">
-    <div class="popup-inner">
-      <div class="popuptext">      
-        <p><label for="pnameother"><b>Add Project:</b></label>
-      <input type="text" id="pnameother" name="pName"><br><br></p>
-      <button class="button button2">Submit</button>
-      </div>
-      <a class="closepopup" href="#">X</a>
-    </div>
-  </div>
-</div>
+        
      
 
   <div style="clear:both;"></div>
