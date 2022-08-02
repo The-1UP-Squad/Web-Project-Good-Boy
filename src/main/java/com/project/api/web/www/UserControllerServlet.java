@@ -89,6 +89,10 @@ public class UserControllerServlet extends HttpServlet {
 				case "ADDEMPLOYEEPROJECT":
 					addEmployeeProject(request, response);
 					break;
+					
+				case "DELETEEMPLOYEEPROJECT":
+					deleteEmployeeProject(request, response);
+					break;
 
 				case "LISTSERVICELINES":
 					listServiceLine(request, response);
@@ -129,6 +133,18 @@ public class UserControllerServlet extends HttpServlet {
 	
 	
 	
+	private void deleteEmployeeProject(HttpServletRequest request, HttpServletResponse response) throws Exception  {
+		//read student id form from id
+        String theEmployeeProjectID = request.getParameter("ProjectID");	
+        	
+        //delete student from data base
+        EmpProjectDbUtil.deleteEmployeeProject(theEmployeeProjectID);
+        
+        listEmployeeProjects(request, response);
+    }
+		
+
+
 	private void updateEmployee(HttpServletRequest request, HttpServletResponse response) throws Exception 
 	{ 
 		int id = Integer.parseInt(request.getParameter("employeeId"));
@@ -344,7 +360,7 @@ private void listServiceLine(HttpServletRequest request, HttpServletResponse res
     	List<ServiceLine> serviceLines = serviceLineDbUtil.getServiceLines();
     	
     
-    	request.setAttribute("SERVICELINE_LIST", serviceline);
+    	request.setAttribute("SERVICELINE_LIST", serviceLines);
     	
     
 

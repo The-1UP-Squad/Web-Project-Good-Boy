@@ -94,14 +94,14 @@
     
     
 	<c:url var="deleteLink" value="UserControllerServlet">
-		<c:param name="command" value="DELETEEMPLOYEES" />
-		<c:param name="EmpId" value="${tempEmployee.id}" />
+		<c:param name="command" value="DELETEEMPLOYEEPROJECT" />
+		<c:param name="ProjectID" value="${tempEmpProject.pId}" />
 	</c:url>
     
     	<td> <a href="${templink}">Edit</a>	</td>
 		
 		<td><a href="${deleteLink}"
-		onclick="if (!(confirm('Are you sure you want to delete this Employee?'))) return false">
+		onclick="if (!(confirm('Are you sure you want to delete this Project?'))) return false">
 		Delete</a>	</td>
 		     
 		   
