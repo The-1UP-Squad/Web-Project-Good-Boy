@@ -98,7 +98,9 @@
 		<c:param name="EmpId" value="${tempEmployee.id}" />
 	</c:url>
     
-    	<td> <a href="${templink}">Edit</a>	</td>
+    	<td> <a href="modify.jsp" 
+    	onclick="if (!(confirm('Are you sure you want to edit this Project?'))) return false">
+    	Edit</a>	</td>
 		
 		<td><a href="${deleteLink}"
 		onclick="if (!(confirm('Are you sure you want to delete this Employee?'))) return false">

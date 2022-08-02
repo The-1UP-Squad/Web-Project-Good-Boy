@@ -343,7 +343,7 @@ private void listServiceLine(HttpServletRequest request, HttpServletResponse res
 
     	List<ServiceLine> serviceLines = serviceLineDbUtil.getServiceLines();
     	
-    
+
     	request.setAttribute("SERVICELINE_LIST", serviceLines);
     	
     
