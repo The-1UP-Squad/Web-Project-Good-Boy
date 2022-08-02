@@ -66,8 +66,8 @@ li a hover {
 }
 
 #logo {
-  float: left;    
- margin: 0 15px 0 0;
+
+     
 }
  
  div.mainlogo{
@@ -194,7 +194,7 @@ select {
 }
 
 #pass{
-  width: 280px;
+  width: 300px;
   padding: 10px 20px;
   margin: 2px 0;
   box-sizing: border-box;
@@ -203,7 +203,7 @@ select {
 }
 
 #password{
-  width: 280px;
+  width: 300px;
   padding: 10px 20px;
   margin: 2px 0;
   box-sizing: border-box;
