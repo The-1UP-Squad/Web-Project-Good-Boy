@@ -289,9 +289,9 @@ public class UserControllerServlet extends HttpServlet {
         // add users to the request
         	request.setAttribute("EMPLOYEE_LIST", employees);
         	
-        	List<ServiceLine> serviceline = serviceLineDbUtil.getServiceLines();
+        	List<ServiceLine> serviceLines = serviceLineDbUtil.getServiceLines();
         	 
-        	request.setAttribute("SERVICELINE_LIST", serviceline);
+        	request.setAttribute("SERVICELINE_LIST", serviceLines);
 
          	List<EmployeeProject> theEmployeeProject = EmpProjectDbUtil.getEmployeeProjects();
     		
@@ -344,7 +344,7 @@ private void listServiceLine(HttpServletRequest request, HttpServletResponse res
     	List<ServiceLine> serviceLines = serviceLineDbUtil.getServiceLines();
     	
     
-    	request.setAttribute("SERVICELINE_LIST", serviceline);
+    	request.setAttribute("SERVICELINE_LIST", serviceLines);
     	
     
 
