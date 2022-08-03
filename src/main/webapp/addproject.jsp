@@ -13,7 +13,7 @@
   </head>
   
   <div class="mainlogo">
-  <h1><img src="logo.png" id="logo"><p style=font-family:"arial";> New Project Form</h1>
+  <h1><p style=font-family:"arial";> New Project Form</h1>
   </div>
   
 <nav>
@@ -93,7 +93,9 @@
 </form> 
   
   <div>
-  <h2>Current Projects at Cognizant</h2>
+
+  <h2>Current Projects at Cogz</h2>
+
   <input type="text" id="myInput" onkeyup="myFunction(`myInput`, `myTableProject`, `tr`)" placeholder="Search for projects..">
   
   <div style="overflow: auto; max-height: 350px; width: 900px;">
@@ -142,7 +144,7 @@
 <br>
 <br>
 <div id="footer" >
-<a href="index.jsp" style="color: white">Request One IT Support</a>
+<a href="index.jsp" style="color: white">Request IT Support</a>
 
 </div>
 

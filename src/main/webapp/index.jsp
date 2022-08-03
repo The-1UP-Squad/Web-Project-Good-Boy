@@ -16,7 +16,7 @@
     </head>
     
 <div class="mainlogo">
-<h1><img src="logo.png" id="logo"><p style=font-family:"arial";> Project Planner  </h1>
+<h1><p style=font-family:"arial";> Project Planner  </h1>
 </div>
 
 <body>
@@ -24,7 +24,7 @@
 <h2>Welcome!</h2>
 
    <div class="Logout">
-   <a class="button button2" href="http://localhost:8086/Web-Project-Good-Boy/login.jsp"> Log Out </a>
+   <a class="button button2" href="login.jsp"> Log Out </a>
    </div>
    
      <div class="highcontrast">
@@ -123,7 +123,7 @@
 <br>
 <br>
 <div id="footer" >
-<a href="index.jsp" style="color: white">Request One IT Support</a>
+<a href="index.jsp" style="color: white">Request IT Support</a>
 
 </div>
 
