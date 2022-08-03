@@ -108,7 +108,7 @@ public void addEmployee(Employee theEmployee) throws Exception {
 			//get connection to database
 			myConn = dataSource.getConnection();
 			
-			//create sql to delete student
+			//create sql to delete employee
 			String sql = "delete from employees where EmpID=?";
 			
 			//prep statement

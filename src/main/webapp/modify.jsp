@@ -1,10 +1,17 @@
 <html>
   <head>
     <link rel="stylesheet" href="./CSS/stylesheet.css">
+    <link rel="stylesheet" href="./CSS/highcontrast.css">
     <title>Project Planner Application - Modify</title>
   </head>
 
-<h1><img src="logo.png" id="logo"><p style="color:#000048; p style=font-family:"arial";> Modify  </h1>
+<div class="mainlogo">
+<h1><p style="color:#000048; p style=font-family:"arial";> Modify  </h1>
+</div>
+
+        <div class="highcontrast">
+   <a class="button button2" href='javascript:void(0);' onclick='retheme()' title='Change Theme'>High Contrast</a>
+   </div>
 
   <nav>
       <div class="menu">
@@ -33,7 +40,7 @@
       <label for="enddate"><b>End Date:&emsp;&ensp;&ensp;</b></label>
       <input type="date" id="enddate" name="enddate"><br><br><br><br>
       
-      <button class="button button2">Submit</button>&emsp;&emsp;<button onclick="document.location= 'http://localhost:8086/Web-Project-Good-Boy/UserControllerServlet'" class="button button2">Back</button>
+      <button class="button button2">Submit</button>&emsp;&emsp;<button onclick="document.location= 'UserControllerServlet'" class="button button2">Back</button>
       
         
      
@@ -46,10 +53,11 @@
 <br>
 <br>
 <div id="footer" >
-<a href="index.jsp" style="color: white">Request One IT Support</a>
+<a href="index.jsp" style="color: white">Request IT Support</a>
 
 
 </div>
 
+<script src="nightmode.js"></script>
   
 </html>
