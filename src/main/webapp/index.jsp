@@ -97,8 +97,13 @@
 		<c:param name="command" value="DELETEEMPLOYEEPROJECT" />
 		<c:param name="ProjectID" value="${tempEmpProject.pId}" />
 	</c:url>
+	
+	<c:url var="modifyLink" value="UserControllerServlet">
+		<c:param name="command" value="LISTEMPLOYEEPROJECTS"/>
+		<c:param name="modifywhereto" value="1"/>
+	</c:url>
     
-    	<td> <a href="modify.jsp" 
+    	<td> <a href="${modifyLink}" 
     	onclick="if (!(confirm('Are you sure you want to edit this Project?'))) return false">
     	Edit</a>	</td>
 		

@@ -1,3 +1,6 @@
+<%@ page import = "java.io.*,java.util.*" %>
+<%@ page import = "javax.servlet.*,java.text.*" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
   <head>
     <link rel="stylesheet" href="./CSS/stylesheet.css">
@@ -16,18 +19,25 @@
       </div>
   </nav>
   <br>
-      <label for="serviceline"><b>Project name:</b></label>
+  <form action="UserControllerServlet" method="GET">
+  	<input type="hidden" name="command" value="LISTEMPLOYEEPROJECTS">
+  	
+     
+	  <label for="serviceline"><b>Project name:</b></label>
       <select id="project" name="project">
-      <option value="7 West">7 West</option>
-      <option value="SRG">Super Retail Group</option>
-      <option value="Telstra">Telstra</option>
+	  <c:forEach var="employeeProjects" items="${EMPLOYEEPROJECT_LIST}">
+	  <option>${employeeProjects.pName}</option>
+	  </c:forEach>
       </select> <br><br>
+      
+      
       <label for="employee"><b>Employee:&emsp;&ensp;</b></label>
       <select id="employee" name="employee">
-      <option value="Matthew">Matthew</option>
-      <option value="Emma">Emma</option>
-      <option value="Siobhan">Siobhan</option>
+      <c:forEach var="employeeProjects" items="${EMPLOYEEPROJECT_LIST}">
+      <option>${employeeProjects.fName}</option>
+      </c:forEach>
       </select> <br><br>
+      
       <label for="startdate"><b>Start Date:&emsp;&ensp;</b></label>
       <input type="date" id="startdate" name="startdate"><br><br>
       <label for="enddate"><b>End Date:&emsp;&ensp;&ensp;</b></label>
@@ -35,7 +45,7 @@
       
       <button class="button button2">Submit</button>&emsp;&emsp;<button onclick="document.location= 'http://localhost:8086/Web-Project-Good-Boy/UserControllerServlet'" class="button button2">Back</button>
       
-        
+ 	</form>       
      
 
   <div style="clear:both;"></div>

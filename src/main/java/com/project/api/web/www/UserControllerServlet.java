@@ -178,8 +178,7 @@ public class UserControllerServlet extends HttpServlet {
             
             request.setAttribute("THE_EMPLOYEE", theEmployee);
             
-            RequestDispatcher dispatcher = 
-            		request.getRequestDispatcher("/modifyuser.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/adduser.jsp");
             dispatcher.forward(request, response);
         	
 		 
@@ -217,15 +216,25 @@ public class UserControllerServlet extends HttpServlet {
 
 
 		private void listEmployeeProjects(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
+		
+		int modifywhereto = 0;
+		
+		if (request.getParameter("modifywhereto") != null) {
+			modifywhereto = Integer.parseInt(request.getParameter("modifywhereto"));
+		}
+		
 		List<EmployeeProject> theEmployeeProject = EmpProjectDbUtil.getEmployeeProjects();
 		
 		request.setAttribute("EMPLOYEEPROJECT_LIST", theEmployeeProject);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
-    	dispatcher.forward(request, response);
-    	
-    	
+		if (modifywhereto == 1) {
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/modify.jsp");
+			dispatcher.forward(request, response);
+		}
+		else {
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+			dispatcher.forward(request, response);
+		}
 		
 	}
 
