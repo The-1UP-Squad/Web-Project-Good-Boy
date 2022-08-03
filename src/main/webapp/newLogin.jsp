@@ -8,7 +8,7 @@
 <title>Project Planner Application - Add Login</title>
 </head>
 
-<h1><img src="logo.png" id="logo">
+<h1>
 <p style="color:#000048; p style=font-family:"arial";> Register New Login  </h1>
 
 <br>
