@@ -26,14 +26,16 @@ public class SaltingDbUtil {
 		try {
 			myConn = dataSource.getConnection();
 			
-			String sql = "select * from userinfo order by username";
+			String sql = "select * from users order by username";
 			myStmt = myConn.createStatement();
 			
 			myRs = myStmt.executeQuery(sql);
 			while (myRs.next()) {
+				int userid = myRs.getInt("userID");
 				String uName = myRs.getString("username");
+				String passWord = myRs.getString("password");
 				
-				Salting tempSalting = new Salting(uName);
+				Salting tempSalting = new Salting(uName, passWord);
 				salting.add(tempSalting);
 				}
 				return salting;
@@ -42,7 +44,84 @@ public class SaltingDbUtil {
 			}
 		}
 		
-		private void close()
+		private void close(Connection myConn, Statement myStmt, ResultSet myRs) {
+			try {
+				if (myRs != null) {
+					myRs.close();
+				}
+				if (myStmt != null) {
+					myStmt.close();
+				}
+				if (myConn != null) {
+					myConn.close();
+				}
+			}
+			catch (Exception exc) {
+				exc.printStackTrace();
+			}
+	     }
+		
+		public void addSalting(Salting theSalting) throws Exception {
 			
-	}
+			Connection myConn = null;
+			PreparedStatement myStmt = null;
+			
+			try {
+				myConn = dataSource.getConnection();
+				
+				String sql = "INSERT INTO users"
+						+ "(username, password)"
+						+ "values (?,?)";
+				
+				myStmt = myConn.prepareStatement(sql);
+				
+				myStmt.setString(1, theSalting.getuName());
+				myStmt.setString(2, theSalting.getPassWord());
+				
+				myStmt.execute();
+				
+			}
+			finally {
+				
+				close(myConn, myStmt, null);
+			}
+		}
+		
+		public Salting getSalting(String theSaltingID) throws Exception {
+			
+			Salting theSalting = null;
+			PreparedStatement myStmt = null;
+			Connection myConn = null;
+			ResultSet myRs = null;
+			int SaltingID;
+			
+			try {
+				SaltingID = Integer.parseInt(theSaltingID);
+				
+				myConn = dataSource.getConnection();
+				
+				String sql = "SELECT * FROM users WHERE userID =?";
+				
+				myStmt = myConn.prepareStatement(sql);
+				
+				myStmt.setInt(1, SaltingID);
+				
+				myRs = myStmt.executeQuery();
+				
+				if (myRs.next()) {
+					String uName = myRs.getString("username");
+					String passWord = myRs.getString("password");
+					
+					theSalting = new Salting(SaltingID, uName, passWord);
+				}
+				else {
+					throw new Exception ("Password Id not found:" + SaltingID);
+				}
+				
+				return theSalting;
+			}
+			finally {
+				close(myConn, myStmt, myRs);
+			}
+		}
 }
