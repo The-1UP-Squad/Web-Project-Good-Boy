@@ -26,13 +26,16 @@
 <label for="email"><b>Email:</b>&emsp;&emsp;&emsp;&nbsp;</label>
 <input type="text" id="email" name="email"/><br><br>
 
+<label for="password"><b>Password:</b>&emsp;&emsp;&emsp;&nbsp;</label>
+<input type="text" id="email" name="password"/><br><br>
 <br>
 <br>
 <br>
 <br>
 
 <button class="button button2">Submit</button>
-
+<br/>
+<br/>
 </form>
 </div>
 </html>
