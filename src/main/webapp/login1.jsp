@@ -19,7 +19,7 @@
 </div>
       
       <div class="loginbutton">
-      <a class="button button2" href="http://localhost:8086/Web-Project-Good-Boy/UserControllerServlet"> Login </a>
+      <a class="button button2" href="UserControllerServlet"> Login </a>
       </div>
       
 <div class="register">
@@ -32,7 +32,7 @@
        <p><label for="password"><b>Password:</b></label>
        
       <input type="text" id="password" name="enrollPassword"><br><br></p>
-      <a class="button button2" href="http://localhost:8086/Web-Project-Good-Boy/UserControllerServlet"> Submit </a>
+      <a class="button button2" href="UserControllerServlet"> Submit </a>
       
       
       </div>
