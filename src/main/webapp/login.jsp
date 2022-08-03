@@ -11,8 +11,6 @@
 <body>
 
 
-<img src="logo.png" id="logo" class="middle"  />
-
 <div class="container">
 <div class="main">
 

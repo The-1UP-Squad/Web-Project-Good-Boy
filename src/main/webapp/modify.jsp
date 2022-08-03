@@ -1,10 +1,17 @@
 <html>
   <head>
     <link rel="stylesheet" href="./CSS/stylesheet.css">
+    <link rel="stylesheet" href="./CSS/highcontrast.css">
     <title>Project Planner Application - Modify</title>
   </head>
 
-<h1><img src="logo.png" id="logo"><p style="color:#000048; p style=font-family:"arial";> Modify  </h1>
+<div class="mainlogo">
+<h1><p style="color:#000048; p style=font-family:"arial";> Modify  </h1>
+</div>
+
+        <div class="highcontrast">
+   <a class="button button2" href='javascript:void(0);' onclick='retheme()' title='Change Theme'>High Contrast</a>
+   </div>
 
   <nav>
       <div class="menu">
@@ -51,5 +58,6 @@
 
 </div>
 
+<script src="nightmode.js"></script>
   
 </html>

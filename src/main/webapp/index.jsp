@@ -16,7 +16,7 @@
     </head>
     
 <div class="mainlogo">
-<h1><img src="logo.png" id="logo"><p style=font-family:"arial";> Project Planner  </h1>
+<h1><p style=font-family:"arial";> Project Planner  </h1>
 </div>
 
 <body>
