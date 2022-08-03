@@ -9,7 +9,7 @@ var username = document.getElementById("username").value;
 var password = document.getElementById("password").value;
 if ( username == "User" && password == "Password"){
 alert ("Login successfully");
-window.location = "http://localhost:8086/Web-Project-Good-Boy/UserControllerServlet"; // Redirecting to other page.
+window.location = "UserControllerServlet"; // Redirecting to other page.
 return false;
 }
 else{

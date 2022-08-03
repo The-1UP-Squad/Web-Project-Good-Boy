@@ -35,7 +35,7 @@
 </form>
 <br/>
 New User?
-<a href="http://localhost:8086/Web-Project-Good-Boy/newLogin.jsp" >Register Here</a>
+<a href="newLogin.jsp" >Register Here</a>
 </div>
 </div>
 </body>

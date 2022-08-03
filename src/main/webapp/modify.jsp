@@ -9,7 +9,7 @@
   <nav>
       <div class="menu">
         <ul>
-          <li><a href="http://localhost:8086/Web-Project-Good-Boy/UserControllerServlet"></a></li>
+          <li><a href="UserControllerServlet"></a></li>
           <li><a href="adduser.jsp"></a></li>
           <li><a href="addproject.jsp"></a></li>
         </ul>
@@ -33,7 +33,7 @@
       <label for="enddate"><b>End Date:&emsp;&ensp;&ensp;</b></label>
       <input type="date" id="enddate" name="enddate"><br><br><br><br>
       
-      <button class="button button2">Submit</button>&emsp;&emsp;<button onclick="document.location= 'http://localhost:8086/Web-Project-Good-Boy/UserControllerServlet'" class="button button2">Back</button>
+      <button class="button button2">Submit</button>&emsp;&emsp;<button onclick="document.location= 'UserControllerServlet'" class="button button2">Back</button>
       
         
      
@@ -46,7 +46,7 @@
 <br>
 <br>
 <div id="footer" >
-<a href="index.jsp" style="color: white">Request One IT Support</a>
+<a href="index.jsp" style="color: white">Request IT Support</a>
 
 
 </div>
