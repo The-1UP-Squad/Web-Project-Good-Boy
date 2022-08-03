@@ -34,7 +34,7 @@
                 <c:param name="whereTo" value="2" />
 		</c:url>
       <ul>
-        <li><a href="http://localhost:8086/Web-Project-Good-Boy/UserControllerServlet">Home</a></li>
+        <li><a href="UserControllerServlet">Home</a></li>
         <li><a href="${addUserLink}">Users</a></li>
         <li><a href="${addProjectLink}">Projects</a></li> 
       </ul>
