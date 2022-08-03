@@ -19,7 +19,7 @@
 <nav>
 
    <div class="Logout">
-   <a class="button button2" href="http://localhost:8086/Web-Project-Good-Boy/login.jsp"> Log Out </a>
+   <a class="button button2" href="login.jsp"> Log Out </a>
    </div>
    
         <div class="highcontrast2">
@@ -36,7 +36,7 @@
                 <c:param name="whereTo" value="2" />
 		</c:url>
       <ul>
-        <li><a href="http://localhost:8086/Web-Project-Good-Boy/UserControllerServlet">Home</a></li>
+        <li><a href="UserControllerServlet">Home</a></li>
         <li><a href="${addUserLink}">Users</a></li>
         <li><a href="${addProjectLink}">Projects</a></li>   
       </ul>
@@ -93,7 +93,9 @@
 </form> 
   
   <div>
+
   <h2>Current Projects at Cogz</h2>
+
   <input type="text" id="myInput" onkeyup="myFunction(`myInput`, `myTableProject`, `tr`)" placeholder="Search for projects..">
   
   <div style="overflow: auto; max-height: 350px; width: 900px;">
@@ -142,7 +144,7 @@
 <br>
 <br>
 <div id="footer" >
-<a href="index.jsp" style="color: white">Request One IT Support</a>
+<a href="index.jsp" style="color: white">Request IT Support</a>
 
 </div>
 
