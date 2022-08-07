@@ -13,6 +13,7 @@
   </head>
   
   <div class="mainlogo">
+  <img class="middle" src="logo.png">
   <h1><p style=font-family:"arial";> New Project Form</h1>
   </div>
   
@@ -94,7 +95,7 @@
   
   <div>
 
-  <h2>Current Projects at Cogz</h2>
+  <h2>Current Projects</h2>
 
   <input type="text" id="myInput" onkeyup="myFunction(`myInput`, `myTableProject`, `tr`)" placeholder="Search for projects..">
   

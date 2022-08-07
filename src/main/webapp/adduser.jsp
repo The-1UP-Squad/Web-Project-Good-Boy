@@ -12,6 +12,7 @@
   </head>
 
 <div class="mainlogo">
+<img class="middle" src="logo.png">
 <h1><p style=font-family:"arial";> New User Form  </h1>
 </div>
 
@@ -86,7 +87,7 @@
      
       <div>
 
-      <h2> Current Employees at Cogz</h2>
+      <h2> Current Employees</h2>
       
      <input type="text" id="myInput" onkeyup="myFunction(`myInput`, `myTableUser`, `tr`)" placeholder="Search for Employees..">
       

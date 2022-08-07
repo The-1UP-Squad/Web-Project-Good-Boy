@@ -10,6 +10,7 @@
 
 <body>
 
+<img class="middle" src="logo.png">
 
 <div class="container">
 <div class="main">

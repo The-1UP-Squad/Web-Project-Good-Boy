@@ -9,6 +9,7 @@
   </head>
 
 <div class="mainlogo">
+<img class="middle" src="logo.png">
 <h1><p style="color:#000048; p style=font-family:"arial";> Modify  </h1>
 </div>
 
