@@ -1,6 +1,7 @@
 package com.project.api.web.www;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -25,6 +26,7 @@ public class UserControllerServlet extends HttpServlet {
 	private ProjectDbUtil projectDbUtil;
 	private EmpProjectDbUtil EmpProjectDbUtil;
 	private ServiceLineDbUtil serviceLineDbUtil;
+	private SaltingDbUtil saltingDbUtil;
 	
 	@Resource(name="jdbc/webapi")
 	private DataSource dataSource;
@@ -40,7 +42,7 @@ public class UserControllerServlet extends HttpServlet {
 			projectDbUtil = new ProjectDbUtil(dataSource);
 			EmpProjectDbUtil = new EmpProjectDbUtil(dataSource);
 			serviceLineDbUtil = new ServiceLineDbUtil (dataSource);
-			
+			saltingDbUtil = new SaltingDbUtil(dataSource);
 		}
 		catch (Exception exc) {
 			throw new ServletException(exc);
@@ -113,7 +115,15 @@ public class UserControllerServlet extends HttpServlet {
 				case "UPDATE":
 					updateEmployee(request, response);
 					break;
-			
+				
+				case "ADDUSERPASSWORD":
+					addUserPassword(request, response);
+					break;
+				
+				case "CHECKUSERPASSWORD":
+					checkUserPassword(request, response);
+					break;
+					
 				default:
 					listEmployees(request, response);
 					}
@@ -133,6 +143,37 @@ public class UserControllerServlet extends HttpServlet {
 	
 	
 	
+	private void checkUserPassword(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		String uName = request.getParameter("username");
+		String passWord = request.getParameter("password");
+		
+		List<Salting> salting = saltingDbUtil.getSalting();
+   	 
+    	request.setAttribute("SALTING_LIST", salting);
+    	
+    	if (ArrayList.contains("uName")){
+    		
+    	}
+    	
+	}
+
+
+	private void addUserPassword(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		String uName = request.getParameter("uName");
+		String passWord = request.getParameter("passWord");
+		
+		Salting theSalting = new Salting(uName, passWord);
+		
+		saltingDbUtil.addSalting(theSalting);
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
+        dispatcher.forward(request, response);
+		
+	}
+
+
 	private void deleteEmployeeProject(HttpServletRequest request, HttpServletResponse response) throws Exception  {
 		//read student id form from id
         String theEmployeeProjectID = request.getParameter("ProjectID");	
@@ -158,12 +199,7 @@ public class UserControllerServlet extends HttpServlet {
 	    
 	    listEmployees(request, response);
 	    
-	    
-		
-		
-		
-		
-	}
+	    }
 
 
 	private void loadEmployees(HttpServletRequest request, HttpServletResponse response) 
@@ -203,7 +239,6 @@ public class UserControllerServlet extends HttpServlet {
         	
         	String pName = request.getParameter("pName");
         	String fName = request.getParameter("fName");
-        	
         	String startDate = request.getParameter("startDate");
         	String endDate = request.getParameter("endDate");
         	

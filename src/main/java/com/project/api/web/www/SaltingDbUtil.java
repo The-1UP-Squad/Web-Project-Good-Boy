@@ -3,10 +3,12 @@ package com.project.api.web.www;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import javax.sql.DataSource;
+import javax.swing.JOptionPane;
 
 public class SaltingDbUtil {
 	
@@ -26,7 +28,7 @@ public class SaltingDbUtil {
 		try {
 			myConn = dataSource.getConnection();
 			
-			String sql = "select * from users order by username";
+			String sql = "select * from usersinfo order by username";
 			myStmt = myConn.createStatement();
 			
 			myRs = myStmt.executeQuery(sql);
@@ -66,17 +68,30 @@ public class SaltingDbUtil {
 			Connection myConn = null;
 			PreparedStatement myStmt = null;
 			
+			
 			try {
+				
+				int notthekey = 6;
+				String myCode = (theSalting.getPassWord());
+				String name="";
+				char[] myArray = myCode.toCharArray();
+				
+				for(char n : myArray) {
+					n += notthekey;
+					name += n;
+					
+				}
+				
 				myConn = dataSource.getConnection();
 				
-				String sql = "INSERT INTO users"
+				String sql = "INSERT INTO usersinfo"
 						+ "(username, password)"
 						+ "values (?,?)";
 				
 				myStmt = myConn.prepareStatement(sql);
 				
 				myStmt.setString(1, theSalting.getuName());
-				myStmt.setString(2, theSalting.getPassWord());
+				myStmt.setString(2, name);
 				
 				myStmt.execute();
 				
@@ -100,7 +115,7 @@ public class SaltingDbUtil {
 				
 				myConn = dataSource.getConnection();
 				
-				String sql = "SELECT * FROM users WHERE userID =?";
+				String sql = "SELECT * FROM usersinfo WHERE userID =?";
 				
 				myStmt = myConn.prepareStatement(sql);
 				
@@ -123,5 +138,28 @@ public class SaltingDbUtil {
 			finally {
 				close(myConn, myStmt, myRs);
 			}
+		}
+		
+		
+		public static void decrptPass(String[] args) {
+			
+			int notthekey = 6;
+			String myCode = "gx{znkx789";
+			//ArrayList<Character> nope = new ArrayList <Character>(); 
+			System.out.println(myCode);
+			String name="";
+			char[] myArray = myCode.toCharArray();
+			
+			for(char n : myArray) {
+				n -= notthekey;
+				//nope.add(n);
+				name += n;
+				System.out.print(n);
+				
+
+			}
+			System.out.println(" ");
+			//String var =nope.addAll(nope);
+			//System.out.println(name);
 		}
 }
