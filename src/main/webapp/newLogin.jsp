@@ -15,19 +15,13 @@
 
 <div class="formUser">
 <form action="UserControllerServlet" method="GET" autocomplete="ON">
-<input type="hidden" name="command" value="ADDEMPLOYEE"/>
+<input type="hidden" name="command" value="ADDUSERPASSWORD"/>
 
-<label for="fName"><b>First name:</b>&ensp;&nbsp;&nbsp; </label>
-<input type="text" id="fName" name="fName"/><br><br>
+<label for="uName"><b>Username:</b>&ensp;&nbsp;&nbsp; </label>
+<input type="text" id="fName" name="uName"/><br><br>
 
-<label for="lName"><b>Last name:</b>&ensp;&nbsp;&nbsp; </label>
-<input type="text" id="lName" name="lName"/><br><br>
-
-<label for="email"><b>Email:</b>&emsp;&emsp;&emsp;&nbsp;</label>
-<input type="text" id="email" name="email"/><br><br>
-
-<label for="password"><b>Password:</b>&emsp;&emsp;&emsp;&nbsp;</label>
-<input type="text" id="email" name="password"/><br><br>
+<label for="passWord"><b>Password:</b>&emsp;&nbsp;</label>
+<input type="password" id="password" name="passWord"/><br><br>
 <br>
 <br>
 <br>

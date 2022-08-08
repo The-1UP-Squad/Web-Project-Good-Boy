@@ -51,47 +51,5 @@ public class Salting {
 	public String toString() {
 		return "Salting [userid=" + userid + ", uName=" + uName + ", passWord=" + passWord + "]";
 	}
-	public static void encrptPass(String[] args) {
-		
-		int notthekey = 6;
-		String myCode = "Hello my name is Matthew";
-		//ArrayList<Character> nope = new ArrayList <Character>(); 
-		System.out.println(myCode);
-		String name="";
-		char[] myArray = myCode.toCharArray();
-		
-		for(char n : myArray) {
-			n += notthekey;
-			//nope.add(n);
-			name += n;
-			System.out.print(n);
-			
 
-		}
-		System.out.println(" ");
-		//String var =nope.addAll(nope);
-		//System.out.println(name);
-	}
-	
-	public static void decrptPass(String[] args) {
-		
-		int notthekey = 6;
-		String myCode = "Nkrru&s&tgsk&oy&Sgzznk}";
-		//ArrayList<Character> nope = new ArrayList <Character>(); 
-		System.out.println(myCode);
-		String name="";
-		char[] myArray = myCode.toCharArray();
-		
-		for(char n : myArray) {
-			n -= notthekey;
-			//nope.add(n);
-			name += n;
-			System.out.print(n);
-			
-
-		}
-		System.out.println(" ");
-		//String var =nope.addAll(nope);
-		//System.out.println(name);
-	}
 }
