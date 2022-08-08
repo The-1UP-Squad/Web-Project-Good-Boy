@@ -123,7 +123,10 @@ public class UserControllerServlet extends HttpServlet {
 				case "CHECKUSERPASSWORD":
 					checkUserPassword(request, response);
 					break;
-					
+
+				case "UPDATEINDEX":
+					updateProjects(request, response);
+			
 				default:
 					listEmployees(request, response);
 					}
@@ -187,6 +190,28 @@ public class UserControllerServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
         dispatcher.forward(request, response);
 		
+
+	private void updateProjects(HttpServletRequest request, HttpServletResponse response) throws Exception 
+	{ 
+		int pId = Integer.parseInt(request.getParameter("projectID"));
+		String projectName = request.getParameter("project");
+	    String Name = request.getParameter("employee");
+	    String startDate = request.getParameter("startdate");
+	    String endDate = request.getParameter("enddate");
+	    
+	    EmployeeProject theEmployeeProject = new EmployeeProject(pId, projectName, Name, startDate, endDate);
+	    
+	    System.out.println(theEmployeeProject.getpId());
+	    System.out.println(theEmployeeProject.getpName());
+	    System.out.println(theEmployeeProject.getfName());
+	    System.out.println(theEmployeeProject.getStartDate());
+	    System.out.println(theEmployeeProject.getEndDate());
+	    
+	    
+	    EmpProjectDbUtil.updateProjects(theEmployeeProject);
+	    
+	    listEmployees(request, response);
+	    
 	}
 
 
@@ -281,6 +306,8 @@ public class UserControllerServlet extends HttpServlet {
 		if (modifywhereto == 1) {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/modify.jsp");
 			dispatcher.forward(request, response);
+			
+			
 		}
 		else {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
