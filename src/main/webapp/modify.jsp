@@ -28,7 +28,7 @@
   </nav>
   <br>
   <form action="UserControllerServlet" method="GET">
-  	<input type="hidden" name="command" value="LISTEMPLOYEEPROJECTS">
+  	<input type="hidden" name="command" value="UPDATEINDEX">
   	
      
 	  <label for="serviceline"><b>Project name:</b></label>
@@ -50,6 +50,10 @@
       <input type="date" id="startdate" name="startdate"><br><br>
       <label for="enddate"><b>End Date:&emsp;&ensp;&ensp;</b></label>
       <input type="date" id="enddate" name="enddate"><br><br><br><br>
+      
+    
+     
+     
       
       <button class="button button2">Submit</button>&emsp;&emsp;<button onclick="document.location= 'UserControllerServlet'" class="button button2">Back</button>
       

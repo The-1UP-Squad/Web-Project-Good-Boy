@@ -103,8 +103,12 @@
 		<c:param name="command" value="LISTEMPLOYEEPROJECTS"/>
 		<c:param name="modifywhereto" value="1"/>
 	</c:url>
+	
+	<c:url var="populatelink" value ="UserControllerServlet">
+	<c:param name="command" value="UPDATEINDEX" />
+	</c:url>
     
-    	<td> <a href="${modifyLink}" 
+    	<td><a href="${modifyLink}"
     	onclick="if (!(confirm('Are you sure you want to edit this Project?'))) return false">
     	Edit</a>	</td>
 		
