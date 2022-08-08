@@ -136,27 +136,43 @@ public class UserControllerServlet extends HttpServlet {
 	}
 
 
-  
-    
-	
-	
-	
-	
-	
 	private void checkUserPassword(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		String uName = request.getParameter("username");
 		String passWord = request.getParameter("password");
 		
 		List<Salting> salting = saltingDbUtil.getSalting();
+		
+		Salting testSalt = new Salting(uName, passWord);
    	 
     	request.setAttribute("SALTING_LIST", salting);
     	
-    	if (ArrayList.contains("uName")){
+    	for(Salting salt: salting) {
     		
+    		int notthekey = 6;
+			String myCode = (passWord);
+			String name="";
+			char[] myArray = myCode.toCharArray();
+			
+			for(char n : myArray) {
+				n += notthekey;
+				name += n;
+		
+			}
+			
+    		if (salt.getuName().equals(testSalt.getuName())) {
+    			
+    			if (salt.getPassWord().equals(name)) {
+    				listEmployeeProjects(request, response);
+    			}
+
+    		else {
+    		RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
+    		dispatcher.forward(request, response);
+    		}
+    		}
     	}
-    	
-	}
+    	}
 
 
 	private void addUserPassword(HttpServletRequest request, HttpServletResponse response) throws Exception {

@@ -141,12 +141,12 @@ public class SaltingDbUtil {
 		}
 		
 		
-		public static void decrptPass(String[] args) {
+		public static void main(String[] args) {
 			
 			int notthekey = 6;
-			String myCode = "gx{znkx789";
+			String myCode = "inxoy789";
 			//ArrayList<Character> nope = new ArrayList <Character>(); 
-			System.out.println(myCode);
+			//System.out.println(myCode);
 			String name="";
 			char[] myArray = myCode.toCharArray();
 			
@@ -158,8 +158,6 @@ public class SaltingDbUtil {
 				
 
 			}
-			System.out.println(" ");
-			//String var =nope.addAll(nope);
-			//System.out.println(name);
+			
 		}
 }
