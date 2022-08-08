@@ -496,3 +496,12 @@ div.loginpopup {
   cursor: pointer;
   text-decoration: none;
 }
+#passwordEnter{
+  width: 280px;
+  padding: 10px 20px;
+  margin: 2px 0;
+  box-sizing: border-box;
+  border: 2px solid #000048;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}

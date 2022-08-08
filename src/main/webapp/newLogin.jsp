@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="./CSS/stylesheet.css">
 <title>Project Planner Application - Add Login</title>
 </head>
-
+<img class="middle" src="logo.png">
 <h1>
 <p style="color:#000048; p style=font-family:"arial";> Register New Login  </h1>
 
