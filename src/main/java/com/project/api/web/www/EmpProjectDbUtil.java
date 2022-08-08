@@ -1,10 +1,15 @@
 package com.project.api.web.www;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 import javax.sql.DataSource;
 
@@ -81,7 +86,7 @@ public class EmpProjectDbUtil {
 			myConn = dataSource.getConnection();
 			
 			String sql = "insert into addprojects"
-					+ "(Project,Name,Start_Date,End_Date) "
+					+ "(ProjectID,Project,Name,Start_Date,End_Date) "
 					+ "values (?,?,?,?)";
 			
 			myStmt = myConn.prepareStatement(sql);
@@ -110,7 +115,7 @@ public class EmpProjectDbUtil {
 	   int employeeProjectId;
 	   
 	   try {
-		   employeeProjectId = Integer.parseInt(theEmployeeProjectID);
+		    employeeProjectId = Integer.parseInt(theEmployeeProjectID);
 		   
 		   myConn = dataSource.getConnection();
 		   
@@ -170,6 +175,40 @@ public class EmpProjectDbUtil {
 		}
 		finally {
 			//clean up JDBC code
-			close(myConn, myStmt, null);
+			close(myConn, myStmt, null);}
+		}
+		public void updateProjects(EmployeeProject theEmployeeProject)throws Exception {
+			Connection myConn = null;
+			PreparedStatement myStmt = null;
+			
+			
+			try {
+				
+		
+			    myConn = dataSource.getConnection();
+//				String sql = "update addprojects"
+//						+" set Project=?, Name=?, Start_Date=?, End_Date=?" 
+//						+" where ProjectID=?;";
+			    
+			    String sql = "update addprojects set Project=?, Name=?, Start_Date=?, End_Date=? where ProjectID=?";
+			
+				System.out.println(sql);
+				
+				
+				myStmt = myConn.prepareStatement(sql);
+				
+				myStmt.setString(1, theEmployeeProject.getpName());
+				myStmt.setString(2, theEmployeeProject.getfName());
+			    myStmt.setString(3, theEmployeeProject.getStartDate());
+			    myStmt.setString(4, theEmployeeProject.getEndDate());
+				myStmt.setInt(5, theEmployeeProject.getpId());
+				
+				System.out.println(myStmt);
+				
+			myStmt.execute();
+				
+				}
+			finally {
+				close(myConn, myStmt, null);
 		}
 	}}
