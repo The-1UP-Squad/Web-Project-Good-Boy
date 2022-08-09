@@ -18,18 +18,29 @@
 <input type="hidden" name="command" value="ADDUSERPASSWORD"/>
 
 <label for="uName"><b>Username:</b>&ensp;&nbsp;&nbsp; </label>
-<input type="text" id="fName" name="uName"/><br><br>
+<input type="text" id="fName" name="uName" placeholder="Enter your name here" required/><br><br>
 
 <label for="passWord"><b>Password:</b>&emsp;&nbsp;</label>
-<input type="password" id="password" name="passWord"/><br><br>
-<br>
-<br>
-<br>
-<br>
+<input type="password" id="password" name="passWord" placeholder="Enter your password here" required/><br><br>
 
-<button class="button button2">Submit</button>
+
+  	<input type="hidden" name="command" value="ADDSERVICELINE">   
+          <div class="containerhello">
+  <a class="button button2" href="#popup">Create Login</a>&emsp;&emsp;
+  <div class="popup" id="popup">
+    <div class="popup-inner">
+      <div class="popuptext">      
+        <p><label for="pnameother"><h2>Please Login to Continue.</h2></label>
+      <br><br></p>
+      <button class="button button2">OK</button>
+      </div>
+      <a class="closepopup" href="#">X</a>
+    </div>
+  </div>
+</div>
+  </form>
+
 <br/>
 <br/>
-</form>
 </div>
 </html>
