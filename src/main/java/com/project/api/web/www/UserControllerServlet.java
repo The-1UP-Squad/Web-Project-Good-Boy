@@ -189,24 +189,19 @@ public class UserControllerServlet extends HttpServlet {
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
         dispatcher.forward(request, response);
-		
+		}
 
 	private void updateProjects(HttpServletRequest request, HttpServletResponse response) throws Exception 
 	{ 
 		int pId = Integer.parseInt(request.getParameter("projectID"));
-		String projectName = request.getParameter("project");
-	    String Name = request.getParameter("employee");
+		String pName = request.getParameter("project");
+	    String fName = request.getParameter("employee");
 	    String startDate = request.getParameter("startdate");
 	    String endDate = request.getParameter("enddate");
+    	
+    	listEmployeeProjects(request, response);
 	    
-	    EmployeeProject theEmployeeProject = new EmployeeProject(pId, projectName, Name, startDate, endDate);
-	    
-	    System.out.println(theEmployeeProject.getpId());
-	    System.out.println(theEmployeeProject.getpName());
-	    System.out.println(theEmployeeProject.getfName());
-	    System.out.println(theEmployeeProject.getStartDate());
-	    System.out.println(theEmployeeProject.getEndDate());
-	    
+	    EmployeeProject theEmployeeProject = new EmployeeProject(pId, pName, fName, startDate, endDate);
 	    
 	    EmpProjectDbUtil.updateProjects(theEmployeeProject);
 	    
@@ -248,14 +243,13 @@ public class UserControllerServlet extends HttpServlet {
         	
 
         	//read student id form from id
-            String theEmployeeID = request.getParameter("EmpId"); 
+            String theEmployeeProjectID = request.getParameter("projectID"); 
 
-            	
-            Employee theEmployee = userDbUtil.getEmployee(theEmployeeID);
+            EmployeeProject theEmployeeProject = EmpProjectDbUtil.getEmployeeProject(theEmployeeProjectID);
             
-            request.setAttribute("THE_EMPLOYEE", theEmployee);
+            request.setAttribute("THE_EMPLOYEEPROJECT", theEmployeeProject);
             
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/adduser.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/modify.jsp");
             dispatcher.forward(request, response);
         	
 		 
@@ -303,7 +297,17 @@ public class UserControllerServlet extends HttpServlet {
 		
 		request.setAttribute("EMPLOYEEPROJECT_LIST", theEmployeeProject);
 		
+		
 		if (modifywhereto == 1) {
+			
+			List<Project> projects = projectDbUtil.getProjects();
+        	
+        	request.setAttribute("PROJECT_LIST", projects);
+        	
+        	List<Employee> employees = userDbUtil.getEmployees();
+        	
+            request.setAttribute("EMPLOYEE_LIST", employees);
+			
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/modify.jsp");
 			dispatcher.forward(request, response);
 			
@@ -340,10 +344,8 @@ public class UserControllerServlet extends HttpServlet {
         	
         		request.setAttribute("EMPLOYEE_LIST", employees);
 
-			// get users from db util
 	        	List<Project> projects = projectDbUtil.getProjects();
 	        	
-	        // add users to the request
 	        	request.setAttribute("PROJECT_LIST", projects);
 	        	
 	        // send to jsp page
@@ -408,8 +410,12 @@ public class UserControllerServlet extends HttpServlet {
 	        	dispatcher.forward(request, response);
 	        	
         	} else {
-	        	RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
-	        	dispatcher.forward(request, response);
+	        	if(response.isCommitted()) {
+	        		return;
+	        	}
+	        	RequestDispatcher dispatcher2 = request.getRequestDispatcher("/index.jsp");
+	        	
+	        	dispatcher2.forward(request, response);
         	}  			
         
 		}

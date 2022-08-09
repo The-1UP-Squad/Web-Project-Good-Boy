@@ -102,6 +102,7 @@
 	<c:url var="modifyLink" value="UserControllerServlet">
 		<c:param name="command" value="LISTEMPLOYEEPROJECTS"/>
 		<c:param name="modifywhereto" value="1"/>
+		<c:param name="command" value="updateProjects"/>
 	</c:url>
 	
 	<c:url var="populatelink" value ="UserControllerServlet">
