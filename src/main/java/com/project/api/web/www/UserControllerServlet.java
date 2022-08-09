@@ -189,6 +189,7 @@ public class UserControllerServlet extends HttpServlet {
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
         dispatcher.forward(request, response);
+	}
 		
 
 	private void updateProjects(HttpServletRequest request, HttpServletResponse response) throws Exception 

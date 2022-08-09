@@ -29,10 +29,10 @@
 <label>Password :</label>
 <input type="password" name="password" id="password"/>
 <br/>
-<button class="button button2">Submit</button>
-<input type="button" value="Login" id="submit" onclick="validate()"/>
-<span><b class="note">Note : </b>For this project use following username and password. 
-<br/><b class="valid">User Name : User<br/>Password : Password</b></span>
+<button class="button button2" >Submit</button>
+<!--<input type="button" value="Login" id="submit" onclick="validate()"/>-->
+
+
 </form>
 <br/>
 New User?
