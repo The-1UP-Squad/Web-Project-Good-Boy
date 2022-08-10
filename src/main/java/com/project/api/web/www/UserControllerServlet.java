@@ -195,7 +195,7 @@ public class UserControllerServlet extends HttpServlet {
 
 	private void updateProjects(HttpServletRequest request, HttpServletResponse response) throws Exception 
 	{ 
-		int pId = Integer.parseInt(request.getParameter("projectID"));
+		int pId = Integer.parseInt(request.getParameter("employeeProject"));
 		String pName = request.getParameter("project");
 	    String fName = request.getParameter("employee");
 	    String startDate = request.getParameter("startdate");
@@ -243,9 +243,16 @@ public class UserControllerServlet extends HttpServlet {
 	private void loadEmployees(HttpServletRequest request, HttpServletResponse response) 
         	throws Exception{ 
         	
-
+			List<Project> projects = projectDbUtil.getProjects();
+    	
+    		request.setAttribute("PROJECT_LIST", projects);
+    	
+    		List<Employee> employees = userDbUtil.getEmployees();
+    	
+        	request.setAttribute("EMPLOYEE_LIST", employees);
         	//read student id form from id
-            String theEmployeeProjectID = request.getParameter("projectID"); 
+            String theEmployeeProjectID = request.getParameter("ProjectID"); 
+            
 
             EmployeeProject theEmployeeProject = EmpProjectDbUtil.getEmployeeProject(theEmployeeProjectID);
             

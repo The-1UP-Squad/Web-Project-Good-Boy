@@ -29,15 +29,15 @@
   <br>
   <form action="UserControllerServlet" method="GET">
   	<input type="hidden" name="command" value="UPDATEINDEX"/>
-  	<input type="hidden" name="employeeProjectId" value="${THE_EMPLOYEEPROJECT}"/>  		
+  	<input type="hidden" name="employeeProjectId" value="${THE_EMPLOYEEPROJECT.pId}"/>  		
      
 	  <label for="serviceline"><b>Project name:</b></label>
       <select id="project" name="project">
-
-  		<c:forEach var="projects" items="${PROJECT_LIST}"> 
-   		<option>${projects.projName}</option>
-		</c:forEach>
-		</select> <br><br>
+		
+  	<c:forEach var="projects" items="${PROJECT_LIST}"> 
+   	  <option>${projects.projName}</option>
+	  </c:forEach>
+	  </select> <br><br>
       
       
       <label for="employee"><b>Employee:&emsp;&ensp;</b></label>
@@ -49,20 +49,17 @@
       
       <label for="startdate"><b>Start Date:&emsp;&ensp;</b></label>
       <input type="date" id="startdate" name="startdate"><br><br>
+      
       <label for="enddate"><b>End Date:&emsp;&ensp;&ensp;</b></label>
       <input type="date" id="enddate" name="enddate"><br><br><br><br>
       
-    
-     <select id="project" name="projectID">     
-      <c:forEach var="employeeProjects" items="${EMPLOYEEPROJECT_LIST}">
-      <option>${employeeProjects.pId}</option>
-      </c:forEach>
-      </select>
-      <button class="button button2">Submit</button>&emsp;&emsp;<button onclick="document.location= 'UserControllerServlet'" class="button button2">Back</button>
+      <label for="projectID"></label>
+      <input type="hidden" id="projectID" name="employeeProject" value="${THE_EMPLOYEEPROJECT.pId}"/>
+      <button class="button button2">Submit</button>&emsp;&emsp;
       
  	</form>       
      
-
+<button onclick="document.location= 'UserControllerServlet'" class="button button2">Back</button>
   <div style="clear:both;"></div>
   <p>
   <br>

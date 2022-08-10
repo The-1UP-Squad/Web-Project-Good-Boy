@@ -108,14 +108,14 @@ public class EmpProjectDbUtil {
 
 
 	public EmployeeProject getEmployeeProject(String theEmployeeProjectID) throws Exception{
-	   EmployeeProject theEmployeeProject = null; 
+	   EmployeeProject theEmployeeProject ; 
 	   PreparedStatement myStmt = null;
 	   Connection myConn = null;
 	   ResultSet myRs = null;
 	   int employeeProjectId;
-	   
+
 	   try {
-		    employeeProjectId = Integer.parseInt(theEmployeeProjectID);
+		   employeeProjectId = Integer.parseInt(theEmployeeProjectID);
 		   
 		   myConn = dataSource.getConnection();
 		   
@@ -129,7 +129,7 @@ public class EmpProjectDbUtil {
 		   
 		   if (myRs.next()) {
 			   String pName = myRs.getString("Project");
-			   String firstName = myRs.getString("First_Name");
+			   String firstName = myRs.getString("Name");
 			   String startDate = myRs.getString("Start_Date");
 			   String endDate = myRs.getString("End_Date");
 	;		  
@@ -191,11 +191,10 @@ public class EmpProjectDbUtil {
 //						+" where ProjectID=?;";
 			    
 			    String sql = "update addprojects set Project=?, Name=?, Start_Date=?, End_Date=? where ProjectID=?";
-			
-				System.out.println(sql);
 				
 				
 				myStmt = myConn.prepareStatement(sql);
+				
 				
 				myStmt.setString(1, theEmployeeProject.getpName());
 				myStmt.setString(2, theEmployeeProject.getfName());
@@ -203,7 +202,6 @@ public class EmpProjectDbUtil {
 			    myStmt.setString(4, theEmployeeProject.getEndDate());
 				myStmt.setInt(5, theEmployeeProject.getpId());
 				
-				System.out.println(myStmt);
 				
 			myStmt.execute();
 				
