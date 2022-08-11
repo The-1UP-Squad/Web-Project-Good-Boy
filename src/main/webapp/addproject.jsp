@@ -74,7 +74,7 @@
       <label for="enddate"><b>End Date:&emsp;&ensp;&ensp;</b></label>
       <input type="date" id="enddate" name="endDate"><br><br><br><br>
       
-      <button class="button button2">Submit</button>
+      <button class="button button2" > Submit</button>
   </form>
  <form action="UserControllerServlet" method="GET">
  	<input type="hidden" name="command" value="ADDPROJECT">
