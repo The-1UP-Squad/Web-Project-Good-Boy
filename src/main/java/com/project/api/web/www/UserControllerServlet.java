@@ -126,7 +126,16 @@ public class UserControllerServlet extends HttpServlet {
 
 				case "UPDATEINDEX":
 					updateProjects(request, response);
+					break;
 			
+				case "DISPLAYSERVICELINE":
+					displayServiceLine(request, response);
+					break;
+					
+				case "DISPLAYPROJECTS":
+					displayProjects(request, response);
+					break;
+				
 				default:
 					listEmployees(request, response);
 					}
@@ -139,7 +148,9 @@ public class UserControllerServlet extends HttpServlet {
 	}
 
 
-	private void checkUserPassword(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+
+		private void checkUserPassword(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		String uName = request.getParameter("username");
 		String passWord = request.getParameter("password");
@@ -177,8 +188,7 @@ public class UserControllerServlet extends HttpServlet {
     	}
     	}
 
-
-	private void addUserPassword(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		private void addUserPassword(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		String uName = request.getParameter("uName");
 		String passWord = request.getParameter("passWord");
@@ -192,8 +202,7 @@ public class UserControllerServlet extends HttpServlet {
 
 	}
 		
-
-	private void updateProjects(HttpServletRequest request, HttpServletResponse response) throws Exception 
+		private void updateProjects(HttpServletRequest request, HttpServletResponse response) throws Exception 
 	{ 
 		int pId = Integer.parseInt(request.getParameter("employeeProject"));
 		String pName = request.getParameter("project");
@@ -209,10 +218,10 @@ public class UserControllerServlet extends HttpServlet {
 	    
 	    listEmployees(request, response);
 	    
+	    
 	}
 
-
-	private void deleteEmployeeProject(HttpServletRequest request, HttpServletResponse response) throws Exception  {
+		private void deleteEmployeeProject(HttpServletRequest request, HttpServletResponse response) throws Exception  {
 		//read student id form from id
         String theEmployeeProjectID = request.getParameter("ProjectID");	
         	
@@ -222,9 +231,7 @@ public class UserControllerServlet extends HttpServlet {
         listEmployeeProjects(request, response);
     }
 		
-
-
-	private void updateEmployee(HttpServletRequest request, HttpServletResponse response) throws Exception 
+		private void updateEmployee(HttpServletRequest request, HttpServletResponse response) throws Exception 
 	{ 
 		int id = Integer.parseInt(request.getParameter("employeeId"));
 		String firstName = request.getParameter("fName");
@@ -239,8 +246,7 @@ public class UserControllerServlet extends HttpServlet {
 	    
 	    }
 
-
-	private void loadEmployees(HttpServletRequest request, HttpServletResponse response) 
+		private void loadEmployees(HttpServletRequest request, HttpServletResponse response) 
         	throws Exception{ 
         	
 			List<Project> projects = projectDbUtil.getProjects();
@@ -264,22 +270,20 @@ public class UserControllerServlet extends HttpServlet {
 		 
 	}
 
-
 		private void deleteEmployee(HttpServletRequest request, HttpServletResponse response)
         throws Exception {
 		
-		//read student id form from id
-        String theEmployeeID = request.getParameter("EmpId");	
+		String theEmployeeID = request.getParameter("EmpId");	
         	
-        //delete student from data base
         userDbUtil.deleteEmployee(theEmployeeID);
-        
-        //send them back to servlet or index page, right?
+        List<EmployeeProject> theEmployeeProject = EmpProjectDbUtil.getEmployeeProjects();
+		
+        displayServiceLine(request, response);
 
-        listEmployees(request, response);//not sure about this line??
         }
 
         private void addEmployeeProject(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
         	
         	String pName = request.getParameter("pName");
         	String fName = request.getParameter("fName");
@@ -338,10 +342,13 @@ public class UserControllerServlet extends HttpServlet {
         	
         	projectDbUtil.addProject(theProject);
           	
-        	listProjects(request, response);
+        	displayProjects(request, response);
 	}
         
+		
+		
 		private void listProjects(HttpServletRequest request, HttpServletResponse response) 
+
 	        	throws Exception {
 			int whereTo = 0;
 			
@@ -357,7 +364,7 @@ public class UserControllerServlet extends HttpServlet {
 	        	
 	        	request.setAttribute("PROJECT_LIST", projects);
 	        	
-	        // send to jsp page
+	       
 			
 	        if (whereTo == 2) {
 	        	RequestDispatcher dispatcher = request.getRequestDispatcher("/addproject.jsp");
@@ -390,6 +397,7 @@ public class UserControllerServlet extends HttpServlet {
 
 
 
+		
 		private void listEmployees(HttpServletRequest request, HttpServletResponse response) 
         	throws Exception {
 			int whereTo = 0;
@@ -433,20 +441,12 @@ public class UserControllerServlet extends HttpServlet {
 		private void deleteProject(HttpServletRequest request, HttpServletResponse response)
 		        throws Exception {
 				
-				//read student id form from id
+				
 		        String pName = request.getParameter("ProID");
 		        
-		        //Project theProjects = new Project(pName);
-		        	
-		        //delete student from data base
-		        //ProjectDbUtil.deleteProject(theProjectID);
-		        
 		        projectDbUtil.deleteProject(pName);
-		  
-		        
-		        //send them back to servlet or index page, right?
 
-		        listProjects(request, response);//not sure about this line??
+		        displayProjects(request, response);
 		        }
 		
 
@@ -471,13 +471,12 @@ private void listServiceLine(HttpServletRequest request, HttpServletResponse res
         	dispatcher.forward(request, response);
         	
     	} else {
-        	RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
-        	dispatcher.forward(request, response);}
+    		displayServiceLine(request, response);
+    	}
     	}  			
     	private void addServiceList(HttpServletRequest request, HttpServletResponse response) throws Exception {
     		
         	String slname = request.getParameter("slname");
-        	
         	
         	ServiceLine theServiceLine = new ServiceLine(slname);
         	
@@ -487,4 +486,43 @@ private void listServiceLine(HttpServletRequest request, HttpServletResponse res
         	
 	} 
     	
-	}
+    	private void displayServiceLine(HttpServletRequest request, HttpServletResponse response) throws Exception{ 
+    		
+    		List<Employee> employees = userDbUtil.getEmployees();
+        	
+            
+            request.setAttribute("EMPLOYEE_LIST", employees);
+            	
+            List<ServiceLine> serviceLines = serviceLineDbUtil.getServiceLines();
+            	 
+            request.setAttribute("SERVICELINE_LIST", serviceLines);
+
+             List<EmployeeProject> theEmployeeProject = EmpProjectDbUtil.getEmployeeProjects();
+        		
+             request.setAttribute("EMPLOYEEPROJECT_LIST", theEmployeeProject);
+        	
+        	RequestDispatcher dispatcher2 = request.getRequestDispatcher("/adduser.jsp");
+        	
+        	dispatcher2.forward(request, response);
+    		
+    	}	
+	
+    	private void displayProjects(HttpServletRequest request, HttpServletResponse response)throws Exception {
+    		List<Employee> employees = userDbUtil.getEmployees();
+        	
+            
+            request.setAttribute("EMPLOYEE_LIST", employees);
+            	
+            List<ServiceLine> serviceLines = serviceLineDbUtil.getServiceLines();
+            	 
+            request.setAttribute("SERVICELINE_LIST", serviceLines);
+
+            List<Project> projects = projectDbUtil.getProjects();
+        	
+        	request.setAttribute("PROJECT_LIST", projects);
+        	
+        	RequestDispatcher dispatcher2 = request.getRequestDispatcher("/addproject.jsp");
+        	
+        	dispatcher2.forward(request, response);
+}
+}
