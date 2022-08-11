@@ -391,6 +391,7 @@ public class UserControllerServlet extends HttpServlet {
         	
         	listEmployees(request, response);
         	
+        	
 	}
 
 
@@ -471,18 +472,20 @@ private void listServiceLine(HttpServletRequest request, HttpServletResponse res
         	dispatcher.forward(request, response);
         	
     	} else {
+
     		displayServiceLine(request, response);
     	}
+
     	}  			
-    	private void addServiceList(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    private void addServiceList(HttpServletRequest request, HttpServletResponse response) throws Exception {
     		
-        	String slname = request.getParameter("slname");
+        String slname = request.getParameter("slname");
         	
-        	ServiceLine theServiceLine = new ServiceLine(slname);
+        ServiceLine theServiceLine = new ServiceLine(slname);
         	
-        	serviceLineDbUtil.addServiceLine(theServiceLine);
+        serviceLineDbUtil.addServiceLine(theServiceLine);
         	
-        	listServiceLine(request, response);
+        listServiceLine(request, response);
         	
 	} 
     	
