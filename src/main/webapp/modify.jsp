@@ -33,7 +33,7 @@
      
 	  <label for="serviceline"><b>Project name:</b></label>
       <select id="project" name="project">
-		
+	<option>${THE_EMPLOYEEPROJECT.pName}</option>
   	<c:forEach var="projects" items="${PROJECT_LIST}"> 
    	  <option>${projects.projName}</option>
 	  </c:forEach>
@@ -42,16 +42,17 @@
       
       <label for="employee"><b>Employee:&emsp;&ensp;</b></label>
       <select id="employee" name="employee">
+      <option>${THE_EMPLOYEEPROJECT.fName}</option>
       <c:forEach var="employees" items="${EMPLOYEE_LIST}">
       <option>${employees.fName} ${employees.lName}</option>
       </c:forEach>
       </select> <br><br>
       
       <label for="startdate"><b>Start Date:&emsp;&ensp;</b></label>
-      <input type="date" id="startdate" name="startdate"><br><br>
+      <input type="date" id="startdate" name="startdate" value="${THE_EMPLOYEEPROJECT.startDate}"><br><br>
       
       <label for="enddate"><b>End Date:&emsp;&ensp;&ensp;</b></label>
-      <input type="date" id="enddate" name="enddate"><br><br><br><br>
+      <input type="date" id="enddate" name="enddate" value="${THE_EMPLOYEEPROJECT.endDate}"><br><br><br><br>
       
       <label for="projectID"></label>
       <input type="hidden" id="projectID" name="employeeProject" value="${THE_EMPLOYEEPROJECT.pId}"/>
