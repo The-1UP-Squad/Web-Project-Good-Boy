@@ -30,8 +30,12 @@ li a {
   text-decoration: none;
 }
 
-li a hover {
-  background-color: #111;
+li a:hover:not(.active) {
+  background-color: #000070;
+}
+
+.active {
+  background-color: #808080;
 }
 
 #myInput {
@@ -63,11 +67,6 @@ li a hover {
 #myTable tr.header {
   background-color: #000048;
   color: white;
-}
-
-#logo {
-
-     
 }
  
  div.mainlogo{
@@ -365,21 +364,21 @@ div.logo{
 
 div.logout{
 	position: relative;
-	top: 1.5%;
+	top: -35%;
 	left: 90%;
 	max-width: 200px;
 }
 
 div.highcontrast{
 	position: relative;
-	top: -5%;
+	top: -41.5%;
 	left: 78%;
 	max-width: 200px;
 }
 
 div.highcontrast2{
 	position: relative;
-	top: 20%;
+	top: -41.5%;
 	left: 78%;
 	max-width: 200px;
 }
