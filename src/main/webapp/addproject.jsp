@@ -14,19 +14,8 @@
   
   <div class="mainlogo">
   <img class="middle" src="logo.png">
-  <h1><p style=font-family:"arial";> New Project Form</h1>
-  </div>
   
-<nav>
-
-   <div class="Logout">
-   <a class="button button2" href="login.jsp"> Log Out </a>
-   </div>
-   
-        <div class="highcontrast2">
-   <a class="button button2" href='javascript:void(0);' onclick='retheme()' title='Change Theme'>High Contrast</a>
-   </div>
-
+  <nav>  
     <div class="navbar">
       <c:url var="addUserLink" value="UserControllerServlet">
                 <c:param name="command" value="LISTEMPLOYEES" />
@@ -39,10 +28,23 @@
       <ul>
         <li><a href="UserControllerServlet">Home</a></li>
         <li><a href="${addUserLink}">Users</a></li>
-        <li><a href="${addProjectLink}">Projects</a></li>   
+        <li><a class="active" href="${addProjectLink}">Projects</a></li>   
       </ul>
     </div>
 </nav>
+  
+  <h1><p style=font-family:"arial";> New Project Form</h1>
+  </div>
+  
+
+   <div class="Logout">
+   <a class="button button2" href="login.jsp"> Log Out </a>
+   </div>
+   
+        <div class="highcontrast2">
+   <a class="button button2" href='javascript:void(0);' onclick='retheme()' title='Change Theme'>High Contrast</a>
+   </div>
+
   <br>
   
    <div class="project-form">

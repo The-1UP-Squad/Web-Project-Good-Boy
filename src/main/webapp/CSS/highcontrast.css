@@ -152,3 +152,13 @@ body.darktheme #employee{
 	background: #000;
 	color: #ffff00;
 }
+
+body.darktheme .active{
+	background-color: #ffff00;
+	color: #000000;
+}
+
+body.darktheme li a:hover:not(.active) {
+  background-color: #ffff80;
+  color: #000000;
+}
