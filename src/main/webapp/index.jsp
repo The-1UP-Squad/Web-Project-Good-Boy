@@ -17,20 +17,6 @@
     
 <div class="mainlogo">
 <img class="middle" src="logo.png">
-<h1><p style=font-family:"arial";> Project Planner  </h1>
-</div>
-
-<body>
-<br>	
-<h2>Welcome!</h2>
-
-   <div class="Logout">
-   <a class="button button2" href="login.jsp"> Log Out </a>
-   </div>
-   
-     <div class="highcontrast">
-   <a class="button button2" href='javascript:void(0);' onclick='retheme()' title='Change Theme'>High Contrast</a>
-   </div>
 
 <nav>
     <div class="navbar">
@@ -44,12 +30,25 @@
                 <c:param name="whereTo" value="2" />
 		</c:url>
       <ul>
-        <li><a href="UserControllerServlet">Home</a></li>
+        <li><a class="active" href="UserControllerServlet">Home</a></li>
         <li><a href="${addUserLink}">Users</a></li>
         <li><a href="${addProjectLink}">Projects</a></li>  
       </ul>
     </div>
-    
+</nav>
+
+<h1><p style=font-family:"arial";> Project Planner  </h1>
+</div>
+
+   <div class="Logout">
+   <a class="button button2" href="login.jsp"> Log Out </a>
+   </div>
+   
+     <div class="highcontrast">
+   <a class="button button2" href='javascript:void(0);' onclick='retheme()' title='Change Theme'>High Contrast</a>
+   </div>
+
+<body>	
 <h2>Project List</h2>
 <div id="time" ><% 
          Date dNow = new Date( );
@@ -123,7 +122,6 @@
 </table>
 
 
-</nav>
 <br>
 <br>
 <br>
