@@ -13,16 +13,6 @@
 
 <div class="mainlogo">
 <img class="middle" src="logo.png">
-<h1><p style=font-family:"arial";> New User Form  </h1>
-</div>
-
-   <div class="Logout">
-   <a class="button button2" href="login.jsp"> Log Out </a>
-   </div>
-   
-        <div class="highcontrast">
-   <a class="button button2" href='javascript:void(0);' onclick='retheme()' title='Change Theme'>High Contrast</a>
-   </div>
 
 <nav>
     <div class="navbar">
@@ -36,11 +26,22 @@
 		</c:url>
       <ul>
         <li><a href="UserControllerServlet">Home</a></li>
-        <li><a href="${addUserLink}">Users</a></li>
+        <li><a class="active" href="${addUserLink}">Users</a></li>
         <li><a href="${addProjectLink}">Projects</a></li> 
       </ul>
     </div>
 </nav>
+
+<h1><p style=font-family:"arial";> New User Form  </h1>
+</div>
+
+   <div class="Logout">
+   <a class="button button2" href="login.jsp"> Log Out </a>
+   </div>
+   
+        <div class="highcontrast">
+   <a class="button button2" href='javascript:void(0);' onclick='retheme()' title='Change Theme'>High Contrast</a>
+   </div>
   
   <br>
   
