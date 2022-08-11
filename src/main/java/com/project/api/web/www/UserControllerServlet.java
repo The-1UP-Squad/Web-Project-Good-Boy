@@ -126,7 +126,8 @@ public class UserControllerServlet extends HttpServlet {
 
 				case "UPDATEINDEX":
 					updateProjects(request, response);
-			
+					break;
+					
 				default:
 					listEmployees(request, response);
 					}
@@ -384,6 +385,7 @@ public class UserControllerServlet extends HttpServlet {
         	
         	listEmployees(request, response);
         	
+        	
 	}
 
 
@@ -471,19 +473,18 @@ private void listServiceLine(HttpServletRequest request, HttpServletResponse res
         	dispatcher.forward(request, response);
         	
     	} else {
-        	RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
-        	dispatcher.forward(request, response);}
+    		listEmployees(request, response);}
     	}  			
-    	private void addServiceList(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    private void addServiceList(HttpServletRequest request, HttpServletResponse response) throws Exception {
     		
-        	String slname = request.getParameter("slname");
+        String slname = request.getParameter("slname");
         	
         	
-        	ServiceLine theServiceLine = new ServiceLine(slname);
+        ServiceLine theServiceLine = new ServiceLine(slname);
         	
-        	serviceLineDbUtil.addServiceLine(theServiceLine);
+        serviceLineDbUtil.addServiceLine(theServiceLine);
         	
-        	listServiceLine(request, response);
+        listServiceLine(request, response);
         	
 	} 
     	
