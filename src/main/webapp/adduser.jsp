@@ -49,6 +49,7 @@
   <div class="formUser">
   <form action="UserControllerServlet" method="GET" autocomplete="ON">
 <input type="hidden" name="command" value="ADDEMPLOYEE"/>
+<script>window.history.pushState("UserControllerServlet", "listEmployees", "UserControllerServlet?command=LISTEMPLOYEES&whereTo=1");</script>
       <label for="fName"><b>First name:</b>&ensp;&nbsp;&nbsp; </label>
 	  <input type="text" id="fName" name="fName"/><br><br>
 	  

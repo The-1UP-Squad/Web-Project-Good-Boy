@@ -31,7 +31,7 @@
   	<input type="hidden" name="command" value="UPDATEINDEX"/>
   	<input type="hidden" name="employeeProjectId" value="${THE_EMPLOYEEPROJECT.pId}"/>  		
      
-	  <label for="serviceline"><b>Project name:</b></label>
+	  <label for="project"><b>Project:&emsp;&ensp;</b></label>
       <select id="project" name="project">
 	<option>${THE_EMPLOYEEPROJECT.pName}</option>
   	<c:forEach var="projects" items="${PROJECT_LIST}"> 
