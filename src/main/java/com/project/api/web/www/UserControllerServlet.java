@@ -389,7 +389,7 @@ public class UserControllerServlet extends HttpServlet {
         	
         	userDbUtil.addEmployee(theEmployee);
         	
-        	listEmployees(request, response);
+        	displayServiceLine(request, response);
         	
         	
 	}
@@ -431,7 +431,7 @@ public class UserControllerServlet extends HttpServlet {
 	        	if(response.isCommitted()) {
 	        		return;
 	        	}
-	        	RequestDispatcher dispatcher2 = request.getRequestDispatcher("/adduser.jsp");
+	        	RequestDispatcher dispatcher2 = request.getRequestDispatcher("/index.jsp");
 	        	
 	        	dispatcher2.forward(request, response);
         	}  			

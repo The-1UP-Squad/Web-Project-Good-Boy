@@ -50,7 +50,7 @@
    <div class="project-form">
    <form action="UserControllerServlet" method="GET">
 <input type="hidden" name="command" value="ADDEMPLOYEEPROJECT"/>
-	
+<script>window.history.pushState("UserControllerServlet", "listEmployees", "UserControllerServlet?command=LISTPROJECTS&whereTo=2")</script>	
       <label for="serviceline"><b>Project name:</b></label>
       <select id="project" name="pName">
 

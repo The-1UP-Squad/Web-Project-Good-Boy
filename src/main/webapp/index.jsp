@@ -58,7 +58,7 @@
       %></div>
       
 <input type="text" id="myInput" onkeyup="myFunction(`myInput`, `myTable`, `tr`)" placeholder="Search for projects..">
-
+<script>window.history.pushState("UserControllerServlet", "listEmployees", "UserControllerServlet")</script>
 
 <table id="myTable">
   <tr class="header">
