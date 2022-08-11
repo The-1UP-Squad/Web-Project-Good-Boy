@@ -422,7 +422,7 @@ public class UserControllerServlet extends HttpServlet {
 	        	if(response.isCommitted()) {
 	        		return;
 	        	}
-	        	RequestDispatcher dispatcher2 = request.getRequestDispatcher("/index.jsp");
+	        	RequestDispatcher dispatcher2 = request.getRequestDispatcher("/adduser.jsp");
 	        	
 	        	dispatcher2.forward(request, response);
         	}  			
