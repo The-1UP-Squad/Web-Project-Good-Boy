@@ -71,16 +71,7 @@ public class SaltingDbUtil {
 			
 			try {
 				
-				int notthekey = 6;
-				String myCode = (theSalting.getPassWord());
-				String name="";
-				char[] myArray = myCode.toCharArray();
-				
-				for(char n : myArray) {
-					n += notthekey;
-					name += n;
-					
-				}
+			String donesalting = Salting.doingTheSalt(theSalting.getPassWord());
 				
 				myConn = dataSource.getConnection();
 				
@@ -91,7 +82,7 @@ public class SaltingDbUtil {
 				myStmt = myConn.prepareStatement(sql);
 				
 				myStmt.setString(1, theSalting.getuName());
-				myStmt.setString(2, name);
+				myStmt.setString(2, donesalting);
 				
 				myStmt.execute();
 				
@@ -145,14 +136,11 @@ public class SaltingDbUtil {
 			
 			int notthekey = 6;
 			String myCode = "inxoy789";
-			//ArrayList<Character> nope = new ArrayList <Character>(); 
-			//System.out.println(myCode);
 			String name="";
 			char[] myArray = myCode.toCharArray();
 			
 			for(char n : myArray) {
 				n -= notthekey;
-				//nope.add(n);
 				name += n;
 				System.out.print(n);
 				
@@ -160,4 +148,5 @@ public class SaltingDbUtil {
 			}
 			
 		}
-}
+			
+		}

@@ -51,13 +51,13 @@
 <input type="hidden" name="command" value="ADDEMPLOYEE"/>
 <script>window.history.pushState("UserControllerServlet", "listEmployees", "UserControllerServlet?command=LISTEMPLOYEES&whereTo=1");</script>
       <label for="fName"><b>First name:</b>&ensp;&nbsp;&nbsp; </label>
-	  <input type="text" id="fName" name="fName"/><br><br>
+	  <input type="text" id="fName" name="fName"required/><br><br>
 	  
       <label for="lName"><b>Last name:</b>&ensp;&nbsp;&nbsp; </label>
-      <input type="text" id="lName" name="lName"/><br><br>
+      <input type="text" id="lName" name="lName"required/><br><br>
       
       <label for="email"><b>Email:</b>&emsp;&emsp;&emsp;&nbsp;</label>
-      <input type="text" id="email" name="email"/><br><br>
+      <input type="text" id="email" name="email"required/><br><br>
       
       <label for="serviceLine"><b>Service Line:</b></label>	
       <select id="serviceLine" name="serviceLine">

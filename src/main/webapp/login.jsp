@@ -20,17 +20,16 @@
 
 <form id="form_id" action="UserControllerServlet" method="GET" name="myform">
 <input type="hidden" name="command" value="CHECKUSERPASSWORD">
-
+<script>window.history.pushState("UserControllerServlet", "listEmployees", "login.jsp")</script>
 <p style=color:#000048; p style=font-family:"arial";>
 
 <label>User Name :</label>
-<input type="text" name="username" id="username"/>
+<input type="text" name="username" id="username"required/>
 
 <label>Password :</label>
-<input type="password" name="password" id="password"/>
+<input type="password" name="password" id="password"required/>
 <br/>
 <button class="button button2" >Submit</button>
-<!--<input type="button" value="Login" id="submit" onclick="validate()"/>-->
 
 
 </form>

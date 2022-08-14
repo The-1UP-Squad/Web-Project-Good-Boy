@@ -49,7 +49,7 @@
    </div>
 
 <body>	
-<h2>Project List</h2>
+<h2>Project Allocation List</h2>
 <div id="time" ><% 
          Date dNow = new Date( );
          SimpleDateFormat ft = 
