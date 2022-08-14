@@ -174,15 +174,16 @@ public class UserControllerServlet extends HttpServlet {
 		
 			}
 			
-    		if (salt.getuName().equals(testSalt.getuName())) {
+			if (salt.getuName().equals(testSalt.getuName())) {
     			
     			if (salt.getPassWord().equals(name)) {
     				listEmployeeProjects(request, response);
     			}
 
     		else {
-    		RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
+    		RequestDispatcher dispatcher = request.getRequestDispatcher("/login1.jsp");
     		dispatcher.forward(request, response);
+    		
     		}
     		}
     	}

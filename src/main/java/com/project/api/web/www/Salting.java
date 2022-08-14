@@ -2,6 +2,7 @@
 package com.project.api.web.www;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Salting {
 	
@@ -46,6 +47,29 @@ public class Salting {
 		this.passWord = passWord;
 	}
 	
+	public static String doingTheSalt(String theSalting) {
+		
+		Salting salt = null;
+		
+		String name="";
+		try {
+			
+			int notthekey = 6;
+			String myCode = (salt.getPassWord());
+			
+			char[] myArray = myCode.toCharArray();
+			
+			for(char n : myArray) {
+				n += notthekey;
+				name += n;
+				
+			}	
+			
+		}catch (Exception exc) {
+			exc.printStackTrace();
+		}
+		return name;
+	}
 	
 	@Override
 	public String toString() {

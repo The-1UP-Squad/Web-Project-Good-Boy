@@ -71,10 +71,10 @@
 		
 	
       <label for="startdate"><b>Start Date:&emsp;&ensp;</b></label>
-      <input type="date" id="startdate" name="startDate"><br><br>
+      <input type="date" id="startdate" name="startDate"required><br><br>
       
       <label for="enddate"><b>End Date:&emsp;&ensp;&ensp;</b></label>
-      <input type="date" id="enddate" name="endDate"><br><br><br><br>
+      <input type="date" id="enddate" name="endDate"required><br><br><br><br>
       
       <button class="button button2" > Submit</button>
   </form>
