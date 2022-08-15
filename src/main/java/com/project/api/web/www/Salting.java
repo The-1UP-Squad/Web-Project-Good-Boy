@@ -49,13 +49,12 @@ public class Salting {
 	
 	public static String doingTheSalt(String theSalting) {
 		
-		Salting salt = null;
 		
 		String name="";
 		try {
 			
 			int notthekey = 6;
-			String myCode = (salt.getPassWord());
+			String myCode = (theSalting);
 			
 			char[] myArray = myCode.toCharArray();
 			
